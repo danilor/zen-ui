@@ -1,9 +1,11 @@
 import {Text, StyleSheet} from 'react-native';
-import { useTheme } from 'zen-ui';
+import { useTheme } from './../../hooks/useTheme';
+import ThemeConfig from '../../config/Theme.config';
 
 type ZenTextProps = {
   children?: any,
   style?: any,
+  type?: keyof typeof ThemeConfig.text
 }
 
 /**
@@ -18,6 +20,7 @@ export default function ZenText(
   {
     children = null,
     style=null,
+    type = 'p'
   }: ZenTextProps
 ){
 
@@ -26,6 +29,10 @@ export default function ZenText(
   const styles = StyleSheet.create({
     text: {
       color: ZenTheme.text,
+      fontSize: ThemeConfig.text[type].size,
+      margin:0,
+      padding:0,
+      fontWeight: ThemeConfig.text[type].weight as any,
     }
   });
 
