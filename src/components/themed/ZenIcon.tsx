@@ -22,7 +22,7 @@ export default (
   {
     name,
     style = {},
-    size = 24,
+    size = 18,
     color
   }
   : ZenIconProps,
