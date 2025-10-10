@@ -27,7 +27,7 @@ export const ZenThemeProvider = ({
   }, []);
 
   const themeContextValue = {
-    theme: currentTheme,
+    ZenTheme: currentTheme,
     toggleTheme,
   };
 

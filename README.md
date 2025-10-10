@@ -14,11 +14,7 @@ npm install zen-ui
 
 
 ```js
-import { multiply } from 'zen-ui';
 
-// ...
-
-const result = await multiply(3, 7);
 ```
 
 

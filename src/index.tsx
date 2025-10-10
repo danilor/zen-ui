@@ -1,8 +1,10 @@
 /**
  * Components
  */
-import Layout from './components/Layout';
-import Screen from './components/Screen';
+import Layout from './components/structure/Layout';
+import Screen from './components/structure/Screen';
+import { useTheme } from './hooks/useTheme';
+import ZenIcon from './components/themed/ZenIcon';
 
 /**
  * Theme
@@ -27,6 +29,13 @@ export {
    */
   ZenLight,
   ZenDark,
+  useTheme,
+
+  /**
+   * Theme components
+   */
+
+  ZenIcon,
 
   /**
    * Types
