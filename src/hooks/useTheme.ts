@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ZenThemeContext } from '../context/ZenThemeContext';
-import type { ThemeModel } from 'zen-ui'; // Import the context
+import type { ThemeModel } from './../models/ThemeModel'; // Import the context
 
 /**
  * This hook should provide an easy way to access the current theme.

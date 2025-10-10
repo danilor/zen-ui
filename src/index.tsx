@@ -5,6 +5,7 @@ import Layout from './components/structure/Layout';
 import Screen from './components/structure/Screen';
 import { useTheme } from './hooks/useTheme';
 import ZenIcon from './components/themed/ZenIcon';
+import { Table, Row, Column } from './components/structure/Table';
 
 /**
  * Theme
@@ -23,6 +24,9 @@ export {
    */
   Screen,
   Layout,
+  Table,
+  Column,
+  Row,
 
   /**
    * Theme
