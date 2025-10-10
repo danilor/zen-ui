@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import { Screen, ZenDark, ZenIcon } from 'zen-ui';
+import { Screen, ZenDark, ZenIcon, ZenLight } from 'zen-ui';
 import ZenText from '../../src/components/themed/ZenText';
 import { ZenThemeProvider } from '../../src/provider/ZenThemeProvider';
 

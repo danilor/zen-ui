@@ -46,8 +46,8 @@ function completeColors(name: string, color: string){
  */
 const ThemeConfig = {
   colors: {
-    defaultLight: '#212121',
-    defaultDark: '#F2F2F2',
+    defaultLight: '#F2F2F2',
+    defaultDark: '#212121',
     defaultSuccess:'#2AAA3D',
     defaultInfo:'#0780F9',
     defaultWarning:'#FF9E0C',

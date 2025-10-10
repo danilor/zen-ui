@@ -1,5 +1,5 @@
 import { Image, StyleSheet } from 'react-native';
-import { useTheme } from 'zen-ui';
+import { useTheme } from './../../hooks/useTheme';
 import IconsConfig from '../../config/Icons.config';
 
 type ZenIconProps = {
