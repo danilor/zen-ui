@@ -22,6 +22,7 @@ export default function Layout({
       paddingLeft: LayoutConfig.space,
       paddingRight: LayoutConfig.space,
       paddingBottom: LayoutConfig.space,
+      marginBottom: LayoutConfig.space,
 
     },
     full: {
@@ -40,7 +41,7 @@ export default function Layout({
     return (
       <View style={[styles.layout, style]}>
 
-          <ScrollView style={styles.full}>
+          <ScrollView fadingEdgeLength={LayoutConfig.edgeLimitForScroll} style={styles.full}>
             {children}
           </ScrollView>
 
