@@ -7,7 +7,7 @@ import {
   ZenInput,
   ZenThemeProvider,
   ZenButton,
-  Layout
+  Layout, ZenSearch,
 } from 'zen-ui';
 import { useState } from 'react';
 
@@ -62,7 +62,7 @@ export default function App() {
               Input
             </ZenText>
 
-            <ZenText type={'p'} paragraph={true} align={'left'}>
+            <ZenText type={'p'} paragraph={true} align={'justify'}>
               The Input component is a styled TextInput that will adapt to the
               current theme. It supports left and right icons, as well as left and
               right accessories.
@@ -82,7 +82,7 @@ export default function App() {
               Buttons
             </ZenText>
 
-            <ZenText type={'p'} paragraph={true} align={'left'}>
+            <ZenText type={'p'} paragraph={true} align={'justify'}>
               Buttons are used to trigger actions. They can be primary or
               secondary (type). They will automatically adapt to the current theme
               and the text color will be selected accordingly depending on the
@@ -156,6 +156,17 @@ export default function App() {
 
               />
             </View>
+
+            <ZenText type={'h4'} paragraph={true} align={'left'}>
+              Search
+            </ZenText>
+
+            <ZenText type={'p'} paragraph={true} align={'justify'}>
+              Search element built on top of the ZenInput component. It provides additional functionality like
+              debouncing and a clear button.
+            </ZenText>
+
+            <ZenSearch />
 
             <ZenIcon key={'testIcon'} name={'hexagon-dice'} />
           </View>

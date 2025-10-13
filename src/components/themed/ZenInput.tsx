@@ -86,7 +86,7 @@ export default function ZenInput(
       <View style={styles.inputSpace}>
         {leftAccessory}
         {leftIcon && (<ZenIcon style={[styles.icon]} key={'left_icon'} name={leftIcon} /> )}
-        <TextInput style={styles.input} {...props} />
+        <TextInput placeholderTextColor={theme.text} style={styles.input} {...props} />
         {rightIcon && (<ZenIcon style={[styles.icon]} key={'right_icon'} name={rightIcon} /> )}
         {rightAccessory}
       </View>

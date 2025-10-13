@@ -10,6 +10,7 @@ import ZenText from './components/themed/ZenText';
 import ZenInput from './components/themed/ZenInput';
 import ZenThemeProvider from './provider/ZenThemeProvider';
 import ZenButton from './components/themed/ZenButton';
+import ZenSearch from './components/themed/ZenSearch';
 /**
  * Theme
  */
@@ -39,6 +40,7 @@ export {
   useTheme,
   ZenThemeProvider,
   ZenButton,
+  ZenSearch,
 
   /**
    * Theme components

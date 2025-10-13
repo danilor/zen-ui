@@ -1,7 +1,7 @@
 
 import {View, StyleSheet, Dimensions, StatusBar } from 'react-native';
 import { useTheme } from '../../hooks/useTheme';
-import LayoutConfig from '../../config/LayoutConfig';
+// import LayoutConfig from '../../config/LayoutConfig';
 import { useKeyboard } from '../../hooks/useKeyboard';
 import { useEffect, useState } from 'react';
 
@@ -75,7 +75,7 @@ export default function Screen({ children }: ScreenProps) {
       backgroundColor: ZenTheme.background,
       height: maxSize,
       maxHeight: maxSize,
-      padding: LayoutConfig.space,
+      // padding: LayoutConfig.space,
       marginTop: (StatusBar.currentHeight ?? 0)
     },
   });
