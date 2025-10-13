@@ -37,3 +37,5 @@ export const ZenThemeProvider = ({
     </ZenThemeContext.Provider>
   );
 };
+
+export default ZenThemeProvider;

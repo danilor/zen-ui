@@ -5,7 +5,7 @@ import ThemeConfig from '../config/Theme.config';
 const ZenLight: ThemeModel = {
   text: ThemeConfig.colors.defaultDark,
   background: ThemeConfig.colors.defaultLight,
-  primary: '#DCB026',
+  primary: '#136eb8',
   secondary: '#D98502',
 
   ...ThemeConfig.defaultColors

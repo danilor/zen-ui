@@ -6,7 +6,10 @@ import Screen from './components/structure/Screen';
 import { useTheme } from './hooks/useTheme';
 import ZenIcon from './components/themed/ZenIcon';
 import { Table, Row, Column } from './components/structure/Table';
-
+import ZenText from './components/themed/ZenText';
+import ZenInput from './components/themed/ZenInput';
+import ZenThemeProvider from './provider/ZenThemeProvider';
+import ZenButton from './components/themed/ZenButton';
 /**
  * Theme
  */
@@ -34,12 +37,16 @@ export {
   ZenLight,
   ZenDark,
   useTheme,
+  ZenThemeProvider,
+  ZenButton,
 
   /**
    * Theme components
    */
 
   ZenIcon,
+  ZenText,
+  ZenInput,
 
   /**
    * Types

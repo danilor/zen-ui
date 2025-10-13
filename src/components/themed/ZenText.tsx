@@ -1,11 +1,16 @@
 import {Text, StyleSheet} from 'react-native';
 import { useTheme } from './../../hooks/useTheme';
 import ThemeConfig from '../../config/Theme.config';
+import LayoutConfig from '../../config/LayoutConfig';
 
 type ZenTextProps = {
   children?: any,
   style?: any,
-  type?: keyof typeof ThemeConfig.text
+  type?: keyof typeof ThemeConfig.text,
+  align?: 'left' | 'center' | 'right' | 'justify',
+  paragraph?: boolean,
+  textColor?: string,
+  fill?: boolean
 }
 
 /**
@@ -13,6 +18,11 @@ type ZenTextProps = {
  * @param children
  * @param style
  * @param size
+ * @param type
+ * @param align
+ * @param paragraph
+ * @param textColor
+ * @param fill
  * @constructor
  */
 
@@ -20,7 +30,11 @@ export default function ZenText(
   {
     children = null,
     style=null,
-    type = 'p'
+    type = 'p',
+    align = 'left',
+    paragraph = false,
+    textColor,
+    fill = true
   }: ZenTextProps
 ){
 
@@ -28,11 +42,16 @@ export default function ZenText(
 
   const styles = StyleSheet.create({
     text: {
-      color: ZenTheme.text,
+      color: textColor ?? ZenTheme.text,
       fontSize: ThemeConfig.text[type].size,
-      margin:0,
+      marginTop:(paragraph) ? LayoutConfig.space : 0,
+      marginBottom:(paragraph) ? LayoutConfig.space : 0,
+      marginLeft: 0,
+      marginRight: 0,
       padding:0,
       fontWeight: ThemeConfig.text[type].weight as any,
+      width: (fill) ? '100%' : 'auto',
+      textAlign: align
     }
   });
 

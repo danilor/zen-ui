@@ -5,6 +5,7 @@ import {useTheme} from '../../hooks/useTheme';
 const styles = StyleSheet.create({
   table: {
     display: "flex",
+    flex: 1,
   },
   row: {
     display: "flex",

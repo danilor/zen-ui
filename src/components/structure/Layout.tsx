@@ -1,5 +1,5 @@
 import {ScrollView, StyleSheet, View} from "react-native";
-import LayoutConfig from '../../config/LayoutConfig';
+// import LayoutConfig from '../../config/LayoutConfig';
 
 type LayoutProps = {
   children: any
@@ -19,14 +19,14 @@ export default function Layout({
   const styles = StyleSheet.create({
     layout: {
       flex: 1,
-      paddingLeft: LayoutConfig.space * 2,
-      paddingRight: LayoutConfig.space * 2,
-      paddingBottom: LayoutConfig.space * 4,
+      // paddingLeft: LayoutConfig.space * 2,
+      // paddingRight: LayoutConfig.space * 2,
+      // paddingBottom: LayoutConfig.space * 4,
 
     },
     full: {
       flex: 1,
-      height: '100%',
+      // height: '100%',
     },
 
     fullCentered: {
