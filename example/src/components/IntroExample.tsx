@@ -1,5 +1,6 @@
 import { Column, Row, Table, ZenButton, ZenText } from 'zen-ui';
 import useThemeStorage from '../../storage/Theme.storage';
+import { View } from 'react-native';
 
 export default function IntroExample() {
 
@@ -27,16 +28,11 @@ export default function IntroExample() {
       also customize the existing themes to suit your needs.
     </ZenText>
 
-    <Table>
-     <Row>
-      <Column>
-        <ZenButton title={'Set Light'} fill={true} pressAction={ ()=> setTheme('light') } />
-      </Column>
-       <Column>
-         <ZenButton type={'secondary'} title={'Set Dark'} fill={true} pressAction={ ()=> setTheme('dark') } />
-       </Column>
-     </Row>
-    </Table>
+    <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: 20, marginTop: 10}}>
+      <ZenButton title={'Set Light'} fill={false} pressAction={ ()=> setTheme('light') } />
+      <ZenButton type={'secondary'} title={'Set Dark'} fill={false} pressAction={ ()=> setTheme('dark') } />
+    </View>
+
 
     <ZenText type={'h2'} paragraph={true} align={'left'}>
       Components

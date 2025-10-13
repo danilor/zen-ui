@@ -96,6 +96,7 @@ export default function ZenButton({
       gap: LayoutConfig.space,
       // color: textColor
       opacity: (disabled) ? ThemeConfig.defaultDimValue : 1,
+      // height: 100
 
     },
   });

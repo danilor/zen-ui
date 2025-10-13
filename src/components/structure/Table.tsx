@@ -5,12 +5,12 @@ import {useTheme} from '../../hooks/useTheme';
 const styles = StyleSheet.create({
   table: {
     display: "flex",
-    flex: 1,
+    // flex: 1,
   },
   row: {
     display: "flex",
     flexDirection: "row",
-    flex: 1,
+    // flex: 1,
     gap: LayoutConfig.space,
     justifyContent:'space-around'
   },
@@ -55,8 +55,6 @@ export function Table(
       borderStyle: borderType,
       borderWidth: (border) ? 1 : 0,
       borderColor: borderColor ?? theme.text,
-
-
     }
   });
   return (
@@ -116,7 +114,9 @@ export function Column(
       // backgroundColor: 'red'
       borderWidth: border ? 1 : 0,
       borderColor: borderColor ?? ZenTheme.text,
-      borderStyle: borderType ?? 'solid'
+      borderStyle: borderType ?? 'solid',
+      // height:'auto'
+      alignSelf: 'stretch'
     }
   });
   return (

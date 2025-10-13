@@ -47,7 +47,8 @@ export default function ZenInput({
 
   const styles = StyleSheet.create({
     container: {
-      flex: 1,
+      // flex: 1,
+
     },
     inputSpace: {
       borderWidth: 1,
@@ -56,7 +57,7 @@ export default function ZenInput({
       paddingTop: multiline ? LayoutConfig.space / 2 : 0,
       // paddingBottom: LayoutConfig.space / 2,
       marginTop: label ? LayoutConfig.space / 8 : 0,
-      marginBottom: LayoutConfig.space / 8,
+      marginBottom: LayoutConfig.space / 4,
       paddingRight: LayoutConfig.space / 4,
       paddingLeft: LayoutConfig.space / 4,
       height: multiline

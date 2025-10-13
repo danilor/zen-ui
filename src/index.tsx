@@ -24,7 +24,7 @@ import ZenDark from './theme/ZenDark';
  * Types
  */
 import type { ThemeModel } from './models/ThemeModel';
- 
+
 export {
   /**
    * Components
