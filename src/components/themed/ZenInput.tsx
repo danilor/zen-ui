@@ -51,8 +51,8 @@ export default function ZenInput(
       borderRadius: LayoutConfig.border,
       // paddingTop: LayoutConfig.space / 2,
       // paddingBottom: LayoutConfig.space / 2,
-      marginTop: (label) ? LayoutConfig.space / 4 : 0,
-      marginBottom: LayoutConfig.space / 4,
+      marginTop: (label) ? LayoutConfig.space / 8 : 0,
+      marginBottom: LayoutConfig.space / 8,
       paddingRight: LayoutConfig.space / 4,
       paddingLeft: LayoutConfig.space / 4,
       height: LayoutConfig.space * 4,
@@ -62,16 +62,20 @@ export default function ZenInput(
       justifyContent: 'space-between',
       gap: LayoutConfig.space / 4,
       // backgroundColor: theme.backgroundSecondary,
+      position:'relative'
     },
     input: {
       flex:12,
+      position:'relative',
       color: theme.text,
       // paddingRight: (rightIcon) ? LayoutConfig.space * 4 : LayoutConfig.space,
       // paddingLeft: (leftIcon) ? LayoutConfig.space * 4 : LayoutConfig.space,
       height: '100%',
-
+      // backgroundColor:'red',
+      includeFontPadding: false,
+      alignSelf:'stretch',
       textAlign: (dir === 'rtl') ? 'right' : 'left',
-      position: 'relative',
+      // position: 'relative',
       // fontSize: 16,
     },
     icon:{
