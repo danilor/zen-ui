@@ -7,7 +7,7 @@ import {
   ZenInput,
   ZenThemeProvider,
   ZenButton,
-  Layout, ZenSearch,
+  Layout, ZenSearch, Table, Row, Column,
 } from 'zen-ui';
 import { useState } from 'react';
 
@@ -56,6 +56,16 @@ export default function App() {
 
             <ZenText type={'h2'} paragraph={true} align={'left'}>
               Components
+            </ZenText>
+
+            <ZenText type={'p'} paragraph={true} align={'justify'}>
+              All components were made on top of React Native components, meaning
+              that you can use them as you would normally do with React Native.
+              However, not all props from the original components are supported.
+              This is to ensure that the components will always look good and work
+              well with the current theme. If you need a prop that is not
+              supported, please open an issue or a pull request and we will
+              consider adding it.
             </ZenText>
 
             <ZenText type={'h4'} paragraph={true} align={'left'}>
@@ -167,6 +177,111 @@ export default function App() {
             </ZenText>
 
             <ZenSearch />
+
+            <ZenText type={'h4'} paragraph={true} align={'left'}>
+              Tables
+            </ZenText>
+
+            <ZenText type={'p'} paragraph={true} align={'justify'}>
+              Simple table components to create grid layouts. It consists of a Table component
+              that wraps Row components, which in turn wrap Column components. You can enable borders
+              and customize their appearance.
+            </ZenText>
+
+            <ZenText type={'p'} paragraph={true} align={'left'}>
+              Bordered table:
+            </ZenText>
+
+            <Table >
+              <Row>
+                <Column border={true}>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>1,1</ZenText>
+                </Column>
+
+                <Column border={true}>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>1,2</ZenText>
+                </Column>
+
+                <Column border={true}>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>1,3</ZenText>
+                </Column>
+              </Row>
+              <Row>
+                <Column border={true}>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>2,1</ZenText>
+                </Column>
+
+                <Column border={true}>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>2,2</ZenText>
+                </Column>
+
+                <Column border={true}>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>2,3</ZenText>
+                </Column>
+              </Row>
+              <Row>
+                <Column border={true}>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>3,1</ZenText>
+                </Column>
+
+                <Column border={true}>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>3,2</ZenText>
+                </Column>
+
+                <Column border={true}>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>3,3</ZenText>
+                </Column>
+
+              </Row>
+            </Table>
+
+            <ZenText type={'p'} paragraph={true} align={'left'}>
+              Clean table:
+            </ZenText>
+
+            <Table border={false}>
+              <Row>
+                <Column>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>1,1</ZenText>
+                </Column>
+
+                <Column>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>1,2</ZenText>
+                </Column>
+
+                <Column>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>1,3</ZenText>
+                </Column>
+              </Row>
+              <Row>
+                <Column>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>2,1</ZenText>
+                </Column>
+
+                <Column>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>2,2</ZenText>
+                </Column>
+
+                <Column>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>2,3</ZenText>
+                </Column>
+              </Row>
+              <Row>
+                <Column>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>3,1</ZenText>
+                </Column>
+
+                <Column>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>3,2</ZenText>
+                </Column>
+
+                <Column>
+                  <ZenText type={'p'} paragraph={false} align={'center'}>3,3</ZenText>
+                </Column>
+
+              </Row>
+            </Table>
+
 
             <ZenIcon key={'testIcon'} name={'hexagon-dice'} />
           </View>

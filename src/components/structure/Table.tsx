@@ -20,21 +20,48 @@ const styles = StyleSheet.create({
   }
 });
 
+type TableProps = {
+  children: any
+  style?: any,
+  border?:boolean,
+  borderType?: 'solid' | 'dotted' | 'dashed',
+  borderColor?: string
+}
+
 /**
  * A simple table component that will help you to create a grid layout
- * @param props
+ * @param style
+ * @param children
+ * @param border
+ * @param borderType
+ * @param borderColor
  * @constructor
  */
-export function Table(props: any){
+export function Table(
+
+  {
+    children,
+    style = null,
+    border= false,
+    borderType = 'solid',
+    borderColor,
+  }: TableProps
+){
+
+  const theme = useTheme();
 
   const intStyles = StyleSheet.create({
     s:{
+      borderStyle: borderType,
+      borderWidth: (border) ? 1 : 0,
+      borderColor: borderColor ?? theme.text,
+
 
     }
   });
   return (
-    <View style={[styles.table, intStyles.s, props.style]}>
-      {props.children ?? null}
+    <View style={[styles.table, intStyles.s, style]}>
+      {children ?? null}
     </View>
   );
 }
@@ -57,25 +84,44 @@ export function Row(props: any){
   );
 }
 
+type ColumnProps = {
+  children: any
+  style?: any,
+  border?:boolean,
+  borderType?: 'solid' | 'dotted' | 'dashed',
+  borderColor?: string,
+  span?: number
+}
+
 /**
  * A simple column component that will help you to create a grid layout
  * @param props
  * @constructor
  */
-export function Column(props: any){
+export function Column(
+  {
+    children,
+    style = null,
+    border= false,
+    borderType = 'solid',
+    borderColor,
+    span=1
+  }:ColumnProps
+){
 
   const ZenTheme = useTheme();
   const intStyles = StyleSheet.create({
     s:{
-      flex: props.span ?? 1,
+      flex: span ?? 1,
       // backgroundColor: 'red'
-      borderWidth: props.border ?? 0,
-      borderColor: ZenTheme.primary,
+      borderWidth: border ? 1 : 0,
+      borderColor: borderColor ?? ZenTheme.text,
+      borderStyle: borderType ?? 'solid'
     }
   });
   return (
-    <View style={[styles.column, intStyles.s, props.style]}>
-      {props.children ?? null}
+    <View style={[styles.column, intStyles.s, style]}>
+      {children ?? null}
     </View>
   );
 }
