@@ -33,7 +33,7 @@ export default function IntroExample() {
         <ZenButton title={'Set Light'} fill={true} pressAction={ ()=> setTheme('light') } />
       </Column>
        <Column>
-         <ZenButton title={'Set Dark'} fill={true} pressAction={ ()=> setTheme('dark') } />
+         <ZenButton type={'secondary'} title={'Set Dark'} fill={true} pressAction={ ()=> setTheme('dark') } />
        </Column>
      </Row>
     </Table>

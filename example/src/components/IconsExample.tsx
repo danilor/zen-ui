@@ -4,14 +4,14 @@ import { View } from 'react-native';
 export default function IconsExample(){
 
   let iconsChunk = [];
-  const chunkSize: number = 3;
+  const chunkSize: number = 2;
   for (let i = 0; i < icons.regular.sort(() => Math.random() - 0.5).length; i += chunkSize) {
     const chunk = icons.regular.slice(i, i + chunkSize);
     iconsChunk.push(chunk);
     // do whatever
   }
 
-  iconsChunk = iconsChunk.splice(0,8);
+  iconsChunk = iconsChunk.splice(0,6);
 
 
 

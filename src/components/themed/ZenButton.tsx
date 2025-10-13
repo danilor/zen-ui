@@ -4,6 +4,7 @@ import { useTheme } from '../../hooks/useTheme';
 import LayoutConfig from '../../config/LayoutConfig';
 import ColorUtil from '../../util/Color.util';
 import ZenIcon from './ZenIcon';
+import ThemeConfig from '../../config/Theme.config';
 
 type ZenButtonProps = {
   title: string,
@@ -16,7 +17,8 @@ type ZenButtonProps = {
   leftIcon?: string,
   rightIcon?: string,
   leftAccessory?: any,
-  rightAccessory?: any
+  rightAccessory?: any,
+  disabled?: boolean
 };
 
 /**
@@ -35,6 +37,7 @@ type ZenButtonProps = {
  * @param rightIcon
  * @param leftAccessory
  * @param rightAccessory
+ * @param disabled
  * @constructor
  */
 export default function ZenButton({
@@ -48,7 +51,8 @@ export default function ZenButton({
   leftIcon,
   rightIcon,
   leftAccessory = null,
-  rightAccessory = null
+  rightAccessory = null,
+  disabled = false
 }: ZenButtonProps) {
 
   const theme = useTheme();
@@ -91,16 +95,18 @@ export default function ZenButton({
       flexDirection: 'row',
       gap: LayoutConfig.space,
       // color: textColor
+      opacity: (disabled) ? ThemeConfig.defaultDimValue : 1,
 
     },
   });
 
   return (
     <TouchableOpacity
+      disabled={disabled}
       activeOpacity={touchableOpacity}
       style={styles.button}
-      onPress={() => { pressAction() }}
-      onLongPress={() => { longPressAction() }}
+      onPress={() => { if(!disabled) pressAction() }}
+      onLongPress={() => { if(!disabled) longPressAction() }}
     >
       {leftAccessory}
       {leftIcon && (

@@ -59,8 +59,8 @@ export default function ZenLoading(
     <>
       <Animated.View style={{ transform: [{ rotate }] , width: iconSize}}>
         <ZenIcon
-          color={color ?? null}
-          size={ iconSize }
+          color={color ?? undefined}
+          size={ iconSize ?? undefined }
           name={iconName}
         />
       </Animated.View>

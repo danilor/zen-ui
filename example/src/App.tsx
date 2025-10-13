@@ -52,6 +52,7 @@ export default function App() {
 
             <IntroExample />
 
+
             <InputExample />
             <ButtonExample />
             <SearchExample />

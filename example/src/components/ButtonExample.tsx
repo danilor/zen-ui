@@ -1,4 +1,4 @@
-import { ZenButton, ZenText } from 'zen-ui';
+import { ZenButton, ZenLoading, ZenText } from 'zen-ui';
 import { StyleSheet, View } from 'react-native';
 
 
@@ -102,6 +102,22 @@ export default function ButtonExample(){
 
        />
      </View>
+
+     <View style={styles.buttonsContainer}>
+
+       <ZenButton
+         type={'primary'}
+         fill={false}
+         title={'Disabled'}
+          disabled={true}
+       />
+       <ZenButton
+         type={'secondary'}
+         fill={false}
+         title={'Disabled'}
+          disabled={true}
+       />
+     </View>
      <View style={styles.buttonsContainer}>
        <ZenButton
          type={'secondary'}
@@ -112,11 +128,12 @@ export default function ButtonExample(){
 
        />
        <ZenButton
-         type={'secondary'}
+         key={Math.random().toString()}
+         type={'success'}
          fill={false}
-         leftIcon={'cash'}
-         title={'Another color'}
-         textColor={'#4CAF50'}
+         leftAccessory={<ZenLoading />}
+         title={'Custom Accessory'}
+         // textColor={'#4CAF50'}
 
        />
      </View>
