@@ -10,7 +10,8 @@ type ZenTextProps = {
   align?: 'left' | 'center' | 'right' | 'justify',
   paragraph?: boolean,
   textColor?: string,
-  fill?: boolean
+  fill?: boolean,
+
 }
 
 /**
@@ -23,6 +24,7 @@ type ZenTextProps = {
  * @param paragraph
  * @param textColor
  * @param fill
+
  * @constructor
  */
 
@@ -34,7 +36,8 @@ export default function ZenText(
     align = 'left',
     paragraph = false,
     textColor,
-    fill = true
+    fill = true,
+
   }: ZenTextProps
 ){
 

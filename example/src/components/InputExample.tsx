@@ -29,6 +29,7 @@ export default function InputExample(){
   const [leftAccessory, setLeftAccessory] = useState<boolean>(true);
   const [rightAccessory, setRightAccessory] = useState<boolean>(true);
   const [textValue, setTextValue] = useState('Welcome to ZenUI');
+  const [textareaValue, setTextareaValue] = useState('This is a multiline textarea. You can write as much as you want here. It will adapt to the content and the theme.');
 
   return (
     <>
@@ -45,19 +46,30 @@ export default function InputExample(){
       <ZenInput
         leftIcon={leftAccessory ? 'user-circle' : undefined}
         rightIcon={rightAccessory ? 'check-circle' : undefined}
-        label={'Type here'}
+        label={'Single Input'}
         onChangeText={(t: string) => setTextValue(t)}
         value={textValue}
         autoComplete={'off'}
         autoCapitalize={'none'}
+        multiline={false}
       />
 
+      <ZenInput
+        leftIcon={leftAccessory ? 'user-circle' : undefined}
+        rightIcon={rightAccessory ? 'check-circle' : undefined}
+        label={'Multiline Textarea'}
+        onChangeText={(t: string) => setTextareaValue(t)}
+        value={textareaValue}
+        autoComplete={'off'}
+        autoCapitalize={'none'}
+        multiline={true}
+      />
       <View style={styles.buttonsContainer}>
         <ZenButton
           type={'primary'}
           fill={false}
           title={'Toggle Left'}
-          leftIcon={'truck'}
+          leftIcon={'arrow-left-circle'}
           pressAction={() => setLeftAccessory(!leftAccessory)}
         />
         <ZenButton

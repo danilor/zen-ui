@@ -11,7 +11,9 @@ type ZenInputProps = {
   leftIcon?: string
   rightIcon?: string
   leftAccessory?: any
-  rightAccessory?: any
+  rightAccessory?: any,
+  multiline?: boolean,
+  multilineVariantHeight?: number
 
 };
 
@@ -23,6 +25,8 @@ type ZenInputProps = {
  * @param rightIcon
  * @param leftAccessory
  * @param rightAccessory
+ * @param multiline
+ * @param multilineVariantHeight
  * @param props All regular TextInput props
  * @see https://reactnative.dev/docs/textinput
  * @constructor
@@ -35,6 +39,8 @@ export default function ZenInput(
     rightIcon,
     leftAccessory,
     rightAccessory,
+    multiline = false,
+    multilineVariantHeight = 10,
     ...props
   }: ZenInputProps & ComponentProps<typeof TextInput>,
 ) {
@@ -49,16 +55,16 @@ export default function ZenInput(
       borderWidth: 1,
       borderColor: theme.primary,
       borderRadius: LayoutConfig.border,
-      // paddingTop: LayoutConfig.space / 2,
+      paddingTop: (multiline) ? LayoutConfig.space / 2 : 0,
       // paddingBottom: LayoutConfig.space / 2,
       marginTop: (label) ? LayoutConfig.space / 8 : 0,
       marginBottom: LayoutConfig.space / 8,
       paddingRight: LayoutConfig.space / 4,
       paddingLeft: LayoutConfig.space / 4,
-      height: LayoutConfig.space * 4,
+      height: (multiline) ? LayoutConfig.space * multilineVariantHeight : LayoutConfig.space * 4,
       display: 'flex',
       flexDirection: 'row',
-      alignItems: 'center',
+      alignItems: (multiline) ? 'flex-start' : 'center',
       justifyContent: 'space-between',
       gap: LayoutConfig.space / 4,
       // backgroundColor: theme.backgroundSecondary,
@@ -70,11 +76,12 @@ export default function ZenInput(
       color: theme.text,
       // paddingRight: (rightIcon) ? LayoutConfig.space * 4 : LayoutConfig.space,
       // paddingLeft: (leftIcon) ? LayoutConfig.space * 4 : LayoutConfig.space,
-      height: '100%',
+      height: (multiline) ? LayoutConfig.space * multilineVariantHeight : '100%',
       // backgroundColor:'red',
       includeFontPadding: false,
       alignSelf:'stretch',
       textAlign: (dir === 'rtl') ? 'right' : 'left',
+      textAlignVertical: (multiline) ? 'top' : 'center',
       // position: 'relative',
       // fontSize: 16,
     },
@@ -90,7 +97,7 @@ export default function ZenInput(
       <View style={styles.inputSpace}>
         {leftAccessory}
         {leftIcon && (<ZenIcon style={[styles.icon]} key={'left_icon'} name={leftIcon} /> )}
-        <TextInput placeholderTextColor={theme.text} style={styles.input} {...props} />
+        <TextInput multiline={multiline} placeholderTextColor={theme.text} style={styles.input} {...props} />
         {rightIcon && (<ZenIcon style={[styles.icon]} key={'right_icon'} name={rightIcon} /> )}
         {rightAccessory}
       </View>
