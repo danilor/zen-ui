@@ -76,7 +76,7 @@ export default function ButtonExample(){
        <ZenButton
          type={'warning'}
          fill={false}
-         leftIcon={'download-square'}
+         rightIcon={'download-square'}
          title={'Warning'}
 
        />

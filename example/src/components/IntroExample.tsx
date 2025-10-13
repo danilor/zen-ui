@@ -1,6 +1,10 @@
-import { ZenText } from 'zen-ui';
+import { Column, Row, Table, ZenButton, ZenText } from 'zen-ui';
+import useThemeStorage from '../../storage/Theme.storage';
 
 export default function IntroExample() {
+
+  const setTheme = useThemeStorage((state: any) => state.setTheme);
+
   return <>
     <ZenText type={'h1'} paragraph={true} align={'left'}>
       ZenUI
@@ -10,6 +14,29 @@ export default function IntroExample() {
       extra requirements; just a plug and play library for your projects
       with enough flexibility to suit your needs.
     </ZenText>
+
+    <ZenText type={'h2'} paragraph={true} align={'left'}>
+      Theme
+    </ZenText>
+
+    <ZenText type={'p'} paragraph={true} align={'justify'}>
+      ZenUI was built upon a theming system, meaning that all components
+      will adapt to the current theme. ZenUI comes with two themes by
+      default: Light and Dark. However, you can easily create your own
+      themes by following the structure of the existing themes. You can
+      also customize the existing themes to suit your needs.
+    </ZenText>
+
+    <Table>
+     <Row>
+      <Column>
+        <ZenButton title={'Set Light'} fill={true} pressAction={ ()=> setTheme('light') } />
+      </Column>
+       <Column>
+         <ZenButton title={'Set Dark'} fill={true} pressAction={ ()=> setTheme('dark') } />
+       </Column>
+     </Row>
+    </Table>
 
     <ZenText type={'h2'} paragraph={true} align={'left'}>
       Components

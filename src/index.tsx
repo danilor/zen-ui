@@ -11,7 +11,7 @@ import ZenInput from './components/themed/ZenInput';
 import ZenThemeProvider from './provider/ZenThemeProvider';
 import ZenButton from './components/themed/ZenButton';
 import ZenSearch from './components/themed/ZenSearch';
-
+import ZenLoading from './components/themed/ZenLoading';
 import icons from './assets/icons.json';
 
 /**
@@ -52,6 +52,7 @@ export {
   ZenIcon,
   ZenText,
   ZenInput,
+  ZenLoading,
 
   /**
    * Types

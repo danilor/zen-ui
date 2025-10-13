@@ -68,7 +68,7 @@ export default function InputExample(){
         <ZenButton
           type={'primary'}
           fill={false}
-          title={'Toggle Left'}
+          title={'Toggle Icon'}
           leftIcon={'arrow-left-circle'}
           pressAction={() => setLeftAccessory(!leftAccessory)}
         />
@@ -76,7 +76,7 @@ export default function InputExample(){
           type={'primary'}
           fill={false}
           rightIcon={'arrow-right-circle'}
-          title={'Toggle Right'}
+          title={'Toggle Icon'}
           pressAction={() => setRightAccessory(!rightAccessory)}
         />
       </View>
