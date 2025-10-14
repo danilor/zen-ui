@@ -1,7 +1,6 @@
 
 import {View, StyleSheet, Dimensions, StatusBar } from 'react-native';
 import { useTheme } from '../../hooks/useTheme';
-// import LayoutConfig from '../../config/LayoutConfig';
 import { useKeyboard } from '../../hooks/useKeyboard';
 import { useEffect, useState } from 'react';
 

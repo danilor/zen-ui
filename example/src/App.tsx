@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import { Screen, ZenDark, ZenThemeProvider, Layout, ZenLight, useChangeTheme } from 'zen-ui';
+import { Screen, ZenDark, ZenThemeProvider, Layout, ZenLight } from 'zen-ui';
 
 import InputExample from './components/InputExample';
 import ButtonExample from './components/ButtonExample';
@@ -41,8 +41,8 @@ export default function App() {
   // console.log('Current theme:', theme);
 
   const usingTheme = (theme === 'dark') ? ZenDark : ZenLight;
-  const changeTheme= useChangeTheme();
-  changeTheme(usingTheme);
+  // const changeTheme= useChangeTheme();
+  // changeTheme(usingTheme);
 
   // console.log('Using theme:', usingTheme);
 
