@@ -1,12 +1,14 @@
-import { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useTheme } from './../../hooks/useTheme';
 import IconsConfig from '../../config/Icons.config';
+import ThemeConfig from '../../config/Theme.config';
 
 type ZenIconProps = {
   name: string;
   style?: any;
   size?: number;
   color?: string;
+  onPress?: () => void;
 };
 
 /**
@@ -23,7 +25,8 @@ export default (
     name,
     style = {},
     size = 26,
-    color
+    color,
+    onPress
   }
   : ZenIconProps,
 ) => {
@@ -42,6 +45,17 @@ export default (
       resizeMode: 'contain',
     },
   });
+
+  if(onPress !== undefined && typeof onPress === 'function'){
+    return (
+      <TouchableOpacity activeOpacity={ThemeConfig.defaultDimValue} onPress={onPress}>
+        <Image
+          style={[styles.icon, style]}
+          source={IconsConfig[name]}
+        />
+      </TouchableOpacity>
+    );
+  }
 
   return (
     <Image

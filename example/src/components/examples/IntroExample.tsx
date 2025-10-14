@@ -1,11 +1,11 @@
-import { useChangeTheme, ZenButton, ZenDark, ZenLight, ZenText } from 'zen-ui';
-import useThemeStorage from '../../../storage/Theme.storage';
-import { View } from 'react-native';
+import { ZenButton, ZenText } from 'zen-ui';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function IntroExample() {
 
-  const setTheme = useThemeStorage((state: any) => state.setTheme);
-  const changeTheme = useChangeTheme();
+
+  const navigation = useNavigation();
 
   return <>
     <ZenText type={'h1'} paragraph={true} align={'left'}>
@@ -21,18 +21,10 @@ export default function IntroExample() {
       Theme
     </ZenText>
 
-    <ZenText type={'p'} paragraph={true} align={'justify'}>
-      ZenUI was built upon a theming system, meaning that all components
-      will adapt to the current theme. ZenUI comes with two themes by
-      default: Light and Dark. However, you can easily create your own
-      themes by following the structure of the existing themes. You can
-      also customize the existing themes to suit your needs.
-    </ZenText>
+    <ZenButton type={'success'} fill={true} title={'Go to Theme'} pressAction={()=>{ navigation.navigate('Theme' as never)}} />
 
-    <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: 20, marginTop: 10}}>
-      <ZenButton title={'Set Light'} fill={false} pressAction={ ()=> {setTheme('light'); changeTheme(ZenLight)} } />
-      <ZenButton type={'secondary'} title={'Set Dark'} fill={false} pressAction={ ()=> {setTheme('dark'); changeTheme(ZenDark)} } />
-    </View>
+
+
 
 
     <ZenText type={'h2'} paragraph={true} align={'left'}>

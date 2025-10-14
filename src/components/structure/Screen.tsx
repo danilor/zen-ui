@@ -37,7 +37,7 @@ export default function Screen({ children, useTopSafeArea = false }: ScreenProps
 
   const ZenTheme = useTheme();
 
-  const [windowHeight, setWindowHeight] = useState<number>(Dimensions.get('window').height);
+  const [windowHeight, setWindowHeight] = useState<number>(Dimensions.get('screen').height);
 
   /**
    * We want to know what is the size of the keyboard to adjust our screen
@@ -64,7 +64,7 @@ export default function Screen({ children, useTopSafeArea = false }: ScreenProps
   }, []);
 
   /**
-   * To calculate the height of the screen we need to substract
+   * To calculate the height of the screen we need to subtract
    * the status bar height from the total height of the window
    * and the bottom bar height if there is one.
    * Also, the keyboard height if the keyboard is open.

@@ -18,7 +18,8 @@ type ZenButtonProps = {
   rightIcon?: string,
   leftAccessory?: any,
   rightAccessory?: any,
-  disabled?: boolean
+  disabled?: boolean,
+  style?: any
 };
 
 /**
@@ -38,6 +39,7 @@ type ZenButtonProps = {
  * @param leftAccessory
  * @param rightAccessory
  * @param disabled
+ * @param style
  * @constructor
  */
 export default function ZenButton({
@@ -52,7 +54,8 @@ export default function ZenButton({
   rightIcon,
   leftAccessory = null,
   rightAccessory = null,
-  disabled = false
+  disabled = false,
+  style={}
 }: ZenButtonProps) {
 
   const theme = useTheme();
@@ -98,6 +101,7 @@ export default function ZenButton({
       opacity: (disabled) ? ThemeConfig.defaultDimValue : 1,
       // height: 100
 
+
     },
   });
 
@@ -105,7 +109,7 @@ export default function ZenButton({
     <TouchableOpacity
       disabled={disabled}
       activeOpacity={touchableOpacity}
-      style={styles.button}
+      style={[styles.button, style]}
       onPress={() => { if(!disabled) pressAction() }}
       onLongPress={() => { if(!disabled) longPressAction() }}
     >

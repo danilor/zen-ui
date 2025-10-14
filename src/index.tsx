@@ -1,18 +1,19 @@
 /**
  * Components
  */
+import { Table, Row, Column } from './components/structure/Table';
 import Layout from './components/structure/Layout';
 import Screen from './components/structure/Screen';
-import { useTheme, useChangeTheme } from './hooks/useTheme';
-import ZenIcon from './components/themed/ZenIcon';
-import { Table, Row, Column } from './components/structure/Table';
-import ZenText from './components/themed/ZenText';
-import ZenInput from './components/themed/ZenInput';
-import ZenThemeProvider from './provider/ZenThemeProvider';
 import ZenButton from './components/themed/ZenButton';
-import ZenSearch from './components/themed/ZenSearch';
+import ZenHeader from './components/navigation/ZenHeader';
+import ZenIcon from './components/themed/ZenIcon';
+import ZenInput from './components/themed/ZenInput';
 import ZenLoading from './components/themed/ZenLoading';
+import ZenSearch from './components/themed/ZenSearch';
+import ZenText from './components/themed/ZenText';
+import ZenThemeProvider from './provider/ZenThemeProvider';
 import icons from './assets/icons.json';
+import { useChangeTheme, useTheme } from './hooks/useTheme';
 
 /**
  * Theme
@@ -54,6 +55,11 @@ export {
   ZenText,
   ZenInput,
   ZenLoading,
+
+  /**
+   * Navigation
+   */
+  ZenHeader,
 
   /**
    * Types

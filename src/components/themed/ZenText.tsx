@@ -36,7 +36,7 @@ export default function ZenText(
     align = 'left',
     paragraph = false,
     textColor,
-    fill = true,
+    fill = false,
 
   }: ZenTextProps
 ){

@@ -1,14 +1,45 @@
-import ButtonExample from '../examples/ButtonExample';
 import IntroExample from '../examples/IntroExample';
-import { Layout, Screen } from 'zen-ui';
+import { Layout, Screen, ZenButton } from 'zen-ui';
+import { useNavigation } from '@react-navigation/native';
+import { View, StyleSheet } from 'react-native';
+
 
 export default function IntroScreen() {
+
+  const navigation = useNavigation();
+
+  const styles = StyleSheet.create({
+    buttons: {display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 15, marginBottom: 15, marginTop: 0}
+  });
+
   return (
     <>
-      <Screen>
+      <Screen useTopSafeArea={false}>
         <Layout scrollable={true}>
           <IntroExample />
-          <ButtonExample />
+
+          <View style={styles.buttons}>
+            <ZenButton type={'primary'} title={'App Header'} fill={false} pressAction={ ()=> { navigation.navigate('Header' as never) }} />
+            <ZenButton type={'primary'} title={'Text'} fill={false} pressAction={ ()=> { navigation.navigate('Text' as never) }} />
+          </View>
+
+          <View style={styles.buttons}>
+            <ZenButton type={'primary'} title={'Buttons'} fill={false} pressAction={ ()=> { navigation.navigate('Buttons' as never) }} />
+            <ZenButton type={'primary'} title={'Input'} fill={false} pressAction={ ()=> { navigation.navigate('Input' as never) }} />
+          </View>
+          <View style={styles.buttons}>
+            <ZenButton type={'primary'} title={'Icons'} fill={false} pressAction={ ()=> { navigation.navigate('Icons' as never) }} />
+            <ZenButton type={'primary'} title={'Loading'} fill={false} pressAction={ ()=> { navigation.navigate('Loading' as never) }} />
+          </View>
+          <View style={styles.buttons}>
+            <ZenButton type={'primary'} title={'Tables'} fill={false} pressAction={ ()=> { navigation.navigate('Tables' as never) }} />
+            <ZenButton type={'primary'} title={'Search'} fill={false} pressAction={ ()=> { navigation.navigate('Search' as never) }} />
+          </View>
+
+
+
+
+
         </Layout>
       </Screen>
     </>
