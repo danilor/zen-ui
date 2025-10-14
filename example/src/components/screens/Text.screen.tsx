@@ -1,7 +1,6 @@
-import IntroExample from '../examples/IntroExample';
-import { Layout, Screen, ZenButton, ZenText } from 'zen-ui';
-import { useNavigation } from '@react-navigation/native';
-import { View, StyleSheet } from 'react-native';
+
+import { Layout, Screen, ZenText } from 'zen-ui';
+
 
 export default function TextScreen() {
   return (
