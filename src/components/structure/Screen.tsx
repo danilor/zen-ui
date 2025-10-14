@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 type ScreenProps = {
   children?: any;
-
+  useTopSafeArea?: boolean;
 };
 
 /**
@@ -29,9 +29,11 @@ type ScreenProps = {
  * ```
  * @see ZenThemeProvider
  * @param children The main content of the screen. It could be anything, including React elements.
+ * @param useTopSafeArea If true, the screen will use the top safe area. This is useful when you have a full screen and not planing to use react navigator or other
+ * similar libraries that already take care of the top safe area. Default is false.
  * @constructor
  */
-export default function Screen({ children }: ScreenProps) {
+export default function Screen({ children, useTopSafeArea = false }: ScreenProps) {
 
   const ZenTheme = useTheme();
 
@@ -75,7 +77,7 @@ export default function Screen({ children }: ScreenProps) {
       height: maxSize,
       maxHeight: maxSize,
       // padding: LayoutConfig.space,
-      marginTop: (StatusBar.currentHeight ?? 0)
+      marginTop: (useTopSafeArea ? (StatusBar.currentHeight ?? 0) : 0),
     },
   });
 

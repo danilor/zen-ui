@@ -1,5 +1,5 @@
 import { useChangeTheme, ZenButton, ZenDark, ZenLight, ZenText } from 'zen-ui';
-import useThemeStorage from '../../storage/Theme.storage';
+import useThemeStorage from '../../../storage/Theme.storage';
 import { View } from 'react-native';
 
 export default function IntroExample() {
