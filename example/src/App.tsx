@@ -45,7 +45,7 @@ export default function App() {
   // console.log('Using theme:', usingTheme);
 
   return (
-    <ZenThemeProvider key={theme} theme={usingTheme}>
+    <ZenThemeProvider theme={usingTheme}>
       <Screen>
         <Layout scrollable={true}>
           <View style={styles.container}>

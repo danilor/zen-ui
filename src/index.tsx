@@ -3,7 +3,7 @@
  */
 import Layout from './components/structure/Layout';
 import Screen from './components/structure/Screen';
-import { useTheme } from './hooks/useTheme';
+import { useTheme, useChangeTheme } from './hooks/useTheme';
 import ZenIcon from './components/themed/ZenIcon';
 import { Table, Row, Column } from './components/structure/Table';
 import ZenText from './components/themed/ZenText';
@@ -41,6 +41,7 @@ export {
   ZenLight,
   ZenDark,
   useTheme,
+  useChangeTheme,
   ZenThemeProvider,
   ZenButton,
   ZenSearch,

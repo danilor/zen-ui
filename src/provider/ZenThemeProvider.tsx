@@ -1,7 +1,7 @@
-import type { ThemeModel } from 'zen-ui';
+import type { ThemeModel } from './../models/ThemeModel';
 import { ZenThemeContext } from '../context/ZenThemeContext';
 import ZenLight from '../theme/ZenLight';
-import { useCallback, useState } from 'react';
+import {useState } from 'react';
 
 type ZenThemeProviderProps = {
   children: any;
@@ -22,13 +22,13 @@ export const ZenThemeProvider = ({
 
   const [currentTheme, setCurrentTheme] = useState(theme ?? ZenLight);
 
-  const toggleTheme = useCallback((newTheme: ThemeModel) => {
+  /*const toggleTheme = useCallback((newTheme: ThemeModel) => {
     setCurrentTheme(() => newTheme);
-  }, []);
+  }, []);*/
 
   const themeContextValue = {
     ZenTheme: currentTheme,
-    toggleTheme,
+    toggleTheme: (newTheme: ThemeModel) => { setCurrentTheme(newTheme) },
   };
 
   return (

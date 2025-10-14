@@ -14,3 +14,11 @@ export const useTheme: ()=> ThemeModel = () => {
   }
   return ZenTheme;
 };
+
+export const useChangeTheme= () => {
+  const {toggleTheme} = useContext(ZenThemeContext);
+  if (toggleTheme === undefined) {
+    throw new Error('changeTheme must be used within a ZenThemeProvider');
+  }
+  return toggleTheme;
+};

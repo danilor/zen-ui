@@ -4,6 +4,7 @@ import { useTheme } from '../../hooks/useTheme';
 // import LayoutConfig from '../../config/LayoutConfig';
 import { useKeyboard } from '../../hooks/useKeyboard';
 import { useEffect, useState } from 'react';
+import ZenText from './../themed/ZenText';
 
 type ScreenProps = {
   children?: any;
@@ -82,6 +83,7 @@ export default function Screen({ children }: ScreenProps) {
 
   return (
       <View style={styles.screen}>
+        <ZenText>{ZenTheme.text}</ZenText>
         {children}
       </View>
   );

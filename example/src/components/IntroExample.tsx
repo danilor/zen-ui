@@ -1,10 +1,11 @@
-import { Column, Row, Table, ZenButton, ZenText } from 'zen-ui';
+import { useChangeTheme, ZenButton, ZenDark, ZenLight, ZenText } from 'zen-ui';
 import useThemeStorage from '../../storage/Theme.storage';
 import { View } from 'react-native';
 
 export default function IntroExample() {
 
   const setTheme = useThemeStorage((state: any) => state.setTheme);
+  const changeTheme = useChangeTheme();
 
   return <>
     <ZenText type={'h1'} paragraph={true} align={'left'}>
@@ -29,8 +30,8 @@ export default function IntroExample() {
     </ZenText>
 
     <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: 20, marginTop: 10}}>
-      <ZenButton title={'Set Light'} fill={false} pressAction={ ()=> setTheme('light') } />
-      <ZenButton type={'secondary'} title={'Set Dark'} fill={false} pressAction={ ()=> setTheme('dark') } />
+      <ZenButton title={'Set Light'} fill={false} pressAction={ ()=> {setTheme('light'); changeTheme(ZenLight)} } />
+      <ZenButton type={'secondary'} title={'Set Dark'} fill={false} pressAction={ ()=> {setTheme('dark'); changeTheme(ZenDark)} } />
     </View>
 
 
