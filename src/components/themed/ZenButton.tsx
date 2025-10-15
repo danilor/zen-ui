@@ -13,7 +13,9 @@ type ZenButtonProps = {
   fill: boolean
   touchableOpacity?: number,
   pressAction?: () => void
+  onPress?: () => void,
   longPressAction?: () => void,
+  onLongPress?: () => void,
   leftIcon?: string,
   rightIcon?: string,
   leftAccessory?: any,
@@ -33,7 +35,9 @@ type ZenButtonProps = {
  * @param fill
  * @param touchableOpacity
  * @param pressAction
+ * @param onPress
  * @param longPressAction
+ * @param onLongPress
  * @param leftIcon
  * @param rightIcon
  * @param leftAccessory
@@ -49,7 +53,9 @@ export default function ZenButton({
   fill = true,
   touchableOpacity = 0.7,
   pressAction = () => {},
+  onPress = () => {},
   longPressAction = () => {},
+  onLongPress = () => {},
   leftIcon,
   rightIcon,
   leftAccessory = null,
@@ -110,8 +116,8 @@ export default function ZenButton({
       disabled={disabled}
       activeOpacity={touchableOpacity}
       style={[styles.button, style]}
-      onPress={() => { if(!disabled) pressAction() }}
-      onLongPress={() => { if(!disabled) longPressAction() }}
+      onPress={() => { if(!disabled) {pressAction(); onPress(); } }}
+      onLongPress={() => { if(!disabled) { longPressAction(); onLongPress(); } }}
     >
       {leftAccessory}
       {leftIcon && (
