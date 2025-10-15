@@ -1,5 +1,5 @@
 import IntroExample from '../examples/IntroExample';
-import { Layout, Screen, ZenButton } from 'zen-ui';
+import { Layout, Screen, ZenButton } from 'react-zen-ui';
 import { useNavigation } from '@react-navigation/native';
 import { View, StyleSheet } from 'react-native';
 

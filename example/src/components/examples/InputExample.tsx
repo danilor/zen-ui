@@ -1,4 +1,4 @@
-import { ZenButton, ZenInput, ZenText } from 'zen-ui';
+import { ZenButton, ZenInput, ZenText } from 'react-zen-ui';
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 

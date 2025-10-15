@@ -1,4 +1,4 @@
-import { Column, ZenLoading, ZenText, Table, Row } from 'zen-ui';
+import { Column, ZenLoading, ZenText, Table, Row } from 'react-zen-ui';
 
 
 export default function LoadingExample(){

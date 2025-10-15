@@ -1,4 +1,4 @@
-import { Column, Row, Table, ZenText } from 'zen-ui';
+import { Column, Row, Table, ZenText } from 'react-zen-ui';
 
 export default function TablesExample(){
   return (

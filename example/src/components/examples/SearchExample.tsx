@@ -1,4 +1,4 @@
-import { ZenSearch, ZenText } from 'zen-ui';
+import { ZenSearch, ZenText } from 'react-zen-ui';
 
 export default function SearchExample(){
   return (

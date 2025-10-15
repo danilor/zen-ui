@@ -1,4 +1,4 @@
-import { Layout, Screen } from 'zen-ui';
+import { Layout, Screen } from 'react-zen-ui';
 import ButtonExample from '../examples/ButtonExample';
 
 export default function ButtonsScreen() {

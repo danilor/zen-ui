@@ -1,5 +1,5 @@
 
-import { Layout, Screen, ZenText } from 'zen-ui';
+import { Layout, Screen, ZenText } from 'react-zen-ui';
 
 
 export default function TextScreen() {

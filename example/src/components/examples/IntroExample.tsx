@@ -1,4 +1,4 @@
-import { ZenButton, ZenText } from 'zen-ui';
+import { ZenButton, ZenText } from 'react-zen-ui';
 import { useNavigation } from '@react-navigation/native';
 
 

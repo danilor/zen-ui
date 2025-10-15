@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator, type NativeStackHeaderProps } from '@react-navigation/native-stack';
-import { ZenDark, ZenHeader, ZenLight, ZenThemeProvider } from 'zen-ui';
+import { ZenDark, ZenHeader, ZenLight, ZenThemeProvider } from 'react-zen-ui';
 import useThemeStorage from '../storage/Theme.storage';
 import IntroScreen from './components/screens/Intro.screen';
 import ButtonsScreen from './components/screens/Buttons.screen';

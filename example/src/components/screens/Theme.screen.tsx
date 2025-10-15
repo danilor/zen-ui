@@ -9,7 +9,7 @@ import {
   ZenDark, ZenIcon,
   ZenLight,
   ZenText,
-} from 'zen-ui';
+} from 'react-zen-ui';
 import useThemeStorage from '../../../storage/Theme.storage';
 import { View } from 'react-native';
 

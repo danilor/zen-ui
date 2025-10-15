@@ -1,4 +1,4 @@
-import { Layout, Screen } from 'zen-ui';
+import { Layout, Screen } from 'react-zen-ui';
 import SearchExample from '../examples/SearchExample';
 
 export default function SearchScreen() {

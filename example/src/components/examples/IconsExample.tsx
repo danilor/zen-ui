@@ -1,4 +1,4 @@
-import { Column, icons, Row, Table, ZenIcon, ZenText } from 'zen-ui';
+import { Column, icons, Row, Table, ZenIcon, ZenText } from 'react-zen-ui';
 import { View } from 'react-native';
 
 export default function IconsExample(){

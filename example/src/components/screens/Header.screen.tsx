@@ -1,4 +1,4 @@
-import { Layout, Screen, ZenButton, ZenText } from 'zen-ui';
+import { Layout, Screen, ZenButton, ZenText } from 'react-zen-ui';
 import {Linking} from 'react-native';
 
 export default function HeaderScreen() {
