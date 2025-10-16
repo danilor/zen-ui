@@ -1,6 +1,17 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator, type NativeStackHeaderProps } from '@react-navigation/native-stack';
-import { ZenDark, ZenHeader, ZenLight, ZenThemeProvider } from 'react-zen-ui';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import {
+  createNativeStackNavigator,
+  type NativeStackHeaderProps,
+} from '@react-navigation/native-stack';
+import {
+  ZenDark,
+  ZenDrawer,
+  ZenDrawerItem,
+  ZenHeader,
+  ZenLight,
+  ZenThemeProvider,
+  ZenDrawerTitle,
+} from 'react-zen-ui';
 import useThemeStorage from '../storage/Theme.storage';
 import IntroScreen from './components/screens/Intro.screen';
 import ButtonsScreen from './components/screens/Buttons.screen';
@@ -16,11 +27,45 @@ import TextScreen from './components/screens/Text.screen';
 const Stack = createNativeStackNavigator();
 
 function RootStack() {
+
+  const navigation = useNavigation();
+
+  const image = require('../assets/logo.png');
+
+  const DrawerItems = [
+    <ZenDrawerTitle title={'Main Menu'} key={'title'} />,
+    <ZenDrawerItem label={'Home'} key={'home'} leftIcon={'home'} onPress={() => navigation.navigate('Home' as never)} />,
+    <ZenDrawerItem label={'Theme'} key={'theme'} leftIcon={'settings'} onPress={() => navigation.navigate('Theme' as never)} />,
+    <ZenDrawerItem label={'Example Car'} key={'example'} leftIcon={'car'} rightIcon={'truck'} />,
+    <ZenDrawerItem
+      label={'Dimensional'}
+      key={'dimensional'}
+      leftIcon={'clock'}
+    />,
+  ];
+
   return (
-      <Stack.Navigator screenOptions={{
-        headerShown: true,
-        header: (props: NativeStackHeaderProps) => (<ZenHeader rightIcon={'menu'} onRightIconPress={()=>{return null;}} {...props}/>),
-      }} >
+    <>
+      <ZenDrawer
+        headerImage={image}
+        headerImageSize={275}
+        items={DrawerItems}
+      />
+      <Stack.Navigator
+        screenOptions={{
+          animation: 'none',
+          headerShown: true,
+          header: (props: NativeStackHeaderProps) => (
+            <ZenHeader
+              rightIcon={'menu'}
+              onRightIconPress={() => {
+                return null;
+              }}
+              {...props}
+            />
+          ),
+        }}
+      >
         <Stack.Screen
           name="Home"
           component={IntroScreen}
@@ -92,18 +137,18 @@ function RootStack() {
           }}
         />
       </Stack.Navigator>
-
+    </>
   );
 }
 
 export default function App() {
   const theme = useThemeStorage((state: any) => state.theme);
-  const usingTheme = (theme === 'dark') ? ZenDark : ZenLight;
+  const usingTheme = theme === 'dark' ? ZenDark : ZenLight;
   return (
-     <ZenThemeProvider theme={usingTheme}>
-       <NavigationContainer>
-       <RootStack/>
-       </NavigationContainer>
-     </ZenThemeProvider>
-   );
+    <ZenThemeProvider theme={usingTheme}>
+      <NavigationContainer>
+        <RootStack />
+      </NavigationContainer>
+    </ZenThemeProvider>
+  );
 }

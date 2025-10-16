@@ -14,6 +14,9 @@ import ZenText from './components/themed/ZenText';
 import ZenThemeProvider from './provider/ZenThemeProvider';
 import icons from './assets/icons.json';
 import { useChangeTheme, useTheme } from './hooks/useTheme';
+import ZenDrawer from './components/drawer/ZenDrawer';
+import ZenDrawerItem from './components/drawer/ZenDrawerItem';
+import ZenDrawerTitle from './components/drawer/ZenDrawerTitle';
 
 /**
  * Theme
@@ -47,6 +50,7 @@ export {
   ZenButton,
   ZenSearch,
 
+
   /**
    * Theme components
    */
@@ -60,6 +64,14 @@ export {
    * Navigation
    */
   ZenHeader,
+
+  /**
+   * Drawer
+   */
+
+  ZenDrawer,
+  ZenDrawerItem,
+  ZenDrawerTitle,
 
   /**
    * Types

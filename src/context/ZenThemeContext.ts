@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import ZenLight from '../theme/ZenLight';
-import type { ThemeModel } from 'zen-ui';
+import type { ThemeModel } from '../models/ThemeModel';
 
 
 /**

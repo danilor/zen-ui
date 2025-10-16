@@ -32,6 +32,40 @@ export default function TextScreen() {
             create uneven spacing between words and make the text harder to
             read.
           </ZenText>
+          <ZenText fill={true} paragraph={true} align={'justify'}>
+            Example of types of ZenText (default is 'p'):
+          </ZenText>
+
+          <ZenText type={'h1'} fill={true} paragraph={true} align={'left'}>
+            h1
+          </ZenText>
+          <ZenText type={'h2'} fill={true} paragraph={true} align={'left'}>
+            h2
+          </ZenText>
+          <ZenText type={'h3'} fill={true} paragraph={true} align={'left'}>
+            h3
+          </ZenText>
+          <ZenText type={'h4'} fill={true} paragraph={true} align={'left'}>
+            h4
+          </ZenText>
+          <ZenText type={'h5'} fill={true} paragraph={true} align={'left'}>
+            h5
+          </ZenText>
+          <ZenText type={'h6'} fill={true} paragraph={true} align={'left'}>
+            h6
+          </ZenText>
+          <ZenText type={'p'} fill={true} paragraph={true} align={'left'}>
+            p
+          </ZenText>
+          <ZenText type={'s1'} fill={true} paragraph={true} align={'left'}>
+            s1
+          </ZenText>
+          <ZenText type={'s2'} fill={true} paragraph={true} align={'left'}>
+            s2
+          </ZenText>
+          <ZenText type={'label'} fill={true} paragraph={true} align={'left'}>
+            label
+          </ZenText>
 
         </Layout>
       </Screen>

@@ -27,7 +27,7 @@ simple and effective way to build their applications.
 To install ZEN UI, simply use npm or yarn:
 
 ```sh
-npm install zen-ui
+npm install react-zen-ui
 ```
 
 ## Usage
@@ -39,7 +39,7 @@ create your own
 custom theme.
 
 ```tsx
-import { ZenDark, ZenThemeProvider } from 'zen-ui';
+import { ZenDark, ZenThemeProvider } from 'react-zen-ui';
 
 export default function App() {
   return (
@@ -55,7 +55,7 @@ After wrapping your app with the `ZenThemeProvider`, you can start using ZEN UI 
 button:
 
 ```tsx
-import { ZenButton } from 'zen-ui';
+import { ZenButton } from 'react-zen-ui';
 import { View } from 'react-native';
 
 export default function App() {
@@ -74,7 +74,7 @@ to fit your application's design.
 
 
 ```tsx
-import { ZenDark, ZenThemeProvider } from 'zen-ui';
+import { ZenDark, ZenThemeProvider } from 'react-zen-ui';
 
 export default function App() {
 
@@ -101,9 +101,9 @@ And with this, you can access the useTheme() method that will return the current
 all components within the `ZenThemeProvider`.
 
 ```tsx
-import { useTheme } from 'zen-ui';
+import { useTheme } from 'react-zen-ui';
 import { View, Text } from 'react-native';
-import { ZenButton } from 'zen-ui';
+import { ZenButton } from 'react-zen-ui';
 
 export default function ThemedComponent() {
   const theme = useTheme();
