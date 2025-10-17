@@ -17,6 +17,8 @@ import { useChangeTheme, useTheme } from './hooks/useTheme';
 import ZenDrawer from './components/drawer/ZenDrawer';
 import ZenDrawerItem from './components/drawer/ZenDrawerItem';
 import ZenDrawerTitle from './components/drawer/ZenDrawerTitle';
+import ZenCode from './components/themed/ZenCode';
+import { useDrawer, useToggleDrawer } from './hooks/useDrawer';
 
 /**
  * Theme
@@ -49,6 +51,7 @@ export {
   ZenThemeProvider,
   ZenButton,
   ZenSearch,
+  ZenCode,
 
 
   /**
@@ -72,6 +75,8 @@ export {
   ZenDrawer,
   ZenDrawerItem,
   ZenDrawerTitle,
+  useDrawer,
+  useToggleDrawer,
 
   /**
    * Types

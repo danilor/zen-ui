@@ -9,6 +9,7 @@ import {
   ZenDark, ZenIcon,
   ZenLight,
   ZenText,
+  ZenCode
 } from 'react-zen-ui';
 import useThemeStorage from '../../../storage/Theme.storage';
 import { View } from 'react-native';
@@ -17,6 +18,26 @@ export default function ThemeScreen() {
   const setTheme = useThemeStorage((state: any) => state.setTheme);
   const changeTheme = useChangeTheme();
   const theme = useTheme();
+
+
+  const content = `import {
+  ZenDark,
+  ZenLight,
+  ZenThemeProvider
+} from 'react-zen-ui';
+
+export default function App() {
+  const usingTheme =
+    theme === 'dark'
+    ? ZenDark
+    : ZenLight;
+
+  return (
+    <ZenThemeProvider theme={usingTheme}>
+      {/* Your App Components go here */}
+    </ZenThemeProvider>
+  );
+}`;
 
   return (
     <>
@@ -66,6 +87,14 @@ export default function ThemeScreen() {
               }}
             />
           </View>
+
+          <ZenText fill={true} paragraph={true} align={'justify'}>
+            To enable the theme, we need to wrap our application with the
+            &lt;ZenThemeProvider&gt; component and pass the desired theme as a
+            prop.
+          </ZenText>
+
+          <ZenCode content={content} />
 
           <ZenText fill={true} paragraph={true} align={'justify'}>
             Below, are the current theme values. You can try changing the

@@ -23,20 +23,36 @@ import SearchScreen from './components/screens/Search.screen';
 import HeaderScreen from './components/screens/Header.screen';
 import ThemeScreen from './components/screens/Theme.screen';
 import TextScreen from './components/screens/Text.screen';
+import ZenDrawerProvider from '../../src/provider/ZenDrawerProvider';
+import DrawerScreen from './components/screens/Drawer.screen';
 
 const Stack = createNativeStackNavigator();
 
 function RootStack() {
-
   const navigation = useNavigation();
 
   const image = require('../assets/logo.png');
 
   const DrawerItems = [
     <ZenDrawerTitle title={'Main Menu'} key={'title'} />,
-    <ZenDrawerItem label={'Home'} key={'home'} leftIcon={'home'} onPress={() => navigation.navigate('Home' as never)} />,
-    <ZenDrawerItem label={'Theme'} key={'theme'} leftIcon={'settings'} onPress={() => navigation.navigate('Theme' as never)} />,
-    <ZenDrawerItem label={'Example Car'} key={'example'} leftIcon={'car'} rightIcon={'truck'} />,
+    <ZenDrawerItem
+      label={'Home'}
+      key={'home'}
+      leftIcon={'home'}
+      onPress={() => navigation.navigate('Home' as never)}
+    />,
+    <ZenDrawerItem
+      label={'Theme'}
+      key={'theme'}
+      leftIcon={'settings'}
+      onPress={() => navigation.navigate('Theme' as never)}
+    />,
+    <ZenDrawerItem
+      label={'Example Car'}
+      key={'example'}
+      leftIcon={'car'}
+      rightIcon={'truck'}
+    />,
     <ZenDrawerItem
       label={'Dimensional'}
       key={'dimensional'}
@@ -53,14 +69,15 @@ function RootStack() {
       />
       <Stack.Navigator
         screenOptions={{
-          animation: 'none',
+          animation: 'default',
           headerShown: true,
           header: (props: NativeStackHeaderProps) => (
             <ZenHeader
-              rightIcon={'menu'}
-              onRightIconPress={() => {
-                return null;
-              }}
+              automaticDrawerIcon={'menu'}
+              // rightIcon={'menu'}
+              // onRightIconPress={() => {
+              //   return null;
+              // }}
               {...props}
             />
           ),
@@ -78,6 +95,13 @@ function RootStack() {
           component={ThemeScreen}
           options={{
             title: 'Theme',
+          }}
+        />
+        <Stack.Screen
+          name="Drawer"
+          component={DrawerScreen}
+          options={{
+            title: 'Drawer',
           }}
         />
         <Stack.Screen
@@ -146,9 +170,11 @@ export default function App() {
   const usingTheme = theme === 'dark' ? ZenDark : ZenLight;
   return (
     <ZenThemeProvider theme={usingTheme}>
-      <NavigationContainer>
-        <RootStack />
-      </NavigationContainer>
+      <ZenDrawerProvider>
+        <NavigationContainer>
+          <RootStack />
+        </NavigationContainer>
+      </ZenDrawerProvider>
     </ZenThemeProvider>
   );
 }

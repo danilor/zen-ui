@@ -20,6 +20,14 @@ export default function HeaderScreen() {
             if you want or try to integrate it with other navigation libraries.
           </ZenText>
 
+          <ZenText paragraph={true} fill={true}>
+            You can configure the header to show a back button, a title, a right icon with an action,
+            and even a custom right accessory component. The header will also adapt to the current theme
+            automatically. Additionally, it can be configured to show a drawer icon that will open a drawer
+            when pressed. This way, the integrated drawer (also included in this library) can be used
+            alongside the header.
+          </ZenText>
+
           <ZenButton fill={true} title={'Visit React Navigation'} pressAction={()=>{
             Linking.openURL('https://reactnavigation.org/docs');
           }}/>

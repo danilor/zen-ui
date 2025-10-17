@@ -5,6 +5,7 @@ import ColorUtil from '../../util/Color.util';
 import LayoutConfig from '../../config/LayoutConfig';
 import type { NativeStackHeaderProps } from '@react-navigation/native-stack';
 import ZenIcon from '../themed/ZenIcon';
+import { useToggleDrawer } from '../../hooks/useDrawer';
 
 type ZenHeaderProps = {
   useTopSafeArea?: boolean;
@@ -13,6 +14,7 @@ type ZenHeaderProps = {
   rightIcon?: string;
   onRightIconPress?: () => void;
   rightAccessory?: any;
+  automaticDrawerIcon?: string;
 };
 
 const iconSize = 28;
@@ -27,6 +29,7 @@ const iconSize = 28;
  * @param rightIcon
  * @param onRightIconPress
  * @param rightAccessory
+ * @param automaticDrawerIcon string If any string is indicated, it will show a drawer icon that will open the drawer when pressed
  * @param props
  * @constructor
  */
@@ -39,13 +42,19 @@ export default function ZenHeader({
     return null;
   },
   rightAccessory = null,
+  automaticDrawerIcon,
   ...props
 }: ZenHeaderProps & NativeStackHeaderProps) {
   // console.log('Rendering ZenHeader', props);
 
   const theme = useTheme();
+  const toggleDrawer = useToggleDrawer();
 
   const baseColor = ColorUtil.getContrastTextColor(theme.primary);
+
+  const drawerMenuPress = () => {
+    toggleDrawer();
+  };
 
   const styles = StyleSheet.create({
     container: {
@@ -100,6 +109,14 @@ export default function ZenHeader({
           />
         )}
         {rightAccessory}
+        {automaticDrawerIcon !== undefined && (
+          <ZenIcon
+            name={automaticDrawerIcon}
+            size={iconSize}
+            color={baseColor}
+            onPress={drawerMenuPress}
+          />
+        )}
       </View>
     </View>
   );

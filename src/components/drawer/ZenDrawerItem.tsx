@@ -5,6 +5,7 @@ import ThemeConfig from '../../config/Theme.config';
 import ColorUtil from '../../util/Color.util';
 import { useTheme } from './../../hooks/useTheme';
 import ZenIcon from '../themed/ZenIcon';
+import { useToggleDrawer } from '../../hooks/useDrawer';
 
 type ZenDrawerItemProps = {
   label: string;
@@ -27,6 +28,11 @@ export default function ZenDrawerItem({
   closeOnPress = true,
 }: ZenDrawerItemProps) {
   const theme = useTheme();
+
+  /**
+   * Function to toggle the drawer
+   */
+  const toggleDrawer = useToggleDrawer();
 
   const styles = StyleSheet.create({
     item: {
@@ -51,6 +57,7 @@ export default function ZenDrawerItem({
     }
     if(closeOnPress){
       // Close the drawer
+      toggleDrawer();
     }
   }
 

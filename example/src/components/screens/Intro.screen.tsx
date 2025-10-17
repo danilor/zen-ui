@@ -20,11 +20,15 @@ export default function IntroScreen() {
 
           <View style={styles.buttons}>
             <ZenButton type={'primary'} title={'App Header'} fill={false} pressAction={ ()=> { navigation.navigate('Header' as never) }} />
+            <ZenButton type={'primary'} title={'Drawer'} fill={false} pressAction={ ()=> { navigation.navigate('Drawer' as never) }} />
+          </View>
+          <View style={styles.buttons}>
             <ZenButton type={'primary'} title={'Text'} fill={false} pressAction={ ()=> { navigation.navigate('Text' as never) }} />
+            <ZenButton type={'primary'} title={'Buttons'} fill={false} pressAction={ ()=> { navigation.navigate('Buttons' as never) }} />
           </View>
 
           <View style={styles.buttons}>
-            <ZenButton type={'primary'} title={'Buttons'} fill={false} pressAction={ ()=> { navigation.navigate('Buttons' as never) }} />
+            <ZenButton type={'primary'} title={'Search'} fill={false} pressAction={ ()=> { navigation.navigate('Search' as never) }} />
             <ZenButton type={'primary'} title={'Input'} fill={false} pressAction={ ()=> { navigation.navigate('Input' as never) }} />
           </View>
           <View style={styles.buttons}>
@@ -33,7 +37,7 @@ export default function IntroScreen() {
           </View>
           <View style={styles.buttons}>
             <ZenButton type={'primary'} title={'Tables'} fill={false} pressAction={ ()=> { navigation.navigate('Tables' as never) }} />
-            <ZenButton type={'primary'} title={'Search'} fill={false} pressAction={ ()=> { navigation.navigate('Search' as never) }} />
+
           </View>
 
 
