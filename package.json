@@ -1,6 +1,6 @@
 {
   "name": "react-zen-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple React Native components library",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
@@ -40,7 +40,7 @@
     "prepare": "bob build",
     "release": "release-it --only-version",
     "docs": "npx typedoc --entryPointStrategy Expand src",
-    "pub": "npm run release && npm publish --access public"
+    "pub": "npm run release --only-version"
   },
   "keywords": [
     "react-native",
