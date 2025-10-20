@@ -19,6 +19,8 @@ import ZenDrawerItem from './components/drawer/ZenDrawerItem';
 import ZenDrawerTitle from './components/drawer/ZenDrawerTitle';
 import ZenCode from './components/themed/ZenCode';
 import { useDrawer, useToggleDrawer } from './hooks/useDrawer';
+import ZenFloatingIcons from './components/navigation/ZenFloatingIcons';
+import ZenIconButton from './components/themed/ZenIconButton';
 
 /**
  * Theme
@@ -49,29 +51,28 @@ export {
   useTheme,
   useChangeTheme,
   ZenThemeProvider,
-  ZenButton,
-  ZenSearch,
-  ZenCode,
-
 
   /**
    * Theme components
    */
-
   ZenIcon,
   ZenText,
   ZenInput,
   ZenLoading,
+  ZenButton,
+  ZenIconButton,
+  ZenSearch,
+  ZenCode,
 
   /**
    * Navigation
    */
   ZenHeader,
+  ZenFloatingIcons,
 
   /**
    * Drawer
    */
-
   ZenDrawer,
   ZenDrawerItem,
   ZenDrawerTitle,
@@ -81,10 +82,10 @@ export {
   /**
    * Types
    */
-    type ThemeModel,
+  type ThemeModel,
 
   /**
    * Other
    */
-  icons
+  icons,
 };

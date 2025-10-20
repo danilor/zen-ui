@@ -11,6 +11,7 @@ import {
   ZenLight,
   ZenThemeProvider,
   ZenDrawerTitle,
+  ZenFloatingIcons,
 } from 'react-zen-ui';
 import useThemeStorage from '../storage/Theme.storage';
 import IntroScreen from './components/screens/Intro.screen';
@@ -47,6 +48,13 @@ function RootStack() {
       onPress={() => navigation.navigate('Theme' as never)}
     />,
     <ZenDrawerItem
+      label={'Drawer'}
+      key={'drawer'}
+      leftIcon={'settings'}
+      onPress={() => navigation.navigate('Drawer' as never)}
+    />,
+    <ZenDrawerTitle title={'Example elements'} key={'example_elements'} />,
+    <ZenDrawerItem
       label={'Example Car'}
       key={'example'}
       leftIcon={'car'}
@@ -59,8 +67,23 @@ function RootStack() {
     />,
   ];
 
+  const menuButtons: any[] = [
+    {
+      icon: 'home',
+      type: 'secondary',
+      onPress: () => navigation.navigate('Home' as never),
+    },
+    {
+      icon: 'settings',
+      type: 'secondary',
+      onPress: () => navigation.navigate('Theme' as never),
+    },
+  ];
+
   return (
     <>
+      <ZenFloatingIcons buttons={menuButtons} size={'large'} />
+
       <ZenDrawer
         headerImage={image}
         headerImageSize={275}
@@ -169,11 +192,9 @@ export default function App() {
   const usingTheme = theme === 'dark' ? ZenDark : ZenLight;
   return (
     <ZenThemeProvider theme={usingTheme}>
-
-        <NavigationContainer>
-          <RootStack />
-        </NavigationContainer>
-
+      <NavigationContainer>
+        <RootStack />
+      </NavigationContainer>
     </ZenThemeProvider>
   );
 }

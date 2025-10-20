@@ -30,6 +30,7 @@ export default function InputExample(){
   const [rightAccessory, setRightAccessory] = useState<boolean>(true);
   const [textValue, setTextValue] = useState('Welcome to ZenUI');
   const [textareaValue, setTextareaValue] = useState('This is a multiline textarea. You can write as much as you want here. It will adapt to the content and the theme.');
+  const [passwordValue, setPasswordValue] = useState('');
 
   return (
     <>
@@ -56,7 +57,7 @@ export default function InputExample(){
 
       <ZenInput
         leftIcon={leftAccessory ? 'user-circle' : undefined}
-        rightIcon={rightAccessory ? 'check-circle' : undefined}
+        rightIcon={rightAccessory ? 'closed-captions-tag' : undefined}
         label={'Multiline Textarea'}
         onChangeText={(t: string) => setTextareaValue(t)}
         value={textareaValue}
@@ -64,6 +65,20 @@ export default function InputExample(){
         autoCapitalize={'none'}
         multiline={true}
       />
+
+      <ZenInput
+        leftIcon={leftAccessory ? 'key' : undefined}
+        rightIcon={rightAccessory ? 'closet' : undefined}
+        label={'Password Input'}
+        onChangeText={(t: string) => setPasswordValue(t)}
+        value={passwordValue}
+        autoComplete={'off'}
+        placeholder={''}
+        autoCapitalize={'none'}
+        secureTextEntry={true}
+        multiline={false}
+      />
+
       <View style={styles.buttonsContainer}>
         <ZenButton
           type={'primary'}
@@ -80,6 +95,11 @@ export default function InputExample(){
           pressAction={() => setRightAccessory(!rightAccessory)}
         />
       </View>
+      <ZenText type={'p'} paragraph={true} align={'justify'}>
+        Additionally, it supports various props to customize its behavior, such as
+        autoComplete, autoCapitalize, secureTextEntry for password fields, and
+        multiline for textarea functionality.
+      </ZenText>
     </>
 
 );

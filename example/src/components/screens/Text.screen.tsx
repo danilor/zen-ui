@@ -1,8 +1,11 @@
 
-import { Layout, Screen, ZenText } from 'react-zen-ui';
+import { Layout, Screen, ZenInput, ZenText } from 'react-zen-ui';
+import { useState } from 'react';
 
 
 export default function TextScreen() {
+  const [textValue, setTextValue] = useState('Welcome to ZenUI');
+
   return (
     <>
       <Screen useTopSafeArea={false}>
@@ -14,6 +17,18 @@ export default function TextScreen() {
             color, and alignment. Text elements are essential for conveying
             information, instructions, and messages to users.
           </ZenText>
+
+          <ZenInput
+            label={'Example Input not being affected by Text styles'}
+            onChangeText={(t: string) => setTextValue(t)}
+            value={textValue}
+            autoComplete={'off'}
+            placeholder={'The text does not affect the input style'}
+            autoCapitalize={'none'}
+            secureTextEntry={false}
+            multiline={false}
+          />
+
           <ZenText fill={true} paragraph={true} align={'left'}>
             They can be left aligned
           </ZenText>

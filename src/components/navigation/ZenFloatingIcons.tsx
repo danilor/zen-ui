@@ -1,0 +1,69 @@
+import { View, StyleSheet } from 'react-native';
+// import { useTheme } from './../../hooks/useTheme';
+import LayoutConfig from '../../config/LayoutConfig';
+import ZenIconButton from '../themed/ZenIconButton';
+
+
+type ZenFloatingIconsType = {
+  size?: 'small' | 'medium' | 'large';
+  position?: 'left' | 'right' | 'center';
+  buttons?: {
+    icon: string;
+    type: 'primary' | 'secondary' | 'warning' | 'danger' | 'info';
+    onPress?: () => void;
+  }[];
+};
+
+export default function ZenFloatingIcons({
+  size = 'medium',
+  position = 'center',
+  buttons = [],
+}: ZenFloatingIconsType) {
+  // console.log('Buttons', buttons, 'Size', size, 'Position', position);
+
+  // const theme = useTheme();
+
+  let height = 50;
+  if (size === 'small') {
+    height = 40;
+  } else if (size === 'large') {
+    height = 60;
+  }
+
+  const styles = StyleSheet.create({
+    container: {
+      // backgroundColor: 'red',
+      position: 'absolute',
+      bottom: 20,
+      right: 0,
+      left: 0,
+      height: height,
+      width: '100%',
+      zIndex: 1,
+      justifyContent:
+        position === 'left'
+          ? 'flex-start'
+          : position === 'right'
+            ? 'flex-end'
+            : 'center',
+      alignItems: 'center',
+      flexDirection: 'row',
+      paddingLeft: LayoutConfig.space,
+      paddingRight: LayoutConfig.space,
+      gap: LayoutConfig.space,
+    },
+  });
+  return (
+    <View style={styles.container}>
+      {buttons.map((button, index: number) => (
+        <ZenIconButton
+          key={'floating_icon_button_' + index}
+          icon={button.icon}
+          type={button.type}
+          onPress={button.onPress}
+          size={size}
+        />
+      ))}
+    </View>
+  );
+}
