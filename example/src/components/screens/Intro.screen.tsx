@@ -1,5 +1,5 @@
 import IntroExample from '../examples/IntroExample';
-import { Layout, Screen, ZenButton, ZenDivider } from 'react-zen-ui';
+import { Layout, Screen, ZenButton } from 'react-zen-ui';
 import { useNavigation } from '@react-navigation/native';
 import { View, StyleSheet } from 'react-native';
 
@@ -7,7 +7,6 @@ import { View, StyleSheet } from 'react-native';
 export default function IntroScreen() {
 
   const navigation = useNavigation();
-
   const styles = StyleSheet.create({
     buttons: {display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 15, marginBottom: 15, marginTop: 0}
   });
@@ -43,11 +42,6 @@ export default function IntroScreen() {
             <ZenButton type={'primary'} title={'Divider'} fill={false} pressAction={ ()=> { navigation.navigate('Divider' as never) }} />
           </View>
 
-          <ZenDivider type={'primary'} />
-          <ZenDivider type={'secondary'} />
-          <ZenDivider type={'warning'} />
-          <ZenDivider type={'info'} />
-          <ZenDivider type={'danger'} />
         </Layout>
       </Screen>
     </>

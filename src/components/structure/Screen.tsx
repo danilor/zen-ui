@@ -8,6 +8,7 @@ type ScreenProps = {
   children?: any;
   useTopSafeArea?: boolean;
   extraBottomPadding?: number;
+
 };
 
 /**
@@ -33,6 +34,7 @@ type ScreenProps = {
  * @param useTopSafeArea If true, the screen will use the top safe area. This is useful when you have a full screen and not planing to use react navigator or other
  * similar libraries that already take care of the top safe area. Default is false.
  *
+ * @param extraBottomPadding
  */
 export default function Screen({ children, useTopSafeArea = false, extraBottomPadding = 0 }: ScreenProps) {
 

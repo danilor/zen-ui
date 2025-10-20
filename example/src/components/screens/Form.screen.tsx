@@ -6,7 +6,7 @@ import {
   Table,
   ZenCheck,
   ZenDivider,
-  ZenInput, ZenSpaceBlock,
+  ZenInput,
   ZenText,
 } from 'react-zen-ui';
 
@@ -122,8 +122,6 @@ export default function FormScreen() {
 
           <ZenDivider type={'primary'} />
 
-
-          <ZenSpaceBlock factor={10} />
 
         </Layout>
       </Screen>

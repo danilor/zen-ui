@@ -111,6 +111,7 @@ function RootStack() {
           header: headerComponent,
         }}
       >
+
         <Stack.Screen
           name="Home"
           component={IntroScreen}
@@ -210,6 +211,7 @@ function RootStack() {
           }}
         />
       </Stack.Navigator>
+
     </>
   );
 }
