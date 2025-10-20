@@ -2,11 +2,14 @@ import ZenInput from './ZenInput';
 import { useState } from 'react';
 import ZenIcon from './ZenIcon';
 import { TouchableOpacity } from 'react-native';
+import type { ThemeType } from '../../literals/Type.literal';
 
 type ZenSearchProps = {
   onChangeTerm?: (term: string) => void
   initialTerm?: string,
-  placeholder?: string
+  placeholder?: string,
+  type?: ThemeType,
+  disabled?: boolean,
 }
 
 /**
@@ -17,6 +20,7 @@ type ZenSearchProps = {
  *
  * @param initialTerm
  * @param placeholder
+ * @param type
  * @see ZenInput
  *
  */
@@ -24,7 +28,9 @@ export default function ZenSearch(
   {
     onChangeTerm = (term: string) => {return term;},
     initialTerm = '',
-    placeholder = 'Type to search...'
+    placeholder = 'Type to search...',
+    type='primary',
+    disabled = false,
   }: ZenSearchProps
 ) {
 
@@ -40,6 +46,8 @@ export default function ZenSearch(
 
   return (
     <ZenInput
+      type={type}
+      disabled={disabled}
       leftIcon={'search-engine'}
       placeholder={placeholder}
       rightAccessory={ (search !== '') ? closeIcon() : null }

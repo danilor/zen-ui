@@ -28,7 +28,6 @@ export default function Layout({
     },
     full: {
       flex: 1,
-      // height: '100%',
     },
 
     fullCentered: {

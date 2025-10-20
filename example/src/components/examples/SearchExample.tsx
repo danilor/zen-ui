@@ -1,4 +1,4 @@
-import { ZenSearch, ZenText } from 'react-zen-ui';
+import { ZenDivider, ZenSearch, ZenText } from 'react-zen-ui';
 
 export default function SearchExample(){
   return (
@@ -12,7 +12,27 @@ export default function SearchExample(){
         debouncing and a clear button.
       </ZenText>
 
+      <ZenDivider type={'primary'} />
+
       <ZenSearch />
+
+      <ZenDivider type={'primary'} />
+      <ZenSearch type={'secondary'} />
+
+      <ZenDivider type={'primary'} />
+      <ZenSearch type={'danger'} />
+
+      <ZenDivider type={'primary'} />
+      <ZenSearch type={'info'} />
+
+      <ZenDivider type={'primary'} />
+      <ZenSearch type={'warning'} />
+
+      <ZenDivider type={'primary'} />
+      <ZenSearch type={'success'} />
+
+      <ZenDivider type={'primary'} />
+      <ZenSearch type={'primary'} placeholder={'Disabled search'} disabled={true} />
     </>
   );
 }

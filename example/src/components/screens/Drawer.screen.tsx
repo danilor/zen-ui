@@ -9,15 +9,11 @@ export default function DrawerScreen() {
   export default function App() {
   return (
     <ZenThemeProvider theme={ZenDark}>
-
       <ZenDrawer />
        {/* Your app components go here */}
-
     </ZenThemeProvider>
   );
-}
-
-  `;
+}`;
   return (
     <>
       <Screen useTopSafeArea={false}>
