@@ -6,6 +6,7 @@ import LayoutConfig from '../../config/LayoutConfig';
 import ZenIcon from './ZenIcon';
 import ColorUtil from '../../util/Color.util';
 import ThemeConfig from '../../config/Theme.config';
+import type { ThemeType } from '../../literals/Type.literal';
 
 type ZenInputProps = {
   label?: string;
@@ -16,6 +17,8 @@ type ZenInputProps = {
   rightAccessory?: any;
   multiline?: boolean;
   multilineVariantHeight?: number;
+  disabled?: boolean;
+  type?: ThemeType
 };
 
 /**
@@ -28,6 +31,8 @@ type ZenInputProps = {
  * @param rightAccessory
  * @param multiline
  * @param multilineVariantHeight
+ * @param disabled
+ * @param type
  * @param props All regular TextInput props
  * @see https://reactnative.dev/docs/textinput
  *
@@ -41,18 +46,25 @@ export default function ZenInput({
   rightAccessory,
   multiline = false,
   multilineVariantHeight = 10,
+  disabled = false,
+  type = 'primary',
   ...props
 }: ZenInputProps & ComponentProps<typeof TextInput>) {
   const theme = useTheme();
 
+
+  if(theme[type] === undefined){
+    throw new Error(`Theme type "${type}" is not defined in the current theme.`);
+  }
+
+
   const styles = StyleSheet.create({
     container: {
       // flex: 1,
-
     },
     inputSpace: {
       borderWidth: 1,
-      borderColor: theme.primary,
+      borderColor: theme[type] ?? theme.primary,
       borderRadius: LayoutConfig.border,
       paddingTop: multiline ? LayoutConfig.space / 2 : 0,
       // paddingBottom: LayoutConfig.space / 2,
@@ -68,7 +80,10 @@ export default function ZenInput({
       alignItems: multiline ? 'flex-start' : 'center',
       justifyContent: 'space-between',
       gap: LayoutConfig.space / 4,
-      backgroundColor: ColorUtil.shade(theme.background, ThemeConfig.defaultShareRatio.input),
+      backgroundColor: ColorUtil.shade(
+        theme.background,
+        ThemeConfig.defaultShareRatio.input
+      ),
       position: 'relative',
     },
     input: {
@@ -105,6 +120,7 @@ export default function ZenInput({
           multiline={multiline}
           placeholderTextColor={theme.text}
           style={styles.input}
+          editable={!disabled}
           {...props}
         />
         {rightIcon && (

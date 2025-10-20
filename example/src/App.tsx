@@ -27,6 +27,7 @@ import TextScreen from './components/screens/Text.screen';
 import DrawerScreen from './components/screens/Drawer.screen';
 import IconButtonsScreen from './components/screens/IconButtons.screen';
 import DividerScreen from './components/screens/Divider.screen';
+import FormScreen from './components/screens/Form.screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -199,6 +200,13 @@ function RootStack() {
           component={DividerScreen}
           options={{
             title: 'Divider',
+          }}
+        />
+        <Stack.Screen
+          name="Form"
+          component={FormScreen}
+          options={{
+            title: 'Form Components',
           }}
         />
       </Stack.Navigator>

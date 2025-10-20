@@ -9,6 +9,7 @@ type ZenIconProps = {
   size?: number;
   color?: string;
   onPress?: () => void;
+  disabled?: boolean;
 };
 
 /**
@@ -19,6 +20,8 @@ type ZenIconProps = {
  * @param size number The size of the icon
  * @param color string The Color of the Icon. Default to text color of the theme
  *
+ * @param onPress
+ * @param disabled
  */
 export default (
   {
@@ -26,7 +29,8 @@ export default (
     style = {},
     size = 26,
     color,
-    onPress
+    onPress,
+    disabled = false,
   }
   : ZenIconProps,
 ) => {
@@ -43,12 +47,14 @@ export default (
       height: size,
       width: size,
       resizeMode: 'contain',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
   });
 
   if(onPress !== undefined && typeof onPress === 'function'){
     return (
-      <TouchableOpacity activeOpacity={ThemeConfig.defaultDimValue} onPress={onPress}>
+      <TouchableOpacity disabled={disabled} activeOpacity={ThemeConfig.defaultDimValue} onPress={onPress}>
         <Image
           style={[styles.icon, style]}
           source={IconsConfig[name]}

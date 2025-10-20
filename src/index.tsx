@@ -22,6 +22,8 @@ import { useDrawer, useToggleDrawer } from './hooks/useDrawer';
 import ZenFloatingIcons from './components/navigation/ZenFloatingIcons';
 import ZenIconButton from './components/themed/ZenIconButton';
 import ZenDivider from './components/structure/ZenDivider';
+import ZenCheck from './components/themed/ZenCheck';
+import ZenSpaceBlock from './components/structure/ZenSpaceBlock';
 
 /**
  * Theme
@@ -43,6 +45,7 @@ export {
   Table,
   Column,
   Row,
+  ZenSpaceBlock,
 
   /**
    * Theme
@@ -65,6 +68,7 @@ export {
   ZenSearch,
   ZenCode,
   ZenDivider,
+  ZenCheck,
 
   /**
    * Navigation
