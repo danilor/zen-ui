@@ -32,7 +32,7 @@ export default function ZenDrawer({
   headerImageSize,
   items = [],
   sizeRatio = 0.6,
-  animationTime = 400,
+  animationTime = 250,
 
 }: DrawerType) {
   /**

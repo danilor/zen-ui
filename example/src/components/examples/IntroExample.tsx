@@ -24,9 +24,6 @@ export default function IntroExample() {
     <ZenButton type={'success'} fill={true} title={'Go to Theme'} pressAction={()=>{ navigation.navigate('Theme' as never)}} />
 
 
-
-
-
     <ZenText type={'h2'} paragraph={true} align={'left'}>
       Components
     </ZenText>

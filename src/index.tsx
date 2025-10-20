@@ -21,6 +21,7 @@ import ZenCode from './components/themed/ZenCode';
 import { useDrawer, useToggleDrawer } from './hooks/useDrawer';
 import ZenFloatingIcons from './components/navigation/ZenFloatingIcons';
 import ZenIconButton from './components/themed/ZenIconButton';
+import ZenDivider from './components/structure/ZenDivider';
 
 /**
  * Theme
@@ -63,6 +64,7 @@ export {
   ZenIconButton,
   ZenSearch,
   ZenCode,
+  ZenDivider,
 
   /**
    * Navigation

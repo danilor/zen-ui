@@ -25,6 +25,8 @@ import HeaderScreen from './components/screens/Header.screen';
 import ThemeScreen from './components/screens/Theme.screen';
 import TextScreen from './components/screens/Text.screen';
 import DrawerScreen from './components/screens/Drawer.screen';
+import IconButtonsScreen from './components/screens/IconButtons.screen';
+import DividerScreen from './components/screens/Divider.screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -80,6 +82,18 @@ function RootStack() {
     },
   ];
 
+  const headerComponent = (props: NativeStackHeaderProps) => (
+    <ZenHeader
+      automaticDrawerIcon={'menu'}
+      // rightIcon={'menu'}
+      // onRightIconPress={() => {
+      //   return null;
+      // }}
+      {...props}
+    />
+  );
+
+
   return (
     <>
       <ZenFloatingIcons buttons={menuButtons} size={'large'} />
@@ -93,16 +107,7 @@ function RootStack() {
         screenOptions={{
           animation: 'default',
           headerShown: true,
-          header: (props: NativeStackHeaderProps) => (
-            <ZenHeader
-              automaticDrawerIcon={'menu'}
-              // rightIcon={'menu'}
-              // onRightIconPress={() => {
-              //   return null;
-              // }}
-              {...props}
-            />
-          ),
+          header: headerComponent,
         }}
       >
         <Stack.Screen
@@ -138,6 +143,13 @@ function RootStack() {
           component={ButtonsScreen}
           options={{
             title: 'Buttons',
+          }}
+        />
+        <Stack.Screen
+          name="IconButtons"
+          component={IconButtonsScreen}
+          options={{
+            title: 'Icon Buttons',
           }}
         />
         <Stack.Screen
@@ -180,6 +192,13 @@ function RootStack() {
           component={HeaderScreen}
           options={{
             title: 'App Header',
+          }}
+        />
+        <Stack.Screen
+          name="Divider"
+          component={DividerScreen}
+          options={{
+            title: 'Divider',
           }}
         />
       </Stack.Navigator>

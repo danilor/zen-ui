@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 type ScreenProps = {
   children?: any;
   useTopSafeArea?: boolean;
+  extraBottomPadding?: number;
 };
 
 /**
@@ -33,7 +34,7 @@ type ScreenProps = {
  * similar libraries that already take care of the top safe area. Default is false.
  *
  */
-export default function Screen({ children, useTopSafeArea = false }: ScreenProps) {
+export default function Screen({ children, useTopSafeArea = false, extraBottomPadding = 0 }: ScreenProps) {
 
   const ZenTheme = useTheme();
 
@@ -78,6 +79,7 @@ export default function Screen({ children, useTopSafeArea = false }: ScreenProps
       maxHeight: maxSize,
       // padding: LayoutConfig.space,
       marginTop: (useTopSafeArea ? (StatusBar.currentHeight ?? 0) : 0),
+      paddingBottom: extraBottomPadding
     },
   });
 

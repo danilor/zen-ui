@@ -2,10 +2,11 @@ import { useTheme } from '../../hooks/useTheme';
 import ColorUtil from '../../util/Color.util';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 import ZenIcon from './ZenIcon';
+import {type ThemeType} from '../../literals/Type.literal';
 
 type ZenIconButtonType = {
   icon: string;
-  type?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger';
+  type?: ThemeType;
   size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
   touchableOpacity?: number;
@@ -42,29 +43,10 @@ export default function ZenIconButton({
     height = 52;
   }
 
-  switch (type) {
-    case 'primary':
-      fillColor = theme.primary;
-      break;
-    case 'secondary':
-      fillColor = theme.secondary;
-      break;
-    case 'success':
-      fillColor = theme.success!;
-      break;
-    case 'info':
-      fillColor = theme.info!;
-      break;
-    case 'warning':
-      fillColor = theme.warning!;
-      break;
-    case 'danger':
-      fillColor = theme.danger!;
-      break;
-    default:
-      fillColor = theme.primary;
-      break;
+  if (theme[type] === undefined){
+    throw new Error(`[ZenIconButton] Theme type "${type}" is not defined in the current theme.`);
   }
+  fillColor = theme[type];
 
   const overColor = ColorUtil.getContrastTextColor(fillColor);
   const aLittleBitDarkerColor = ColorUtil.shade(fillColor, -0.3);

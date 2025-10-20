@@ -5,7 +5,7 @@ import LayoutConfig from '../../config/LayoutConfig';
 import ColorUtil from '../../util/Color.util';
 import ZenIcon from './ZenIcon';
 import ThemeConfig from '../../config/Theme.config';
-
+import {type ThemeType} from '../../literals/Type.literal';
 /**
  *  ZenButtonProps
  * Props for the ZenButton component.
@@ -13,7 +13,7 @@ import ThemeConfig from '../../config/Theme.config';
  */
 export type ZenButtonProps = {
   title: string;
-  type?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger';
+  type?: ThemeType;
   textColor?: string;
   fill: boolean;
   touchableOpacity?: number;
@@ -76,29 +76,11 @@ export default function ZenButton({
 
   let fillColor = 'white';
 
-  switch (type) {
-    case 'primary':
-      fillColor = theme.primary;
-      break;
-    case 'secondary':
-      fillColor = theme.secondary;
-      break;
-    case 'success':
-      fillColor = theme.success!;
-      break;
-    case 'info':
-      fillColor = theme.info!;
-      break;
-    case 'warning':
-      fillColor = theme.warning!;
-      break;
-    case 'danger':
-      fillColor = theme.danger!;
-      break;
-    default:
-      fillColor = theme.primary;
-      break;
+  if( theme[type] === undefined ){
+    throw new Error(`Theme type "${type}" is not defined in the current theme.`);
   }
+  fillColor = theme[type];
+
 
   const styles = StyleSheet.create({
     button: {
