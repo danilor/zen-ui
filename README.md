@@ -16,8 +16,6 @@ simple and effective way to build their applications.
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Language](https://img.shields.io/badge/language-typescript-brightgreen.svg)](https://standardjs.com)
 
-[![Build Status](https://travis-ci.com/arkofdan/react-zen-ui.svg?branch=main)](https://travis-ci.com/arkofdan/zen-ui)
-
 [![npm version](https://badge.fury.io/js/react-zen-ui.svg)](https://badge.fury.io/js/react-zen-ui)
 [![Downloads](https://img.shields.io/npm/dm/react-zen-ui.svg)](https://www.npmjs.com/package/react-zen-ui)
 [![License](https://img.shields.io/npm/l/react-zen-ui.svg)](https://www.apache.org/licenses/LICENSE-2.0)
