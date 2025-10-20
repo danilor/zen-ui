@@ -30,7 +30,7 @@ type ZenInputProps = {
  * @param multilineVariantHeight
  * @param props All regular TextInput props
  * @see https://reactnative.dev/docs/textinput
- * @constructor
+ *
  */
 export default function ZenInput({
   label,

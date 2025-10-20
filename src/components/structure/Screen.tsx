@@ -10,7 +10,7 @@ type ScreenProps = {
 };
 
 /**
- * @title Screen Component
+ *  Screen Component
  * The screen component should be used as the main container for every screen in the app. The idea
  * behind it is to use it only once in the app, right after the application provider tag. It should
  * take care of the status bar height, the bottom bar height (if there is one) and the keyboard height.
@@ -31,7 +31,7 @@ type ScreenProps = {
  * @param children The main content of the screen. It could be anything, including React elements.
  * @param useTopSafeArea If true, the screen will use the top safe area. This is useful when you have a full screen and not planing to use react navigator or other
  * similar libraries that already take care of the top safe area. Default is false.
- * @constructor
+ *
  */
 export default function Screen({ children, useTopSafeArea = false }: ScreenProps) {
 

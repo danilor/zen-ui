@@ -30,15 +30,14 @@ type TableProps = {
 
 /**
  * A simple table component that will help you to create a grid layout
- * @param style
- * @param children
- * @param border
- * @param borderType
- * @param borderColor
- * @constructor
+ * @param style The additional styles to be added to the table. Default is null
+ * @param children The child component of the table. This is required
+ * @param border The border of the table. Default is false
+ * @param borderType The border type of the table. Default is solid. Options are: solid, dotted, dashed
+ * @param borderColor The border color of the table. Default is the text color of the current theme
+ *
  */
 export function Table(
-
   {
     children,
     style = null,
@@ -47,9 +46,7 @@ export function Table(
     borderColor,
   }: TableProps
 ){
-
   const theme = useTheme();
-
   const intStyles = StyleSheet.create({
     s:{
       borderStyle: borderType,
@@ -67,16 +64,11 @@ export function Table(
 /**
  * A simple row component that will help you to create a grid layout
  * @param props
- * @constructor
+ *
  */
 export function Row(props: any){
-  const intStyles = StyleSheet.create({
-    s:{
-
-    }
-  });
   return (
-    <View style={[styles.row, intStyles.s, props.style]}>
+    <View style={[styles.row,props.style]}>
       {props.children ?? null}
     </View>
   );
@@ -94,7 +86,7 @@ type ColumnProps = {
 /**
  * A simple column component that will help you to create a grid layout
  * @param props
- * @constructor
+ *
  */
 export function Column(
   {

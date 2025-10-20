@@ -9,9 +9,9 @@ export default function DrawerScreen() {
   export default function App() {
   return (
     <ZenThemeProvider theme={ZenDark}>
-      <ZenDrawerProvider>
+
        {/* Your app components go here */}
-      </ZenDrawerProvider>
+
     </ZenThemeProvider>
   );
 }
@@ -42,7 +42,7 @@ export default function DrawerScreen() {
 
           <ZenText paragraph={true} fill={true}>
             To make the drawer work, you just need to wrap your app with the
-            "ZenDrawerProvider" component, just after the ZenThemeProvider.
+            "ZenThemeProvider" component, just after the ZenThemeProvider.
           </ZenText>
 
           <ZenCode content={codeExample} />

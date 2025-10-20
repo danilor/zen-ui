@@ -12,13 +12,13 @@ type ZenIconProps = {
 };
 
 /**
- * @title ZenIcon Component
+ *  ZenIcon Component
  * A simple icon component that will adapt to the current theme and display the provided icon
  * @param name The icon we want to use
  * @param style
  * @param size number The size of the icon
  * @param color string The Color of the Icon. Default to text color of the theme
- * @constructor
+ *
  */
 export default (
   {

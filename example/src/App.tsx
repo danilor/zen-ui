@@ -23,7 +23,6 @@ import SearchScreen from './components/screens/Search.screen';
 import HeaderScreen from './components/screens/Header.screen';
 import ThemeScreen from './components/screens/Theme.screen';
 import TextScreen from './components/screens/Text.screen';
-import ZenDrawerProvider from '../../src/provider/ZenDrawerProvider';
 import DrawerScreen from './components/screens/Drawer.screen';
 
 const Stack = createNativeStackNavigator();
@@ -170,11 +169,11 @@ export default function App() {
   const usingTheme = theme === 'dark' ? ZenDark : ZenLight;
   return (
     <ZenThemeProvider theme={usingTheme}>
-      <ZenDrawerProvider>
+
         <NavigationContainer>
           <RootStack />
         </NavigationContainer>
-      </ZenDrawerProvider>
+
     </ZenThemeProvider>
   );
 }

@@ -1,21 +1,21 @@
 import { useContext } from 'react';
-import { ZenDrawerContext } from '../context/ZenDrawerContext'; // Import the context
+import { ZenThemeContext } from '../context/ZenThemeContext'; // Import the context
 
 /**
  * Hook to get the current state of the drawer (open or closed).
  */
 export const useDrawer = () => {
-  const {open} = useContext(ZenDrawerContext);
-  if (open === undefined) {
-    throw new Error('useDrawer must be used within a ZenDrawerProvider');
+  const {ZenDrawer} = useContext(ZenThemeContext);
+  if (ZenDrawer === undefined) {
+    throw new Error('useDrawer must be used within a ZenThemeProvider');
   }
-  return open;
+  return ZenDrawer;
 };
 
 export const useToggleDrawer= () => {
-  const {toggle} = useContext(ZenDrawerContext);
-  if (toggle === undefined) {
-    throw new Error('useToggleDrawer must be used within a ZenDrawerProvider');
+  const {toggleDrawer} = useContext(ZenThemeContext);
+  if (toggleDrawer === undefined) {
+    throw new Error('useToggleDrawer must be used within a ZenThemeProvider');
   }
-  return toggle;
+  return toggleDrawer;
 };

@@ -3,6 +3,5 @@ export type ThemeModel = {
   background: string
   primary: string
   secondary: string
-
   [key: string]: string
 }

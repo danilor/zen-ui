@@ -18,7 +18,7 @@ type ZenSearchProps = {
  * @param initialTerm
  * @param placeholder
  * @see ZenInput
- * @constructor
+ *
  */
 export default function ZenSearch(
   {

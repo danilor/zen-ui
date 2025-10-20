@@ -1,9 +1,29 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": ["./src/index.ts"],
   "out": "docs",
   "compilerOptions": {
     "skipLibCheck": true,
     "strictNullChecks": false
-  }
+  },
+  "excludeNotDocumentedKinds": [
+    "Module",
+    "Namespace",
+    "Enum",
+    "EnumMember",
+    "Variable",
+    "Function",
+    "Class",
+    "Interface",
+    "Constructor",
+    "Property",
+    "Method",
+    "CallSignature",
+    "IndexSignature",
+    "ConstructorSignature",
+    "Accessor",
+    "GetSignature",
+    "SetSignature",
+    "TypeAlias",
+    "Reference"
+  ]
 }

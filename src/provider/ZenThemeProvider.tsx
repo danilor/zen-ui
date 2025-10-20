@@ -12,7 +12,6 @@ type ZenThemeProviderProps = {
  * The provider for the current theme. Should wrap the entire app. It will be inside the screen component.
  * @param children
  * @param theme
- * @constructor
  */
 export const ZenThemeProvider = ({
   children,
@@ -21,6 +20,7 @@ export const ZenThemeProvider = ({
 
 
   const [currentTheme, setCurrentTheme] = useState(theme ?? ZenLight);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   /*const toggleTheme = useCallback((newTheme: ThemeModel) => {
     setCurrentTheme(() => newTheme);
@@ -29,6 +29,8 @@ export const ZenThemeProvider = ({
   const themeContextValue = {
     ZenTheme: currentTheme,
     toggleTheme: (newTheme: ThemeModel) => { setCurrentTheme(newTheme) },
+    ZenDrawer: drawerOpen,
+    toggleDrawer: ( ) => { setDrawerOpen(!drawerOpen) },
   };
 
   return (

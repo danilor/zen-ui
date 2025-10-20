@@ -1,4 +1,4 @@
-# ZEN UI
+# ZEN UI (WORK ON PROGRESS)
 
 ![ZEN UI Logo, made with AI](readme/logo.png)
 

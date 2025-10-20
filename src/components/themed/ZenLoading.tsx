@@ -16,7 +16,7 @@ const iconName = 'refresh-double';
  * @param size
  * @param color
  * @param duration
- * @constructor
+ *
  */
 export default function ZenLoading(
   {

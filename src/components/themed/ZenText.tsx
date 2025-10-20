@@ -25,7 +25,7 @@ type ZenTextProps = {
  * @param textColor
  * @param fill
 
- * @constructor
+ *
  */
 
 export default function ZenText(

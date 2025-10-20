@@ -39,7 +39,7 @@
     "clean": "del-cli lib",
     "prepare": "bob build",
     "release": "release-it --only-version",
-    "docs": "npx typedoc --entryPointStrategy Expand src",
+    "typedocs": "npx typedoc --entryPointStrategy expand ./src/components ./src/hooks ./src/context ./src/provider ./src/theme ./src/models --out docs --excludePrivate --excludeProtected --excludeNotDocumented --tsconfig ./tsconfig.build.json",
     "pub": "npm run release --only-version"
   },
   "keywords": [

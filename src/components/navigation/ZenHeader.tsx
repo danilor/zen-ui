@@ -20,7 +20,7 @@ type ZenHeaderProps = {
 const iconSize = 28;
 
 /**
- * @title ZenHeader Component
+ *  ZenHeader Component
  * A simple header component that will adapt to the current theme and display a title and a back button if needed
  *
  * @param useTopSafeArea
@@ -31,7 +31,7 @@ const iconSize = 28;
  * @param rightAccessory
  * @param automaticDrawerIcon string If any string is indicated, it will show a drawer icon that will open the drawer when pressed
  * @param props
- * @constructor
+ *
  */
 export default function ZenHeader({
   useTopSafeArea = true,

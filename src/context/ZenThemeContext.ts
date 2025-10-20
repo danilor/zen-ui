@@ -9,6 +9,8 @@ import type { ThemeModel } from '../models/ThemeModel';
 
 export const ZenThemeContext = createContext({
   ZenTheme: ZenLight,
+  ZenDrawer: false,
 // @ts-ignore
   toggleTheme: (theme: ThemeModel) => {  },
+  toggleDrawer: () => {  },
 });
