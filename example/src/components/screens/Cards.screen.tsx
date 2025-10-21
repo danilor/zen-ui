@@ -7,7 +7,7 @@ import {
   ZenText,
 } from 'react-zen-ui';
 import { useState } from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 
 
 
@@ -78,9 +78,9 @@ export default function CardsScreen() {
             </ZenText>
           </Card>
 
-          <Card  title={''} header={<View style={{justifyContent:'center', alignItems:'center'}}> <ZenText type={'h4'}>Custom Header</ZenText> </View>}>
+          <Card  title={''} header={<View style={{justifyContent:'center', alignItems:'center'}}> <Image source={require('./../../../assets/logo.png')} style={{flex: 1, flexDirection:'row', aspectRatio: 1}} /> </View>}>
             <ZenText align={'justify'}>
-              You can completely overwrite the header of the Card by passing a custom component
+              You can completely overwrite the header of the Card by passing a custom component 
               to the "header" prop. This allows for maximum customization and the ability to
               include any elements or styles you desire in the header section.
             </ZenText>
