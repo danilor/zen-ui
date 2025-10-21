@@ -24,7 +24,7 @@ import ZenIconButton from './components/themed/ZenIconButton';
 import ZenDivider from './components/structure/ZenDivider';
 import ZenCheck from './components/themed/ZenCheck';
 import ZenSpaceBlock from './components/structure/ZenSpaceBlock';
-
+import Card, {CardHeader} from './components/structure/Card';
 /**
  * Theme
  */
@@ -46,6 +46,8 @@ export {
   Column,
   Row,
   ZenSpaceBlock,
+  Card,
+  CardHeader,
 
   /**
    * Theme

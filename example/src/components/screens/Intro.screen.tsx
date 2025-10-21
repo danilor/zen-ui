@@ -5,10 +5,17 @@ import { View, StyleSheet } from 'react-native';
 
 
 export default function IntroScreen() {
-
   const navigation = useNavigation();
   const styles = StyleSheet.create({
-    buttons: {display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 15, marginBottom: 15, marginTop: 0}
+    buttons: {
+      // display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: 15,
+      marginBottom: 15,
+      marginTop: 0,
+    },
   });
 
   return (
@@ -16,36 +23,136 @@ export default function IntroScreen() {
       <Screen useTopSafeArea={false}>
         <Layout scrollable={true}>
           <IntroExample />
+
+
+
           <View style={styles.buttons}>
-            <ZenButton type={'primary'} title={'App Header'} fill={false} pressAction={ ()=> { navigation.navigate('Header' as never) }} />
-            <ZenButton type={'primary'} title={'Drawer'} fill={false} pressAction={ ()=> { navigation.navigate('Drawer' as never) }} />
+            <ZenButton
+              type={'primary'}
+              title={'App Header'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Header' as never);
+              }}
+            />
+            <ZenButton
+              type={'primary'}
+              title={'Drawer'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Drawer' as never);
+              }}
+            />
           </View>
           <View style={styles.buttons}>
-            <ZenButton type={'primary'} title={'Buttons'} fill={false} pressAction={ ()=> { navigation.navigate('Buttons' as never) }} />
-            <ZenButton type={'primary'} title={'Icon Buttons'} fill={false} pressAction={ ()=> { navigation.navigate('IconButtons' as never) }} />
+            <ZenButton
+              type={'primary'}
+              title={'Buttons'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Buttons' as never);
+              }}
+            />
+            <ZenButton
+              type={'primary'}
+              title={'Icon Buttons'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('IconButtons' as never);
+              }}
+            />
           </View>
           <View style={styles.buttons}>
-            <ZenButton type={'primary'} title={'Text'} fill={false} pressAction={ ()=> { navigation.navigate('Text' as never) }} />
-            <ZenButton type={'primary'} title={'Icons'} fill={false} pressAction={ ()=> { navigation.navigate('Icons' as never) }} />
+            <ZenButton
+              type={'primary'}
+              title={'Text'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Text' as never);
+              }}
+            />
+            <ZenButton
+              type={'primary'}
+              title={'Icons'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Icons' as never);
+              }}
+            />
           </View>
 
           <View style={styles.buttons}>
-            <ZenButton type={'primary'} title={'Search'} fill={false} pressAction={ ()=> { navigation.navigate('Search' as never) }} />
-            <ZenButton type={'primary'} title={'Input'} fill={false} pressAction={ ()=> { navigation.navigate('Input' as never) }} />
+            <ZenButton
+              type={'primary'}
+              title={'Search'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Search' as never);
+              }}
+            />
+            <ZenButton
+              type={'primary'}
+              title={'Input'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Input' as never);
+              }}
+            />
           </View>
           <View style={styles.buttons}>
-            <ZenButton type={'primary'} title={'Loading'} fill={false} pressAction={ ()=> { navigation.navigate('Loading' as never) }} />
-            <ZenButton type={'primary'} title={'Tables'} fill={false} pressAction={ ()=> { navigation.navigate('Tables' as never) }} />
+            <ZenButton
+              type={'primary'}
+              title={'Loading'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Loading' as never);
+              }}
+            />
+            <ZenButton
+              type={'primary'}
+              title={'Tables'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Tables' as never);
+              }}
+            />
           </View>
           <View style={styles.buttons}>
-            <ZenButton type={'primary'} title={'Form'} fill={false} pressAction={ ()=> { navigation.navigate('Form' as never) }} />
-            <ZenButton type={'primary'} title={'Divider'} fill={false} pressAction={ ()=> { navigation.navigate('Divider' as never) }} />
+            <ZenButton
+              type={'primary'}
+              title={'Form'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Form' as never);
+              }}
+            />
+            <ZenButton
+              type={'primary'}
+              title={'Divider'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Divider' as never);
+              }}
+            />
           </View>
           <View style={styles.buttons}>
-            <ZenButton type={'primary'} title={'Floating Icons'} fill={false} pressAction={ ()=> { navigation.navigate('FloatingIcons' as never) }} />
-
+            <ZenButton
+              type={'primary'}
+              title={'Floating Icons'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('FloatingIcons' as never);
+              }}
+            />
+            <ZenButton
+              type={'primary'}
+              title={'Cards'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Cards' as never);
+              }}
+            />
           </View>
-
         </Layout>
       </Screen>
     </>

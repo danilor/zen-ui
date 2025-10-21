@@ -84,8 +84,8 @@ export default function ZenButton({
 
   const styles = StyleSheet.create({
     button: {
-      width: fill ? '100%' : 'auto',
-      flex: fill ? 0 : 1,
+      // width: fill ? '100%' : 'auto',
+      flex: fill ? 1 : undefined,
       backgroundColor: fillColor,
       borderRadius: LayoutConfig.border,
       padding: LayoutConfig.space,

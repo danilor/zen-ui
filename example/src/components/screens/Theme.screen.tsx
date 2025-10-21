@@ -123,7 +123,18 @@ export default function App() {
 
 
             </Table>
+
+
           </View>
+
+          <ZenText type={'h4'} fill={true} paragraph={true} align={'justify'}>
+            Tips:</ZenText>
+          <ZenText fill={true} paragraph={true} align={'justify'}>
+            1) Don't use a pure black or pure white color in your themes, as they can be harsh on the eyes. Instead, use slightly off-white or off-black colors for a more comfortable viewing experience.
+          </ZenText>
+          <ZenText fill={true} paragraph={true} align={'justify'}>
+            2) Test your themes in different lighting conditions to ensure readability and usability.
+          </ZenText>
         </Layout>
       </Screen>
     </>
