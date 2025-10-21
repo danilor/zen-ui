@@ -11,6 +11,7 @@ import LayoutConfig from '../../config/LayoutConfig';
 import { useDrawer, useToggleDrawer } from '../../hooks/useDrawer';
 import { useEffect, useRef } from 'react';
 import ThemeConfig from '../../config/Theme.config';
+import LayersConfig from '../../config/Layers.config';
 
 type DrawerType = {
   position?: 'left' | 'right';
@@ -24,6 +25,19 @@ type DrawerType = {
   animationTime?: number;
 };
 
+/**
+ * ZenDrawer Component
+ *
+ * @param position
+ * @param backgroundDimmed
+ * @param backgroundColor
+ * @param headerImage
+ * @param headerImageSize
+ * @param items
+ * @param sizeRatio
+ * @param animationTime
+ * @constructor
+ */
 export default function ZenDrawer({
   position = 'right',
   backgroundDimmed = true,
@@ -91,7 +105,7 @@ export default function ZenDrawer({
       position: 'absolute',
       top: 0,
       left: 0,
-      zIndex: 999,
+      zIndex: LayersConfig.drawer,
     },
     container: {
       backgroundColor: theme.background,
@@ -102,7 +116,7 @@ export default function ZenDrawer({
       bottom: 0,
       width: Dimensions.get('screen').width * sizeRatio,
       height: Dimensions.get('screen').height,
-      zIndex: 1000,
+      zIndex: LayersConfig.drawer + 1,
       // paddingTop: StatusBar.currentHeight?StatusBar.currentHeight+LayoutConfig.space,
       display: 'flex',
       flexDirection: 'column',

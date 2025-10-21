@@ -2,6 +2,7 @@ import { View, StyleSheet } from 'react-native';
 // import { useTheme } from './../../hooks/useTheme';
 import LayoutConfig from '../../config/LayoutConfig';
 import ZenIconButton from '../themed/ZenIconButton';
+import LayersConfig from '../../config/Layers.config';
 
 
 type ZenFloatingIconsType = {
@@ -39,7 +40,7 @@ export default function ZenFloatingIcons({
       left: 0,
       height: height,
       width: '100%',
-      zIndex: 1,
+      zIndex: LayersConfig.floatingIcons,
       justifyContent:
         position === 'left'
           ? 'flex-start'
