@@ -48,7 +48,7 @@ export default function CardsScreen() {
           </Card>
 
           <Card type={themed} title={'Dynamic Card'}
-                headerRightAccessory={<ZenButton onPress={changeThemed} type={'primary'} title={'Switch'} fill={false}  />}
+                headerRightAccessory={<ZenButton onPress={changeThemed} type={themed} title={'Switch'} fill={false}  />}
                 footer={
                 <CardFooter type={themed}>
                   <View style={{justifyContent:'flex-end', alignItems:'center', flexDirection:'row', gap: 10}}>
