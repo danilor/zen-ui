@@ -71,7 +71,7 @@ export default function App() {
           >
             <ZenButton
               title={'Set Light'}
-              fill={false}
+              fill={true}
               pressAction={() => {
                 setTheme('light');
                 changeTheme(ZenLight);
@@ -80,7 +80,7 @@ export default function App() {
             <ZenButton
               type={'secondary'}
               title={'Set Dark'}
-              fill={false}
+              fill={true}
               pressAction={() => {
                 setTheme('dark');
                 changeTheme(ZenDark);

@@ -7,12 +7,13 @@ import {
   ZenText,
 } from 'react-zen-ui';
 import { useState } from 'react';
+import { View } from 'react-native';
 
 
 
 export default function CardsScreen() {
 
-  const [themed, setThemed] = useState<'primary'|'secondary'|'success'|'danger'|'warning'|'info'>('secondary');
+  const [themed, setThemed] = useState<'primary'|'secondary'|'success'|'danger'|'warning'|'info'>('primary');
 
   const changeThemed = () => {
     if(themed === 'primary'){
@@ -46,6 +47,13 @@ export default function CardsScreen() {
             </ZenText>
           </Card>
 
+          <Card type={themed} title={'Dynamic Card'} headerRightAccessory={<ZenButton onPress={changeThemed} type={'primary'} title={'Switch'} fill={false}  />}>
+            <ZenText align={'justify'}>
+              You can pass dynamic components as accessories to the Card header, such as buttons or icons,
+              allowing for interactive elements that enhance user engagement and functionality. Current theme type is "{themed}".
+            </ZenText>
+          </Card>
+
           <Card  title={'Card without a type'}>
           <ZenText align={'justify'}>
             If you don't specify a type for the Card component, it will use the default
@@ -62,20 +70,23 @@ export default function CardsScreen() {
             </ZenText>
           </Card>
 
-          <Card type={'secondary'} title={'Secondary Card'} headerRightAccessory={<ZenIcon name={'cellar'} />}>
+          <Card  title={'Custom Background'} backColor={'lightblue'}>
             <ZenText align={'justify'}>
-              We can also use the defined types in the theme, such as 'secondary', to apply different
-              color schemes and styles to the Card component. This helps in categorizing and
-              differentiating content visually.
+              You can also overwrite the background color of the card by passing a custom color
+              to the "backColor" prop. This allows for greater flexibility in design and can help
+              the card stand out or blend in as needed.
             </ZenText>
           </Card>
 
-          <Card type={themed} title={'Dynamic Card'} headerRightAccessory={<ZenButton onPress={changeThemed} type={'primary'} title={'Switch'} fill={false}  />}>
+          <Card  title={''} header={<View style={{justifyContent:'center', alignItems:'center'}}> <ZenText type={'h4'}>Custom Header</ZenText> </View>}>
             <ZenText align={'justify'}>
-             You can pass dynamic components as accessories to the Card header, such as buttons or icons,
-             allowing for interactive elements that enhance user engagement and functionality. Current theme type is "{themed}".
+              You can completely overwrite the header of the Card by passing a custom component
+              to the "header" prop. This allows for maximum customization and the ability to
+              include any elements or styles you desire in the header section.
             </ZenText>
           </Card>
+
+
 
         </Layout>
       </Screen>

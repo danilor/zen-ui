@@ -75,6 +75,21 @@ export function CardHeader(
 
 /*******************************************************************************************************************************/
 
+export function CardFooter(){
+
+  const styles = StyleSheet.create({
+    footer:{}
+  });
+
+  return (
+    <View style={styles.footer}>
+
+    </View>
+  );
+}
+
+/*******************************************************************************************************************************/
+
 /**
  * Card Props
  */
@@ -84,6 +99,8 @@ type CardProps = {
   title?: string;
   headerLeftAccessory?: ReactElement | ReactElement[] | undefined;
   headerRightAccessory?: ReactElement | ReactElement[] | undefined;
+  backColor?: string | undefined;
+  header?: any;
 }
 
 /**
@@ -91,9 +108,11 @@ type CardProps = {
  * A simple card component to display content in a card-like container.
  * @param children
  * @param type
- * @param header
+ * @param title
  * @param headerLeftAccessory
  * @param headerRightAccessory
+ * @param backColor
+ * @param header We can overwrite the header by passing a custom component here.
  * @constructor
  */
 export default function Card(
@@ -102,7 +121,9 @@ export default function Card(
     type = undefined,
     title,
     headerLeftAccessory = undefined,
-    headerRightAccessory = undefined
+    headerRightAccessory = undefined,
+    backColor = undefined,
+    header,
   }: CardProps
 ) {
 
@@ -117,7 +138,7 @@ export default function Card(
   const styles = StyleSheet.create({
     card:{
       flex: 1,
-      backgroundColor: cardBackgroundColor,
+      backgroundColor: (backColor ?? cardBackgroundColor),
       borderRadius: LayoutConfig.border,
       padding: LayoutConfig.space,
       marginTop: LayoutConfig.space,
@@ -139,10 +160,11 @@ export default function Card(
   return (
     <View style={styles.card}>
       {
-        (title !== undefined) && (
+        (title !== undefined && header === undefined) && (
           <CardHeader title={title} type={type} leftAccessory={headerLeftAccessory} rightAccessory={headerRightAccessory} />
         )
       }
+      { header }
       <View style={styles.body}>
         {children}
       </View>
