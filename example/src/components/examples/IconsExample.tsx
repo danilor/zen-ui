@@ -11,7 +11,7 @@ export default function IconsExample(){
     // do whatever
   }
 
-  iconsChunk = iconsChunk.splice(0,30);
+  iconsChunk = iconsChunk.splice(0,10);
 
 
 

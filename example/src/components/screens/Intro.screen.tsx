@@ -41,6 +41,10 @@ export default function IntroScreen() {
             <ZenButton type={'primary'} title={'Form'} fill={false} pressAction={ ()=> { navigation.navigate('Form' as never) }} />
             <ZenButton type={'primary'} title={'Divider'} fill={false} pressAction={ ()=> { navigation.navigate('Divider' as never) }} />
           </View>
+          <View style={styles.buttons}>
+            <ZenButton type={'primary'} title={'Floating Icons'} fill={false} pressAction={ ()=> { navigation.navigate('FloatingIcons' as never) }} />
+
+          </View>
 
         </Layout>
       </Screen>

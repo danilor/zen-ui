@@ -44,6 +44,10 @@ const ColorUtil = {
     return ColorUtil.color(r, g, b);
   },
 
+  /**
+   * Get a contrasting text color (black or white) for a given background hex color
+   * @param hexColor
+   */
   getContrastTextColor: (hexColor: string) => {
     // Remove the '#' if present
     const cleanHex = hexColor.startsWith('#') ? hexColor.slice(1) : hexColor;
