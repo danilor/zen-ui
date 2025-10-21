@@ -1,5 +1,5 @@
 import {
-  Card,
+  Card, CardFooter,
   Layout,
   Screen,
   ZenButton,
@@ -47,10 +47,20 @@ export default function CardsScreen() {
             </ZenText>
           </Card>
 
-          <Card type={themed} title={'Dynamic Card'} headerRightAccessory={<ZenButton onPress={changeThemed} type={'primary'} title={'Switch'} fill={false}  />}>
+          <Card type={themed} title={'Dynamic Card'}
+                headerRightAccessory={<ZenButton onPress={changeThemed} type={'primary'} title={'Switch'} fill={false}  />}
+                footer={
+                <CardFooter type={themed}>
+                  <View style={{justifyContent:'flex-end', alignItems:'center', flexDirection:'row', gap: 10}}>
+                    <ZenButton type={themed} title={'I am here!'} fill={false} />
+                    <ZenButton type={themed} title={'Click me!'} fill={false} />
+                  </View>
+                </CardFooter>}
+          >
             <ZenText align={'justify'}>
               You can pass dynamic components as accessories to the Card header, such as buttons or icons,
               allowing for interactive elements that enhance user engagement and functionality. Current theme type is "{themed}".
+              Also, you can pass a Element/Component as footer parameter (we recommend using the CardFooter component for that) to add custom footer elements to the Card.
             </ZenText>
           </Card>
 
@@ -78,14 +88,14 @@ export default function CardsScreen() {
             </ZenText>
           </Card>
 
-          <Card  title={''} header={<View style={{justifyContent:'center', alignItems:'center'}}> <Image source={require('./../../../assets/logo.png')} style={{flex: 1, flexDirection:'row', aspectRatio: 1}} /> </View>}>
+
+          <Card header={<View style={{justifyContent:'center', alignItems:'center'}}><Image source={require('./../../../assets/logo.png')} style={{flex: 1, flexDirection:'row', aspectRatio: 1}} /></View>}>
             <ZenText align={'justify'}>
-              You can completely overwrite the header of the Card by passing a custom component 
+              You can completely overwrite the header of the Card by passing a custom component
               to the "header" prop. This allows for maximum customization and the ability to
               include any elements or styles you desire in the header section.
             </ZenText>
           </Card>
-
 
 
         </Layout>

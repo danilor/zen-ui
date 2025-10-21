@@ -75,7 +75,20 @@ export function CardHeader(
 
 /*******************************************************************************************************************************/
 
-export function CardFooter(){
+type CardFooterProps = {
+  type?: ThemeType;
+  children?: any;
+}
+
+export function CardFooter(
+  { type = 'primary', children }: CardFooterProps
+){
+
+  const theme = useTheme();
+
+  if(theme[type] === undefined){
+    throw new Error(`Theme type "${type}" is not defined in the current theme.`);
+  }
 
   const styles = StyleSheet.create({
     footer:{}
@@ -83,7 +96,8 @@ export function CardFooter(){
 
   return (
     <View style={styles.footer}>
-
+      <ZenDivider type={type} />
+      {children}
     </View>
   );
 }
@@ -101,6 +115,7 @@ type CardProps = {
   headerRightAccessory?: ReactElement | ReactElement[] | undefined;
   backColor?: string | undefined;
   header?: any;
+  footer?: any;
 }
 
 /**
@@ -113,6 +128,7 @@ type CardProps = {
  * @param headerRightAccessory
  * @param backColor
  * @param header We can overwrite the header by passing a custom component here.
+ * @param footer
  * @constructor
  */
 export default function Card(
@@ -124,6 +140,7 @@ export default function Card(
     headerRightAccessory = undefined,
     backColor = undefined,
     header,
+    footer,
   }: CardProps
 ) {
 
@@ -146,15 +163,7 @@ export default function Card(
       borderWidth: (type !== undefined) ? 1 : 0,
       borderColor: (type !== undefined) ? theme[type] : 'transparent',
     },
-    body:{
 
-    },
-    header:{
-
-    },
-    footer:{
-
-    }
   });
 
   return (
@@ -165,9 +174,10 @@ export default function Card(
         )
       }
       { header }
-      <View style={styles.body}>
+      <View>
         {children}
       </View>
+      {footer}
     </View>
   );
 }
