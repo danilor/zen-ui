@@ -28,6 +28,7 @@ import DrawerScreen from './components/screens/Drawer.screen';
 import IconButtonsScreen from './components/screens/IconButtons.screen';
 import DividerScreen from './components/screens/Divider.screen';
 import FormScreen from './components/screens/Form.screen';
+import FloatingIconsScreen from './components/screens/FloatingIcons.screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -73,13 +74,18 @@ function RootStack() {
   const menuButtons: any[] = [
     {
       icon: 'home',
-      type: 'secondary',
+      type: 'primary',
       onPress: () => navigation.navigate('Home' as never),
     },
     {
       icon: 'settings',
       type: 'secondary',
       onPress: () => navigation.navigate('Theme' as never),
+    },
+    {
+      icon: 'apple',
+      type: 'success',
+      onPress: () => navigation.navigate('FloatingIcons' as never),
     },
   ];
 
@@ -208,6 +214,13 @@ function RootStack() {
           component={FormScreen}
           options={{
             title: 'Form Components',
+          }}
+        />
+        <Stack.Screen
+          name="FloatingIcons"
+          component={FloatingIconsScreen}
+          options={{
+            title: 'Floating Icons',
           }}
         />
       </Stack.Navigator>
