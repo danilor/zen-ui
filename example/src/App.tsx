@@ -91,8 +91,14 @@ function RootStack() {
   ];
 
   const headerComponent = (props: NativeStackHeaderProps) => (
+
+
+
     <ZenHeader
       automaticDrawerIcon={'menu'}
+      showBackButton={props.navigation.canGoBack()}
+      title={props.options.title as string}
+      goBack={()=>{ props.navigation.goBack(); }}
       // rightIcon={'menu'}
       // onRightIconPress={() => {
       //   return null;

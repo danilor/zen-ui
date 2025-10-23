@@ -3,7 +3,7 @@ import ZenText from './../themed/ZenText';
 import { Dimensions, StyleSheet, View, StatusBar } from 'react-native';
 import ColorUtil from '../../util/Color.util';
 import LayoutConfig from '../../config/LayoutConfig';
-import type { NativeStackHeaderProps } from '@react-navigation/native-stack';
+
 import ZenIcon from '../themed/ZenIcon';
 import { useToggleDrawer } from '../../hooks/useDrawer';
 
@@ -15,6 +15,7 @@ type ZenHeaderProps = {
   onRightIconPress?: () => void;
   rightAccessory?: any;
   automaticDrawerIcon?: string;
+  goBack?: () => void;
 };
 
 const iconSize = 28;
@@ -30,21 +31,22 @@ const iconSize = 28;
  * @param onRightIconPress
  * @param rightAccessory
  * @param automaticDrawerIcon string If any string is indicated, it will show a drawer icon that will open the drawer when pressed
+ * @param goBack
  * @param props
  *
  */
 export default function ZenHeader({
   useTopSafeArea = true,
   title,
-  showBackButton = true,
+  showBackButton = false,
   rightIcon,
   onRightIconPress = () => {
     return null;
   },
   rightAccessory = null,
   automaticDrawerIcon,
-  ...props
-}: ZenHeaderProps & NativeStackHeaderProps) {
+  goBack = () => {},
+}: ZenHeaderProps) {
   // console.log('Rendering ZenHeader', props);
 
   const theme = useTheme();
@@ -85,17 +87,17 @@ export default function ZenHeader({
   return (
     <View style={styles.container}>
       <View style={styles.left}>
-        {props.navigation.canGoBack() && showBackButton && (
+        {showBackButton && (
           <ZenIcon
             name={'cursor-pointer'}
             size={iconSize}
             color={baseColor}
-            onPress={() => props.navigation.goBack()}
+            onPress={() => goBack()}
           />
         )}
 
         <ZenText fill={false} textColor={baseColor} type={'h4'}>
-          {title ?? props.options.title ?? 'Header'}
+          {title ?? 'Header'}
         </ZenText>
       </View>
 
