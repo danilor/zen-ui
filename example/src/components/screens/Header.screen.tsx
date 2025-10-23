@@ -1,7 +1,28 @@
-import { Layout, Screen, ZenButton, ZenText } from 'react-zen-ui';
+import {
+  Layout,
+  Screen,
+  ZenButton,
+  ZenCode,
+  ZenText,
+} from 'react-zen-ui';
 import {Linking} from 'react-native';
 
+
 export default function HeaderScreen() {
+
+  const code = `const headerComponent = (props: NativeStackHeaderProps) => (
+    <ZenHeader
+      automaticDrawerIcon={'menu'}
+      showBackButton={props.navigation.canGoBack()}
+      title={props.options.title as string}
+      goBack={()=>{ props.navigation.goBack(); }}
+      // rightIcon={'menu'}
+      // onRightIconPress={() => {
+      //   return null;
+      // }}
+      {...props}
+    />
+  );`;
 
   return (
     <>
@@ -27,6 +48,8 @@ export default function HeaderScreen() {
             when pressed. This way, the integrated drawer (also included in this library) can be used
             alongside the header.
           </ZenText>
+
+          <ZenCode content={code} />
 
           <ZenButton fill={true} title={'Visit React Navigation'} pressAction={()=>{
             Linking.openURL('https://reactnavigation.org/docs');

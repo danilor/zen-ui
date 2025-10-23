@@ -91,9 +91,6 @@ function RootStack() {
   ];
 
   const headerComponent = (props: NativeStackHeaderProps) => (
-
-
-
     <ZenHeader
       automaticDrawerIcon={'menu'}
       showBackButton={props.navigation.canGoBack()}

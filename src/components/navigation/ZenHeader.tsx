@@ -16,6 +16,7 @@ type ZenHeaderProps = {
   rightAccessory?: any;
   automaticDrawerIcon?: string;
   goBack?: () => void;
+  goBackIcon?: string;
 };
 
 const iconSize = 28;
@@ -32,7 +33,7 @@ const iconSize = 28;
  * @param rightAccessory
  * @param automaticDrawerIcon string If any string is indicated, it will show a drawer icon that will open the drawer when pressed
  * @param goBack
- * @param props
+ * @param goBackIcon
  *
  */
 export default function ZenHeader({
@@ -46,6 +47,7 @@ export default function ZenHeader({
   rightAccessory = null,
   automaticDrawerIcon,
   goBack = () => {},
+  goBackIcon = 'cursor-pointer',
 }: ZenHeaderProps) {
   // console.log('Rendering ZenHeader', props);
 
@@ -89,7 +91,7 @@ export default function ZenHeader({
       <View style={styles.left}>
         {showBackButton && (
           <ZenIcon
-            name={'cursor-pointer'}
+            name={goBackIcon}
             size={iconSize}
             color={baseColor}
             onPress={() => goBack()}
