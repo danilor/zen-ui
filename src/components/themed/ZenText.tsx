@@ -3,6 +3,13 @@ import { useTheme } from './../../hooks/useTheme';
 import ThemeConfig from '../../config/Theme.config';
 import LayoutConfig from '../../config/LayoutConfig';
 
+/**
+ * @docunator
+ * @title ZenTextProps
+ * @description Props for the ZenText component.
+ * @category Themed Components Props
+ *
+ */
 type ZenTextProps = {
   children?: any,
   style?: any,
@@ -15,15 +22,17 @@ type ZenTextProps = {
 }
 
 /**
- * The most basic text component that will adapt to the current theme
- * @param children
- * @param style
- * @param size
- * @param type
- * @param align
- * @param paragraph
- * @param textColor
- * @param fill
+ * @docunator
+ * @title ZenText
+ * @description The most basic text component that will adapt to the current theme
+ * @param {Element} children The text content to be displayed within the ZenText component.
+ * @param {StyleSheet} style Additional styles to customize the appearance of the text.
+ * @param {number} size The size of the text. Can be 'small', 'medium', 'large' or a number.
+ * @param {string} type The type of text style to apply. Options are 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'small'.
+ * @param {string} align The alignment of the text. Options are 'left', 'center', 'right', 'justify'.
+ * @param {boolean} paragraph Whether to add margin to the top and bottom of the text to separate it as a paragraph.
+ * @param {string} textColor The color of the text. Defaults to the text color of the current theme.
+ * @param {boolean} fill Whether the text should take the full width of its container.
 
  *
  */

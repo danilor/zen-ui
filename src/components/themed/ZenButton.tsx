@@ -7,9 +7,10 @@ import ZenIcon from './ZenIcon';
 import ThemeConfig from '../../config/Theme.config';
 import {type ThemeType} from '../../literals/Type.literal';
 /**
- *  ZenButtonProps
- * Props for the ZenButton component.
- * @category Themed Components
+ * @docunator
+ * @title ZenButtonProps
+ * @description Props for the ZenButton component.
+ * @category Themed Components Props
  */
 export type ZenButtonProps = {
   title: string;
@@ -30,29 +31,30 @@ export type ZenButtonProps = {
 };
 
 /**
- *  ZenButton
- * A simple button component that can be used throughout the app.
- * It supports different types (primary, secondary, success, info, warning, danger) and all of them
- * are styled according to the current theme.
- * The text color will be automatically selected based on the brightness of the button color,
- * but it can be overwritten by passing a textColor prop.
+ * @docunator
+ * @title ZenButton
+ * @author Danilo Ramírez Mattey
+ * @version 1.0.0
+ * @description A simple button component that can be used throughout the app. It supports different types (primary, secondary, success, info, warning, danger) and all of them are styled according to the current theme. The text color will be automatically selected based on the brightness of the button color, but it can be overwritten by passing a textColor prop.
  * @category Themed Components
- * @param {object} options The options for the button.
- * @param {string} options.title The title of the button
- * @param {string} options.type The type of the button. Can be 'primary', 'secondary', 'success', 'info', 'warning', or 'danger'. Default is 'primary'.
- * @param {string} options.textColor The color of the button text. If not provided, it will be automatically selected based on the button color.
- * @param {boolean} options.fill Whether the button should fill the width of its container. Default is true.
- * @param {number} options.touchableOpacity The opacity of the button when pressed. Default is 0.7.
- * @param {function} options.pressAction Alias for pressAction
- * @param {function} options.onPress onPress action
- * @param {function} options.longPressAction Alias for longPressAction
- * @param {function} options.onLongPress onLongPress action
- * @param {string} options.leftIcon The left icon of the button. Should be a valid icon name from the ZenIcon component.
- * @param {string} options.rightIcon The right icon of the button. Should be a valid icon name from the ZenIcon component.
- * @param {Element} options.leftAccessory A left accessory. Accepts any valid React Node.
- * @param {Element} options.rightAccessory A right accessory. Accepts any valid React Node.
- * @param {boolean} options.disabled Whether the button is disabled. Default is false.
- * @param {StyleSheet} options.style Additional styles for the button container.
+ * @param {string} title The title of the button
+ * @param {string} type - The type of the button. Can be 'primary', 'secondary', 'success', 'info', 'warning', or 'danger'. Default is 'primary'.
+ * @param {string} textColor - The color of the button text. If not provided, it will be automatically selected based on the button color.
+ * @param {boolean} fill - Whether the button should fill the width of its container. Default is true.
+ * @param {number} touchableOpacity - The opacity of the button when pressed. Default is 0.7.
+ * @param {function} pressAction - Alias for pressAction
+ * @param {function} onPress - onPress action
+ * @param {function} longPressAction - Alias for longPressAction
+ * @param {function} onLongPress - onLongPress action
+ * @param {string} leftIcon - The left icon of the button. Should be a valid icon name from the ZenIcon component.
+ * @param {string} rightIcon - The right icon of the button. Should be a valid icon name from the ZenIcon component.
+ * @param {Element} leftAccessory - A left accessory. Accepts any valid React Node.
+ * @param {Element} rightAccessory - A right accessory. Accepts any valid React Node.
+ * @param {boolean} disabled - Whether the button is disabled. Default is false.
+ * @param {StyleSheet} style - Additional styles for the button container.
+ *
+ * @link https://github.com/danilor/zen-ui
+ * @link https://github.com/danilor/zen-ui/blob/main/example/src/components/examples/ButtonExample.tsx
  *
  */
 export default function ZenButton({

@@ -7,6 +7,15 @@ type ZenCodeType = {
   content: string;
 };
 
+/**
+ * @docunator
+ * @title ZenCode
+ * @author Danilo Ramírez Mattey
+ * @version 1.0.0
+ * @description A simple code block component that can be used to display code snippets throughout the app. It styles the code block according to the current theme.
+ * @category Themed Components
+ * @param {string} content The code content to display
+ */
 export default function ZenCode({ content }: ZenCodeType) {
   const theme = useTheme();
 

@@ -8,6 +8,13 @@ import ColorUtil from '../../util/Color.util';
 import ThemeConfig from '../../config/Theme.config';
 import type { ThemeType } from '../../literals/Type.literal';
 
+/**
+ * @docunator
+ * @title ZenInputProps
+ * @description Props for the ZenInput component.
+ * @category Themed Components Props
+ *
+ */
 type ZenInputProps = {
   label?: string;
   dir?: 'ltr' | 'rtl';
@@ -22,19 +29,22 @@ type ZenInputProps = {
 };
 
 /**
- * An input field with a label. The label is optional.
- * @param label
- * @param dir
- * @param leftIcon
- * @param rightIcon
- * @param leftAccessory
- * @param rightAccessory
- * @param multiline
- * @param multilineVariantHeight
- * @param disabled
- * @param type
- * @param props All regular TextInput props
- * @see https://reactnative.dev/docs/textinput
+ * @docunator
+ * @title ZenInput
+ * @description An input field with a label. The label is optional.
+ * @category Themed Components
+ * @param {string} label The label for the input field
+ * @param {string} dir The direction of the text. Can be 'ltr' or 'rtl'. Default is 'ltr'
+ * @param {string} leftIcon The left icon name
+ * @param {string} rightIcon The right icon name
+ * @param {Element} leftAccessory The left accessory element
+ * @param {Element} rightAccessory The right accessory element
+ * @param {boolean} multiline Whether the input is multiline
+ * @param {number} multilineVariantHeight The height multiplier for multiline inputs. Default is 10
+ * @param {boolean} disabled Whether the input is disabled
+ * @param {string } type The theme type for the input. Default is 'primary'
+ * @param {Object} props All regular TextInput props
+ * @link https://reactnative.dev/docs/textinput
  *
  */
 export default function ZenInput({

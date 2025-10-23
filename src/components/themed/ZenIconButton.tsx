@@ -4,6 +4,12 @@ import { TouchableOpacity, StyleSheet } from 'react-native';
 import ZenIcon from './ZenIcon';
 import {type ThemeType} from '../../literals/Type.literal';
 
+/**
+ * @docunator
+ * @title ZenIconButtonType
+ * @description Type definition for the ZenIconButton component props.
+ * @category Themed Components Props
+ */
 type ZenIconButtonType = {
   icon: string;
   type?: ThemeType;
@@ -18,6 +24,24 @@ type ZenIconButtonType = {
   opacity?: number;
 };
 
+/**
+ * @docunator
+ * @title ZenIconButton
+ * @description A button component that displays an icon and handles press and long-press actions with customizable styles and themes.
+ * @param {string} icon - The name of the icon to display.
+ * @param {string} type - The theme type for the button (e.g., 'primary', 'secondary').
+ * @param {number} size - The size of the button ('small', 'medium', 'large').
+ * @param {number} touchableOpacity - The opacity of the button when pressed.
+ * @param {boolean} disabled - Whether the button is disabled.
+ * @param {StyleSheet} style - Additional styles for the button.
+ * @param {function} pressAction - Function to execute on button press.
+ * @param {function} onPress - Additional function to execute on button press.
+ * @param {function} longPressAction - Function to execute on button long press.
+ * @param {function} onLongPress - Additional function to execute on button long press.
+ * @param {number} opacity - The overall opacity of the button.
+ * @category Themed Components
+ */
+
 export default function ZenIconButton({
   icon,
   type = 'primary',
@@ -25,7 +49,6 @@ export default function ZenIconButton({
   touchableOpacity = 0.7,
   disabled = false,
   style = {},
-
   pressAction = () => {},
   onPress = () => {},
   longPressAction = () => {},

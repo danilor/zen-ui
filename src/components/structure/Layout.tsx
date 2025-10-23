@@ -2,6 +2,12 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import LayoutConfig from '../../config/LayoutConfig';
 import ZenSpaceBlock from './../structure/ZenSpaceBlock';
 
+/**
+ * @docunator
+ * @title Layout Props
+ * @description Props for the Layout component.
+ * @category Structure Components Props
+ */
 type LayoutProps = {
   children: any;
   bottomBar?: boolean;
@@ -11,6 +17,18 @@ type LayoutProps = {
   airBottom?: boolean;
 };
 
+/**
+ * @docunator
+ * @title Layout Component
+ * @description A layout component that provides consistent padding and optional scrolling behavior.
+ * @category Structure Components
+ * @author Danilo Ramírez Mattey
+ * @param {Element} children - The children components to be rendered within the layout.
+ * @param {boolean} centered - Whether to center the children components.
+ * @param {boolean} scrollable - Whether the layout should be scrollable.
+ * @param {StyleSheet} style - Additional styles to apply to the layout.
+ * @param {boolean} airBottom - Whether to add extra space at the bottom of the layout.
+ */
 export default function Layout({
   children,
   centered = false,

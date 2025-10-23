@@ -7,6 +7,12 @@ import LayoutConfig from '../../config/LayoutConfig';
 import ZenIcon from '../themed/ZenIcon';
 import { useToggleDrawer } from '../../hooks/useDrawer';
 
+/**
+ * @docunator
+ * @title ZenHeaderProps
+ * @description Props for the ZenHeader component
+ * @category Navigation Components Props
+ */
 type ZenHeaderProps = {
   useTopSafeArea?: boolean;
   showBackButton?: boolean;
@@ -22,18 +28,21 @@ type ZenHeaderProps = {
 const iconSize = 28;
 
 /**
- *  ZenHeader Component
- * A simple header component that will adapt to the current theme and display a title and a back button if needed
- *
- * @param useTopSafeArea
- * @param title
- * @param showBackButton
- * @param rightIcon
- * @param onRightIconPress
- * @param rightAccessory
- * @param automaticDrawerIcon string If any string is indicated, it will show a drawer icon that will open the drawer when pressed
- * @param goBack
- * @param goBackIcon
+ * @docunator
+ * @title ZenHeader
+ * @description A simple header component that will adapt to the current theme and display a title and a back button if needed
+ * @category Navigation Components
+ * @param {boolean} useTopSafeArea - Whether to use the top safe area or not
+ * @param {string} title - The title to display in the header
+ * @param {boolean} showBackButton - Whether to show the back button or not
+ * @param {string} rightIcon - The name of the right icon to display
+ * @param {function} onRightIconPress - The function to call when the right icon is pressed
+ * @param {Element} rightAccessory - Any React Element to show on the right side of the header
+ * @param {string} automaticDrawerIcon If any string is indicated, it will show a drawer icon that will open the drawer when pressed
+ * @param {function} goBack - The function to call when the back button is pressed
+ * @param {string} goBackIcon - The name of the back icon to display
+ * @link https://github.com/danilor/zen-ui/blob/main/example/src/App.tsx#L93
+ * @author Danilo Ramírez Mattey
  *
  */
 export default function ZenHeader({

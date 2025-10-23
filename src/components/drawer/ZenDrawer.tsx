@@ -13,6 +13,12 @@ import { useEffect, useRef } from 'react';
 import ThemeConfig from '../../config/Theme.config';
 import LayersConfig from '../../config/Layers.config';
 
+/**
+ * @docunator
+ * @title DrawerType
+ * @description Props for the ZenDrawer component
+ * @category Drawer Components Props
+ */
 type DrawerType = {
   position?: 'left' | 'right';
   backgroundDimmed?: boolean;
@@ -26,17 +32,19 @@ type DrawerType = {
 };
 
 /**
- * ZenDrawer Component
- *
- * @param position
- * @param backgroundDimmed
- * @param backgroundColor
- * @param headerImage
- * @param headerImageSize
- * @param items
- * @param sizeRatio
- * @param animationTime
- * @constructor
+ * @docunator
+ * @title ZenDrawer
+ * @description A drawer component that can be opened from the left or right side of the screen
+ * @category Drawer Components
+ * @param {string} position - The position of the drawer (left or right)
+ * @param {number} backgroundDimmed - Whether the background should be dimmed or not
+ * @param {string} backgroundColor - The color of the background when dimmed
+ * @param {Element} headerImage - An optional image to display at the top of the drawer
+ * @param {number} headerImageSize - The height of the header image
+ * @param {Elements[]} items - An array of React Elements to display as items in the drawer
+ * @param {number} sizeRatio - The size of the drawer as a ratio of the screen width
+ * @param {number} animationTime - The time in milliseconds for the open/close animation
+ * @author Danilo Ramírez Mattey
  */
 export default function ZenDrawer({
   position = 'right',

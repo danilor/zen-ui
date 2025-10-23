@@ -7,6 +7,12 @@ import { useTheme } from './../../hooks/useTheme';
 import ZenIcon from '../themed/ZenIcon';
 import { useToggleDrawer } from '../../hooks/useDrawer';
 
+/**
+ * @docunator
+ * @title ZenDrawerItem
+ * @description A single item for the ZenDrawer component
+ * @category Drawer Components Props
+ */
 type ZenDrawerItemProps = {
   label: string;
   leftIcon?: string;
@@ -19,6 +25,19 @@ type ZenDrawerItemProps = {
 const defaultIconSize = 22;
 const defaultDimmedValue = 0.2;
 
+/**
+ * @docunator
+ * @title ZenDrawerItem
+ * @description A single item for the ZenDrawer component
+ * @category Drawer Components
+ * @param {string} label - The label of the drawer item
+ * @param {string} leftIcon - The name of the left icon (from ZenIcon)
+ * @param {string} rightIcon - The name of the right icon (from ZenIcon)
+ * @param {function} onPress - The function to call when the item is pressed
+ * @param {boolean} arrow - Whether to show a right arrow icon
+ * @param {function} closeOnPress - Whether to close the drawer when the item is pressed
+ * @author Danilo Ramírez Mattey
+ */
 export default function ZenDrawerItem({
   label,
   leftIcon,

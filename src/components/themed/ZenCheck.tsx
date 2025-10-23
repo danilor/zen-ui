@@ -8,6 +8,13 @@ import { useState } from 'react';
 import  ZenText  from './ZenText';
 import LayoutConfig from '../../config/LayoutConfig';
 
+/**
+ * @docunator
+ * @title ZenCheckProps
+ * @description Props for the ZenCheck component.
+ * @category Themed Components Props
+ */
+
 type ZenCheckProps = {
   type: ThemeType;
   label?: string;
@@ -18,6 +25,24 @@ type ZenCheckProps = {
   useBackground?: boolean,
   disabled?: boolean,
 };
+
+/**
+ * @docunator
+ * @title ZenCheck
+ * @author Danilo Ramírez Mattey
+ * @version 1.0.0
+ * @description A simple checkbox component that can be used throughout the app. It supports different types (primary, secondary, success, info, warning, danger) and all of them are styled according to the current theme. The checkbox can be positioned to the left or right of the label.
+ * @category Themed Components
+ * @param {string} type - The type of the checkbox. Can be 'primary', 'secondary', 'success', 'info', 'warning', or 'danger'. Default is 'primary'.
+ * @param {string} label - The label of the checkbox.
+ * @param {string} value - The initial value of the checkbox. Default is false.
+ * @param {string} position - The position of the checkbox relative to the label. Can be 'left' or 'right'. Default is 'left'.
+ * @param {function} onChange - The function to call when the value of the checkbox changes.
+ * @param {StyleSheet} style - Additional styles for the checkbox container.
+ * @param {boolean} useBackground - Whether to use a background color for the checkbox icon. Default is false.
+ * @param {boolean} disabled - Whether the checkbox is disabled. Default is false.
+ * @constructor
+ */
 export default function ZenCheck({
   type = 'primary',
   label,

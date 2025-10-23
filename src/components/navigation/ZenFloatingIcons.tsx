@@ -1,10 +1,15 @@
 import { View, StyleSheet } from 'react-native';
-// import { useTheme } from './../../hooks/useTheme';
 import LayoutConfig from '../../config/LayoutConfig';
 import ZenIconButton from '../themed/ZenIconButton';
 import LayersConfig from '../../config/Layers.config';
 
 
+/**
+ * @docunator
+ * @title ZenFloatingIconsType
+ * @description Props for the ZenFloatingIcons component
+ * @category Navigation Components Props
+ */
 type ZenFloatingIconsType = {
   size?: 'small' | 'medium' | 'large';
   position?: 'left' | 'right' | 'center';
@@ -15,6 +20,16 @@ type ZenFloatingIconsType = {
   }[];
 };
 
+/**
+ * @docunator
+ * @title ZenFloatingIcons
+ * @description A set of floating icon buttons that can be positioned at the bottom of the screen
+ * @category Navigation Components
+ * @param {number} size - The size of the buttons (small, medium, large)
+ * @param {string} position - The position of the buttons (left, right, center)
+ * @param {Object} buttons - An array of button objects with icon, type and onPress function
+ * @constructor
+ */
 export default function ZenFloatingIcons({
   size = 'medium',
   position = 'center',

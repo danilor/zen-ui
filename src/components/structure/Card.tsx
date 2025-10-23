@@ -9,6 +9,12 @@ import ZenText from '../themed/ZenText';
 import  ZenDivider  from './../structure/ZenDivider';
 
 
+/**
+ * @docunator
+ * @title Card Header Props
+ * @description Props for the CardHeader component.
+ * @category Structure Components Props
+ */
 type CardHeaderProps = {
   title?: string;
   type?: ThemeType | undefined;
@@ -17,12 +23,14 @@ type CardHeaderProps = {
 }
 
 /**
- * Card Header
- * @param title
- * @param type
- * @param leftAccessory
- * @param rightAccessory
- * @constructor
+ * @docunator
+ * @title Card Header
+ * @description A simple header component for the Card component.
+ * @category Structure Components
+ * @param {string} title - The title of the card header.
+ * @param {string} type - The theme type of the card header.
+ * @param {Element} leftAccessory - The left accessory component of the card header.
+ * @param {Element} rightAccessory - The right accessory component of the card header.
  */
 export function CardHeader(
   {
@@ -75,11 +83,26 @@ export function CardHeader(
 
 /*******************************************************************************************************************************/
 
+/**
+ * @docunator
+ * @title Card Footer Props
+ * @description Props for the CardFooter component.
+ * @category Structure Components Props
+ */
 type CardFooterProps = {
   type?: ThemeType;
   children?: any;
 }
 
+/**
+ * @docunator
+ * @title Card Footer
+ * @description A simple footer component for the Card component.
+ * @category Structure Components
+ * @param {string} type - The theme type of the card footer.
+ * @param {Element} children - The children components of the card footer.
+ * @constructor
+ */
 export function CardFooter(
   { type = 'primary', children }: CardFooterProps
 ){
@@ -105,7 +128,10 @@ export function CardFooter(
 /*******************************************************************************************************************************/
 
 /**
- * Card Props
+ * @docunator
+ * @title Card Props
+ * @description Props for the Card component.
+ * @category Structure Components Props
  */
 type CardProps = {
   children?: any;
@@ -119,16 +145,18 @@ type CardProps = {
 }
 
 /**
- * Card Component
- * A simple card component to display content in a card-like container.
- * @param children
- * @param type
- * @param title
- * @param headerLeftAccessory
- * @param headerRightAccessory
- * @param backColor
- * @param header We can overwrite the header by passing a custom component here.
- * @param footer
+ * @docunator
+ * @title Card
+ * @description A simple card component to display content in a card-like container.
+ * @category Structure Components
+ * @param {Element} children - The content of the card.
+ * @param {string} type - The theme type of the card.
+ * @param {string} title - The title of the card.
+ * @param {Element} headerLeftAccessory - The left accessory component of the card header.
+ * @param {Element} headerRightAccessory - The right accessory component of the card header.
+ * @param {string} backColor - We can overwrite the background color by passing a custom color here.
+ * @param {Element} header We can overwrite the header by passing a custom component here.
+ * @param {Element} footer
  * @constructor
  */
 export default function Card(
@@ -145,13 +173,10 @@ export default function Card(
 ) {
 
   const theme = useTheme();
-
   const cardBackgroundColor = ColorUtil.shade(theme.background,ThemeConfig.defaultCardBackgroundFactor);
   if(type !== undefined && theme[type] === undefined){
     throw new Error(`Theme type "${type}" is not defined in the current theme.`);
   }
-
-
   const styles = StyleSheet.create({
     card:{
       flex: 1,
@@ -163,9 +188,7 @@ export default function Card(
       borderWidth: (type !== undefined) ? 1 : 0,
       borderColor: (type !== undefined) ? theme[type] : 'transparent',
     },
-
   });
-
   return (
     <View style={styles.card}>
       {

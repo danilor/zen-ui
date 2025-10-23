@@ -12,29 +12,15 @@ type ScreenProps = {
 };
 
 /**
- *  Screen Component
- * The screen component should be used as the main container for every screen in the app. The idea
- * behind it is to use it only once in the app, right after the application provider tag. It should
- * take care of the status bar height, the bottom bar height (if there is one) and the keyboard height.
- * This way, we can have a full screen experience even when the keyboard is open.
- *
- * Example of usage:
- * ```html
- *    <ZenThemeProvider theme={ZenDark}>
- *       <Screen>
- *         <View style={styles.container}>
- *           <ZenText>Hello!</ZenText>
- *           <TextInput > test</TextInput>
- *         </View>
- *       </Screen>
- *     </ZenThemeProvider>
- * ```
+ * @docunator
+ * @title Screen
+ * @description The screen component should be used as the main container for every screen in the app. The idea behind it is to use it only once in the app, right after the application provider tag. It should take care of the status bar height, the bottom bar height (if there is one) and the keyboard height. This way, we can have a full screen experience even when the keyboard is open.
+ * @author Danilo Ramírez Mattey
  * @see ZenThemeProvider
- * @param children The main content of the screen. It could be anything, including React elements.
- * @param useTopSafeArea If true, the screen will use the top safe area. This is useful when you have a full screen and not planing to use react navigator or other
- * similar libraries that already take care of the top safe area. Default is false.
- *
- * @param extraBottomPadding
+ * @param {Element} children The main content of the screen. It could be anything, including React elements.
+ * @param {boolean} useTopSafeArea If true, the screen will use the top safe area. This is useful when you have a full screen and not planing to use react navigator or other similar libraries that already take care of the top safe area. Default is false.
+ * @param {number} extraBottomPadding If you need to add extra padding to the bottom of the screen, you can use this prop. Default is 0.
+ * @category Structure Components
  */
 export default function Screen({ children, useTopSafeArea = false, extraBottomPadding = 0 }: ScreenProps) {
 

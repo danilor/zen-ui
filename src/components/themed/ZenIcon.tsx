@@ -3,6 +3,12 @@ import { useTheme } from './../../hooks/useTheme';
 import IconsConfig from '../../config/Icons.config';
 import ThemeConfig from '../../config/Theme.config';
 
+/**
+ * @docunator
+ * @title ZenIconProps
+ * @description Props for the ZenIcon component.
+ * @category Themed Components Props
+ */
 type ZenIconProps = {
   name: string;
   style?: any;
@@ -13,15 +19,18 @@ type ZenIconProps = {
 };
 
 /**
- *  ZenIcon Component
- * A simple icon component that will adapt to the current theme and display the provided icon
- * @param name The icon we want to use
- * @param style
- * @param size number The size of the icon
- * @param color string The Color of the Icon. Default to text color of the theme
- *
- * @param onPress
- * @param disabled
+ * @docunator
+ * @title ZenIcon
+ * @author Danilo Ramírez Mattey
+ * @version 1.0.0
+ * @description A simple icon component that will adapt to the current theme and display the provided icon
+ * @param {string} name The icon we want to use
+ * @param {StyleSheet} style Additional styles for the icon
+ * @param {number} size Number The size of the icon
+ * @param {string} color The Color of the Icon. Default to text color of the theme
+ * @param {function} onPress onPress action
+ * @param {boolean} disabled Whether the icon is disabled. Default is false.
+ * @category Themed Components
  */
 export default (
   {

@@ -13,6 +13,7 @@ type ZenSearchProps = {
 }
 
 /**
+ * @docunator
  * A search input field with a search icon on the left and a clear icon on the right.
  * It is a wrapper around the ZenInput component with predefined props for search functionality.
  *

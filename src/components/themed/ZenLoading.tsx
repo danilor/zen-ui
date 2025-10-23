@@ -2,6 +2,12 @@ import ZenIcon from './ZenIcon';
 import {Animated, Easing} from 'react-native';
 import { useEffect } from 'react';
 
+/**
+ * @docunator
+ * @title ZenLoadingProps
+ * @description Props for the ZenLoading component.
+ * @category Themed Components Props
+ */
 type ZenLoadingProps = {
   size?: 'small' | 'large' | number
   color?: string,
@@ -11,11 +17,13 @@ type ZenLoadingProps = {
 const iconName = 'refresh-double';
 
 /**
- * A loading indicator using an animated icon.
- * You can set the size to small, medium or large.
- * @param size
- * @param color
- * @param duration
+ * @docunator
+ * @title ZenLoading
+ * @description A loading indicator using an animated icon. You can set the size to small, medium or large.
+ * @param {number} size The size of the loading indicator. Can be 'small', 'large' or a number. Default is 'small'
+ * @param {string} color The color of the loading indicator. Default is the text color of the current theme
+ * @param {number} duration The duration of one full rotation in milliseconds. Default is 1500ms
+ * @category Themed Components
  *
  */
 export default function ZenLoading(
@@ -28,8 +36,6 @@ export default function ZenLoading(
 ){
 
   const spinValue = new Animated.Value(0);
-
-
   const spin = () => {
     spinValue.setValue(0); // Reset the spin value
     Animated.timing(

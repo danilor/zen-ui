@@ -1,10 +1,24 @@
 import {StyleSheet,View} from 'react-native';
 import LayoutConfig from '../../config/LayoutConfig';
 
+/**
+ * @docunator
+ * @title ZenSpaceBlock Props
+ * @description Props for the ZenSpaceBlock component.
+ * @category Structure Components Props
+ */
 type ZenSpaceBlockProps = {
   factor?: number;
 }
 
+/**
+ * @docunator
+ * @title ZenSpaceBlock
+ * @description A simple component that adds vertical space based on a factor of the standard layout space.
+ * @category Structure Components
+ * @param {number} factor - The factor to multiply the standard layout space. Default is 2.
+ * @category Structure Components
+ */
 export default function ZenSpaceBlock(
   { factor = 2 }: ZenSpaceBlockProps
 ){
