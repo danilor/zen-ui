@@ -1,4 +1,13 @@
 /**
+ * @docunator
+ * @title Intro
+ * @description ZenUI is a React component library that provides a set of customizable and themeable UI components to help developers build modern mobile applications with ease. It offers a variety of components such as buttons, inputs, icons, and layouts, all designed to be responsive and visually appealing. With ZenUI, developers can quickly create beautiful and functional user interfaces while maintaining consistency across their applications.
+ * @author Danilo Ramírez Mattey
+ * @category Documentation
+ *
+ */
+
+/**
  * Components
  */
 import { Table, Row, Column } from './components/structure/Table';
