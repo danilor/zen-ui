@@ -40,7 +40,8 @@
     "prepare": "bob build",
     "release": "release-it --only-version",
     "typedocs": "npx typedoc --entryPointStrategy expand ./src/components ./src/hooks ./src/context ./src/provider ./src/theme ./src/models --out docs --excludePrivate --excludeProtected --excludeNotDocumented --tsconfig ./tsconfig.build.json",
-    "pub": "npm run release --only-version"
+    "pub": "npm run release --only-version",
+    "doc": "npx danilor/docunatorjs -I ./src -O ./docs/docs.json"
   },
   "keywords": [
     "react-native",
