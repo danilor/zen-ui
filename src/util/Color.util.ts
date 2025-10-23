@@ -1,7 +1,11 @@
 const ColorUtil = {
   /**
-   * Convert a number to a two-digit hexadecimal string
-   * @param c
+   * @docunator
+   * @title hex2
+   * @category Color Utilities
+   * @description Convert a number to a two-digit hexadecimal string
+   * @param {number} c - The number to convert
+   * @returns {string} The two-digit hexadecimal string
    */
   hex2: (c: number) => {
     c = Math.round(c);
@@ -13,19 +17,28 @@ const ColorUtil = {
   },
 
   /**
-   * Create a hex color string from RGB values
-   * @param r
-   * @param g
-   * @param b
+   *
+   * @docunator
+   * @title color
+   * @category Color Utilities
+   * @description Create a hex color string from RGB values
+   * @param {number} r The red factor (0-255)
+   * @param {number} g The green factor (0-255)
+   * @param {number} b The blue factor (0-255)
+   * @returns {string} The hex color string
    */
   color: (r: any, g: any, b: any)=> {
     return "#" + ColorUtil.hex2(r) + ColorUtil.hex2(g) + ColorUtil.hex2(b);
   },
 
   /**
-   * Shade a color by a given lightness factor
-   * @param col
-   * @param light
+   * @docunator
+   * @title shade
+   * @category Color Utilities
+   * @description Shade a hex color by a given light factor
+   * @param {string} col
+   * @param {number} light
+   * @returns {string} The shaded hex color
    */
   shade: (col: string, light: number)=> {
     let r = parseInt(col.substr(1, 2), 16);
@@ -45,8 +58,12 @@ const ColorUtil = {
   },
 
   /**
-   * Get a contrasting text color (black or white) for a given background hex color
-   * @param hexColor
+   * @docunator
+   * @title getContrastTextColor
+   * @category Color Utilities
+   * @description Given a hex color, determine whether black or white text would provide better contrast.
+   * @param {string} hexColor
+   * @returns {string} '#000000' for black text or '#ffffff' for white text
    */
   getContrastTextColor: (hexColor: string) => {
     // Remove the '#' if present
