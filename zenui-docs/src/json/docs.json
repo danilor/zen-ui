@@ -1,0 +1,1037 @@
+[
+  {
+    "title": "DrawerType",
+    "description": "Props for the ZenDrawer component",
+    "category": "Drawer Components Props"
+  },
+  {
+    "title": "ZenDrawer",
+    "description": "A drawer component that can be opened from the left or right side of the screen",
+    "category": "Drawer Components",
+    "author": "Danilo Ramírez Mattey",
+    "params": [
+      {
+        "type": "string",
+        "name": "position",
+        "description": "The position of the drawer (left or right)"
+      },
+      {
+        "type": "number",
+        "name": "backgroundDimmed",
+        "description": "Whether the background should be dimmed or not"
+      },
+      {
+        "type": "string",
+        "name": "backgroundColor",
+        "description": "The color of the background when dimmed"
+      },
+      {
+        "type": "Element",
+        "name": "headerImage",
+        "description": "An optional image to display at the top of the drawer"
+      },
+      {
+        "type": "number",
+        "name": "headerImageSize",
+        "description": "The height of the header image"
+      },
+      {
+        "type": "Elements[]",
+        "name": "items",
+        "description": "An array of React Elements to display as items in the drawer"
+      },
+      {
+        "type": "number",
+        "name": "sizeRatio",
+        "description": "The size of the drawer as a ratio of the screen width"
+      },
+      {
+        "type": "number",
+        "name": "animationTime",
+        "description": "The time in milliseconds for the open/close animation"
+      }
+    ]
+  },
+  {
+    "title": "ZenDrawerItem",
+    "description": "A single item for the ZenDrawer component",
+    "category": "Drawer Components Props"
+  },
+  {
+    "title": "ZenDrawerItem",
+    "description": "A single item for the ZenDrawer component",
+    "category": "Drawer Components",
+    "author": "Danilo Ramírez Mattey",
+    "params": [
+      {
+        "type": "string",
+        "name": "label",
+        "description": "The label of the drawer item"
+      },
+      {
+        "type": "string",
+        "name": "leftIcon",
+        "description": "The name of the left icon (from ZenIcon)"
+      },
+      {
+        "type": "string",
+        "name": "rightIcon",
+        "description": "The name of the right icon (from ZenIcon)"
+      },
+      {
+        "type": "function",
+        "name": "onPress",
+        "description": "The function to call when the item is pressed"
+      },
+      {
+        "type": "boolean",
+        "name": "arrow",
+        "description": "Whether to show a right arrow icon"
+      },
+      {
+        "type": "function",
+        "name": "closeOnPress",
+        "description": "Whether to close the drawer when the item is pressed"
+      }
+    ]
+  },
+  {
+    "title": "ZenDrawerTitle",
+    "description": "A title component for the ZenDrawer",
+    "category": "Drawer Components Props"
+  },
+  {
+    "title": "ZenDrawerTitle",
+    "description": "A title component for the ZenDrawer",
+    "category": "Drawer Components",
+    "author": "Danilo Ramírez Mattey",
+    "params": [
+      {
+        "type": "string",
+        "name": "title",
+        "description": "The title text to display"
+      }
+    ]
+  },
+  {
+    "title": "ZenFloatingIconsType",
+    "description": "Props for the ZenFloatingIcons component",
+    "category": "Navigation Components Props"
+  },
+  {
+    "title": "ZenFloatingIcons",
+    "description": "A set of floating icon buttons that can be positioned at the bottom of the screen",
+    "category": "Navigation Components",
+    "params": [
+      {
+        "type": "number",
+        "name": "size",
+        "description": "The size of the buttons (small, medium, large)"
+      },
+      {
+        "type": "string",
+        "name": "position",
+        "description": "The position of the buttons (left, right, center)"
+      },
+      {
+        "type": "Object",
+        "name": "buttons",
+        "description": "An array of button objects with icon, type and onPress function"
+      }
+    ]
+  },
+  {
+    "title": "ZenHeaderProps",
+    "description": "Props for the ZenHeader component",
+    "category": "Navigation Components Props"
+  },
+  {
+    "title": "ZenHeader",
+    "description": "A simple header component that will adapt to the current theme and display a title and a back button if needed",
+    "category": "Navigation Components",
+    "author": "Danilo Ramírez Mattey",
+    "link": [
+      {
+        "url": "https://github.com/danilor/zen-ui/blob/main/example/src/App.tsx#L93"
+      }
+    ],
+    "params": [
+      {
+        "type": "boolean",
+        "name": "useTopSafeArea",
+        "description": "Whether to use the top safe area or not"
+      },
+      {
+        "type": "string",
+        "name": "title",
+        "description": "The title to display in the header"
+      },
+      {
+        "type": "boolean",
+        "name": "showBackButton",
+        "description": "Whether to show the back button or not"
+      },
+      {
+        "type": "string",
+        "name": "rightIcon",
+        "description": "The name of the right icon to display"
+      },
+      {
+        "type": "function",
+        "name": "onRightIconPress",
+        "description": "The function to call when the right icon is pressed"
+      },
+      {
+        "type": "Element",
+        "name": "rightAccessory",
+        "description": "Any React Element to show on the right side of the header"
+      },
+      {
+        "type": "string",
+        "name": "automaticDrawerIcon",
+        "description": "If any string is indicated, it will show a drawer icon that will open the drawer when pressed"
+      },
+      {
+        "type": "function",
+        "name": "goBack",
+        "description": "The function to call when the back button is pressed"
+      },
+      {
+        "type": "string",
+        "name": "goBackIcon",
+        "description": "The name of the back icon to display"
+      }
+    ]
+  },
+  {
+    "title": "CardHeaderProps",
+    "description": "Props for the CardHeader component.",
+    "category": "Structure Components Props"
+  },
+  {
+    "title": "CardHeader",
+    "description": "A simple header component for the Card component.",
+    "category": "Structure Components",
+    "params": [
+      {
+        "type": "string",
+        "name": "title",
+        "description": "The title of the card header."
+      },
+      {
+        "type": "string",
+        "name": "type",
+        "description": "The theme type of the card header."
+      },
+      {
+        "type": "Element",
+        "name": "leftAccessory",
+        "description": "The left accessory component of the card header."
+      },
+      {
+        "type": "Element",
+        "name": "rightAccessory",
+        "description": "The right accessory component of the card header."
+      }
+    ]
+  },
+  {
+    "title": "Card Footer Props",
+    "description": "Props for the CardFooter component.",
+    "category": "Structure Components Props"
+  },
+  {
+    "title": "CardFooter",
+    "description": "A simple footer component for the Card component.",
+    "category": "Structure Components",
+    "params": [
+      {
+        "type": "string",
+        "name": "type",
+        "description": "The theme type of the card footer."
+      },
+      {
+        "type": "Element",
+        "name": "children",
+        "description": "The children components of the card footer."
+      }
+    ]
+  },
+  {
+    "title": "CardProps",
+    "description": "Props for the Card component.",
+    "category": "Structure Components Props"
+  },
+  {
+    "title": "Card",
+    "description": "A simple card component to display content in a card-like container.",
+    "category": "Structure Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "params": [
+      {
+        "type": "Element",
+        "name": "children",
+        "description": "The content of the card."
+      },
+      {
+        "type": "string",
+        "name": "type",
+        "description": "The theme type of the card."
+      },
+      {
+        "type": "string",
+        "name": "title",
+        "description": "The title of the card."
+      },
+      {
+        "type": "Element",
+        "name": "headerLeftAccessory",
+        "description": "The left accessory component of the card header."
+      },
+      {
+        "type": "Element",
+        "name": "headerRightAccessory",
+        "description": "The right accessory component of the card header."
+      },
+      {
+        "type": "string",
+        "name": "backColor",
+        "description": "We can overwrite the background color by passing a custom color here."
+      },
+      {
+        "type": "Element",
+        "name": "header",
+        "description": "We can overwrite the header by passing a custom component here."
+      },
+      {
+        "type": "Element",
+        "name": "footer",
+        "description": "* @constructor"
+      }
+    ]
+  },
+  {
+    "title": "LayoutProps",
+    "description": "Props for the Layout component.",
+    "category": "Structure Components Props"
+  },
+  {
+    "title": "Layout",
+    "description": "A layout component that provides consistent padding and optional scrolling behavior.",
+    "category": "Structure Components",
+    "author": "Danilo Ramírez Mattey",
+    "params": [
+      {
+        "type": "Element",
+        "name": "children",
+        "description": "The children components to be rendered within the layout."
+      },
+      {
+        "type": "boolean",
+        "name": "centered",
+        "description": "Whether to center the children components."
+      },
+      {
+        "type": "boolean",
+        "name": "scrollable",
+        "description": "Whether the layout should be scrollable."
+      },
+      {
+        "type": "StyleSheet",
+        "name": "style",
+        "description": "Additional styles to apply to the layout."
+      },
+      {
+        "type": "boolean",
+        "name": "airBottom",
+        "description": "Whether to add extra space at the bottom of the layout."
+      }
+    ]
+  },
+  {
+    "title": "ScreenProps",
+    "description": "Props for the Screen component.",
+    "category": "Structure Components Props"
+  },
+  {
+    "title": "Screen",
+    "description": "The screen component should be used as the main container for every screen in the app. The idea behind it is to use it only once in the app, right after the application provider tag. It should take care of the status bar height, the bottom bar height (if there is one) and the keyboard height. This way, we can have a full screen experience even when the keyboard is open.",
+    "category": "Structure Components",
+    "author": "Danilo Ramírez Mattey",
+    "params": [
+      {
+        "type": "Element",
+        "name": "children",
+        "description": "The main content of the screen. It could be anything, including React elements."
+      },
+      {
+        "type": "boolean",
+        "name": "useTopSafeArea",
+        "description": "If true, the screen will use the top safe area. This is useful when you have a full screen and not planing to use react navigator or other similar libraries that already take care of the top safe area. Default is false."
+      },
+      {
+        "type": "number",
+        "name": "extraBottomPadding",
+        "description": "If you need to add extra padding to the bottom of the screen, you can use this prop. Default is 0."
+      }
+    ]
+  },
+  {
+    "title": "TableProps",
+    "description": "Props for the Table component.",
+    "category": "Structure Components Props"
+  },
+  {
+    "title": "Table",
+    "description": "A simple table component that will help you to create a grid layout",
+    "category": "Structure Components",
+    "params": [
+      {
+        "type": "StyleSheet",
+        "name": "style",
+        "description": "The additional styles to be added to the table. Default is null"
+      },
+      {
+        "type": "Element",
+        "name": "children",
+        "description": "The child component of the table. This is required"
+      },
+      {
+        "type": "boolean",
+        "name": "border",
+        "description": "The border of the table. Default is false"
+      },
+      {
+        "type": "string",
+        "name": "borderType",
+        "description": "The border type of the table. Default is solid. Options are: solid, dotted, dashed"
+      },
+      {
+        "type": "string",
+        "name": "borderColor",
+        "description": "The border color of the table. Default is the text color of the current theme"
+      }
+    ]
+  },
+  {
+    "title": "Row",
+    "description": "A simple row component that will help you to create a grid layout",
+    "category": "Structure Components",
+    "params": [
+      {
+        "type": "any",
+        "name": "props",
+        "description": "The props of the row component"
+      }
+    ]
+  },
+  {
+    "title": "ColumnProps",
+    "description": "Props for the Column component.",
+    "category": "Structure Components Props",
+    "params": [
+      {
+        "type": "Element",
+        "name": "children",
+        "description": "The child component of the column. This is required"
+      },
+      {
+        "type": "StyleSheet",
+        "name": "style",
+        "description": "The additional styles to be added to the column. Default is null"
+      },
+      {
+        "type": "boolean",
+        "name": "border",
+        "description": "The border of the column. Default is false"
+      },
+      {
+        "type": "string",
+        "name": "borderType",
+        "description": "The border type of the column. Default is solid. Options are: solid, dotted, dashed"
+      },
+      {
+        "type": "string",
+        "name": "borderColor",
+        "description": "The border color of the column. Default is the text color of the current theme"
+      },
+      {
+        "type": "number",
+        "name": "span",
+        "description": "The number of columns to span. Default is 1"
+      }
+    ]
+  },
+  {
+    "title": "Column",
+    "description": "A simple column component that will help you to create a grid layout",
+    "category": "Structure Components Props",
+    "params": [
+      {
+        "type": "any",
+        "name": "props",
+        "description": "The props of the column component"
+      }
+    ]
+  },
+  {
+    "title": "ZenDividerProps",
+    "description": "Props for the ZenDivider component.",
+    "category": "Structure Components Props"
+  },
+  {
+    "title": "ZenDivider",
+    "description": "Component to create a customizable divider line.",
+    "category": "Structure Components",
+    "params": [
+      {
+        "type": "string",
+        "name": "type",
+        "description": "The theme type for the divider color."
+      },
+      {
+        "type": "number",
+        "name": "opacity",
+        "description": "The opacity of the divider line. Default is 0.3."
+      },
+      {
+        "type": "number",
+        "name": "thickness",
+        "description": "The thickness of the divider line in pixels. Default is 2."
+      },
+      {
+        "type": "number",
+        "name": "marginFactor",
+        "description": "Factor to multiply the standard layout space for top and bottom margins. Default is 0.5."
+      }
+    ]
+  },
+  {
+    "title": "ZenSpaceBlockProps",
+    "description": "Props for the ZenSpaceBlock component.",
+    "category": "Structure Components Props"
+  },
+  {
+    "title": "ZenSpaceBlock",
+    "description": "A simple component that adds vertical space based on a factor of the standard layout space.",
+    "category": "Structure Components",
+    "params": [
+      {
+        "type": "number",
+        "name": "factor",
+        "description": "The factor to multiply the standard layout space. Default is 2."
+      }
+    ]
+  },
+  {
+    "title": "ZenButtonProps",
+    "description": "Props for the ZenButton component.",
+    "category": "Themed Components Props"
+  },
+  {
+    "title": "ZenButton",
+    "description": "A simple button component that can be used throughout the app. It supports different types (primary, secondary, success, info, warning, danger) and all of them are styled according to the current theme. The text color will be automatically selected based on the brightness of the button color, but it can be overwritten by passing a textColor prop.",
+    "category": "Themed Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "link": [
+      {
+        "url": "https://github.com/danilor/zen-ui"
+      },
+      {
+        "url": "https://github.com/danilor/zen-ui/blob/main/example/src/components/examples/ButtonExample.tsx"
+      }
+    ],
+    "params": [
+      {
+        "type": "string",
+        "name": "title",
+        "description": "The title of the button"
+      },
+      {
+        "type": "string",
+        "name": "type",
+        "description": "The type of the button. Can be 'primary', 'secondary', 'success', 'info', 'warning', or 'danger'. Default is 'primary'."
+      },
+      {
+        "type": "string",
+        "name": "textColor",
+        "description": "The color of the button text. If not provided, it will be automatically selected based on the button color."
+      },
+      {
+        "type": "boolean",
+        "name": "fill",
+        "description": "Whether the button should fill the width of its container. Default is true."
+      },
+      {
+        "type": "number",
+        "name": "touchableOpacity",
+        "description": "The opacity of the button when pressed. Default is 0.7."
+      },
+      {
+        "type": "function",
+        "name": "pressAction",
+        "description": "Alias for pressAction"
+      },
+      {
+        "type": "function",
+        "name": "onPress",
+        "description": "onPress action"
+      },
+      {
+        "type": "function",
+        "name": "longPressAction",
+        "description": "Alias for longPressAction"
+      },
+      {
+        "type": "function",
+        "name": "onLongPress",
+        "description": "onLongPress action"
+      },
+      {
+        "type": "string",
+        "name": "leftIcon",
+        "description": "The left icon of the button. Should be a valid icon name from the ZenIcon component."
+      },
+      {
+        "type": "string",
+        "name": "rightIcon",
+        "description": "The right icon of the button. Should be a valid icon name from the ZenIcon component."
+      },
+      {
+        "type": "Element",
+        "name": "leftAccessory",
+        "description": "A left accessory. Accepts any valid React Node."
+      },
+      {
+        "type": "Element",
+        "name": "rightAccessory",
+        "description": "A right accessory. Accepts any valid React Node."
+      },
+      {
+        "type": "boolean",
+        "name": "disabled",
+        "description": "Whether the button is disabled. Default is false."
+      },
+      {
+        "type": "StyleSheet",
+        "name": "style",
+        "description": "Additional styles for the button container."
+      }
+    ]
+  },
+  {
+    "title": "ZenCheckProps",
+    "description": "Props for the ZenCheck component.",
+    "category": "Themed Components Props"
+  },
+  {
+    "title": "ZenCheck",
+    "description": "A simple checkbox component that can be used throughout the app. It supports different types (primary, secondary, success, info, warning, danger) and all of them are styled according to the current theme. The checkbox can be positioned to the left or right of the label.",
+    "category": "Themed Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "params": [
+      {
+        "type": "string",
+        "name": "type",
+        "description": "The type of the checkbox. Can be 'primary', 'secondary', 'success', 'info', 'warning', or 'danger'. Default is 'primary'."
+      },
+      {
+        "type": "string",
+        "name": "label",
+        "description": "The label of the checkbox."
+      },
+      {
+        "type": "string",
+        "name": "value",
+        "description": "The initial value of the checkbox. Default is false."
+      },
+      {
+        "type": "string",
+        "name": "position",
+        "description": "The position of the checkbox relative to the label. Can be 'left' or 'right'. Default is 'left'."
+      },
+      {
+        "type": "function",
+        "name": "onChange",
+        "description": "The function to call when the value of the checkbox changes."
+      },
+      {
+        "type": "StyleSheet",
+        "name": "style",
+        "description": "Additional styles for the checkbox container."
+      },
+      {
+        "type": "boolean",
+        "name": "useBackground",
+        "description": "Whether to use a background color for the checkbox icon. Default is false."
+      },
+      {
+        "type": "boolean",
+        "name": "disabled",
+        "description": "Whether the checkbox is disabled. Default is false."
+      }
+    ]
+  },
+  {
+    "title": "ZenCode",
+    "description": "A simple code block component that can be used to display code snippets throughout the app. It styles the code block according to the current theme.",
+    "category": "Themed Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "params": [
+      {
+        "type": "string",
+        "name": "content",
+        "description": "The code content to display"
+      }
+    ]
+  },
+  {
+    "title": "ZenIconProps",
+    "description": "Props for the ZenIcon component.",
+    "category": "Themed Components Props"
+  },
+  {
+    "title": "ZenIcon",
+    "description": "A simple icon component that will adapt to the current theme and display the provided icon",
+    "category": "Themed Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "params": [
+      {
+        "type": "string",
+        "name": "name",
+        "description": "The icon we want to use"
+      },
+      {
+        "type": "StyleSheet",
+        "name": "style",
+        "description": "Additional styles for the icon"
+      },
+      {
+        "type": "number",
+        "name": "size",
+        "description": "Number The size of the icon"
+      },
+      {
+        "type": "string",
+        "name": "color",
+        "description": "The Color of the Icon. Default to text color of the theme"
+      },
+      {
+        "type": "function",
+        "name": "onPress",
+        "description": "onPress action"
+      },
+      {
+        "type": "boolean",
+        "name": "disabled",
+        "description": "Whether the icon is disabled. Default is false."
+      }
+    ]
+  },
+  {
+    "title": "ZenIconButtonType",
+    "description": "Type definition for the ZenIconButton component props.",
+    "category": "Themed Components Props"
+  },
+  {
+    "title": "ZenIconButton",
+    "description": "A button component that displays an icon and handles press and long-press actions with customizable styles and themes.",
+    "category": "Themed Components",
+    "params": [
+      {
+        "type": "string",
+        "name": "icon",
+        "description": "The name of the icon to display."
+      },
+      {
+        "type": "string",
+        "name": "type",
+        "description": "The theme type for the button (e.g., 'primary', 'secondary')."
+      },
+      {
+        "type": "number",
+        "name": "size",
+        "description": "The size of the button ('small', 'medium', 'large')."
+      },
+      {
+        "type": "number",
+        "name": "touchableOpacity",
+        "description": "The opacity of the button when pressed."
+      },
+      {
+        "type": "boolean",
+        "name": "disabled",
+        "description": "Whether the button is disabled."
+      },
+      {
+        "type": "StyleSheet",
+        "name": "style",
+        "description": "Additional styles for the button."
+      },
+      {
+        "type": "function",
+        "name": "pressAction",
+        "description": "Function to execute on button press."
+      },
+      {
+        "type": "function",
+        "name": "onPress",
+        "description": "Additional function to execute on button press."
+      },
+      {
+        "type": "function",
+        "name": "longPressAction",
+        "description": "Function to execute on button long press."
+      },
+      {
+        "type": "function",
+        "name": "onLongPress",
+        "description": "Additional function to execute on button long press."
+      },
+      {
+        "type": "number",
+        "name": "opacity",
+        "description": "The overall opacity of the button."
+      }
+    ]
+  },
+  {
+    "title": "ZenInputProps",
+    "description": "Props for the ZenInput component.",
+    "category": "Themed Components Props"
+  },
+  {
+    "title": "ZenInput",
+    "description": "An input field with a label. The label is optional.",
+    "category": "Themed Components",
+    "link": [
+      {
+        "url": "https://reactnative.dev/docs/textinput"
+      }
+    ],
+    "params": [
+      {
+        "type": "string",
+        "name": "label",
+        "description": "The label for the input field"
+      },
+      {
+        "type": "string",
+        "name": "dir",
+        "description": "The direction of the text. Can be 'ltr' or 'rtl'. Default is 'ltr'"
+      },
+      {
+        "type": "string",
+        "name": "leftIcon",
+        "description": "The left icon name"
+      },
+      {
+        "type": "string",
+        "name": "rightIcon",
+        "description": "The right icon name"
+      },
+      {
+        "type": "Element",
+        "name": "leftAccessory",
+        "description": "The left accessory element"
+      },
+      {
+        "type": "Element",
+        "name": "rightAccessory",
+        "description": "The right accessory element"
+      },
+      {
+        "type": "boolean",
+        "name": "multiline",
+        "description": "Whether the input is multiline"
+      },
+      {
+        "type": "number",
+        "name": "multilineVariantHeight",
+        "description": "The height multiplier for multiline inputs. Default is 10"
+      },
+      {
+        "type": "boolean",
+        "name": "disabled",
+        "description": "Whether the input is disabled"
+      },
+      {
+        "type": "Object",
+        "name": "props",
+        "description": "All regular TextInput props"
+      }
+    ]
+  },
+  {
+    "title": "ZenLoadingProps",
+    "description": "Props for the ZenLoading component.",
+    "category": "Themed Components Props"
+  },
+  {
+    "title": "ZenLoading",
+    "description": "A loading indicator using an animated icon. You can set the size to small, medium or large.",
+    "category": "Themed Components",
+    "params": [
+      {
+        "type": "number",
+        "name": "size",
+        "description": "The size of the loading indicator. Can be 'small', 'large' or a number. Default is 'small'"
+      },
+      {
+        "type": "string",
+        "name": "color",
+        "description": "The color of the loading indicator. Default is the text color of the current theme"
+      },
+      {
+        "type": "number",
+        "name": "duration",
+        "description": "The duration of one full rotation in milliseconds. Default is 1500ms"
+      }
+    ]
+  },
+  {},
+  {
+    "title": "ZenTextProps",
+    "description": "Props for the ZenText component.",
+    "category": "Themed Components Props"
+  },
+  {
+    "title": "ZenText",
+    "description": "The most basic text component that will adapt to the current theme",
+    "params": [
+      {
+        "type": "Element",
+        "name": "children",
+        "description": "The text content to be displayed within the ZenText component."
+      },
+      {
+        "type": "StyleSheet",
+        "name": "style",
+        "description": "Additional styles to customize the appearance of the text."
+      },
+      {
+        "type": "number",
+        "name": "size",
+        "description": "The size of the text. Can be 'small', 'medium', 'large' or a number."
+      },
+      {
+        "type": "string",
+        "name": "type",
+        "description": "The type of text style to apply. Options are 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'small'."
+      },
+      {
+        "type": "string",
+        "name": "align",
+        "description": "The alignment of the text. Options are 'left', 'center', 'right', 'justify'."
+      },
+      {
+        "type": "boolean",
+        "name": "paragraph",
+        "description": "Whether to add margin to the top and bottom of the text to separate it as a paragraph."
+      },
+      {
+        "type": "string",
+        "name": "textColor",
+        "description": "The color of the text. Defaults to the text color of the current theme."
+      },
+      {
+        "type": "boolean",
+        "name": "fill",
+        "description": "Whether the text should take the full width of its container."
+      }
+    ]
+  },
+  {
+    "title": "Intro",
+    "description": "ZenUI is a React component library that provides a set of customizable and themeable UI components to help developers build modern mobile applications with ease. It offers a variety of components such as buttons, inputs, icons, and layouts, all designed to be responsive and visually appealing. With ZenUI, developers can quickly create beautiful and functional user interfaces while maintaining consistency across their applications.",
+    "category": "Documentation",
+    "author": "Danilo Ramírez Mattey"
+  },
+  {
+    "title": "hex2",
+    "description": "Convert a number to a two-digit hexadecimal string",
+    "category": "Color Utilities",
+    "return": [
+      {
+        "type": "string",
+        "description": "The two-digit hexadecimal string"
+      }
+    ],
+    "params": [
+      {
+        "type": "number",
+        "name": "c",
+        "description": "The number to convert"
+      }
+    ]
+  },
+  {
+    "title": "color",
+    "description": "Create a hex color string from RGB values",
+    "category": "Color Utilities",
+    "return": [
+      {
+        "type": "string",
+        "description": "The hex color string"
+      }
+    ],
+    "params": [
+      {
+        "type": "number",
+        "name": "r",
+        "description": "The red factor (0-255)"
+      },
+      {
+        "type": "number",
+        "name": "g",
+        "description": "The green factor (0-255)"
+      },
+      {
+        "type": "number",
+        "name": "b",
+        "description": "The blue factor (0-255)"
+      }
+    ]
+  },
+  {
+    "title": "shade",
+    "description": "Shade a hex color by a given light factor",
+    "category": "Color Utilities",
+    "return": [
+      {
+        "type": "string",
+        "description": "The shaded hex color"
+      }
+    ],
+    "params": [
+      {
+        "type": "string",
+        "name": "col",
+        "description": "* @param {number} light"
+      }
+    ]
+  },
+  {
+    "title": "getContrastTextColor",
+    "description": "Given a hex color, determine whether black or white text would provide better contrast.",
+    "category": "Color Utilities",
+    "return": [
+      {
+        "type": "string",
+        "description": "'#000000' for black text or '#ffffff' for white text"
+      }
+    ],
+    "params": [
+      {
+        "type": "string",
+        "name": "hexColor",
+        "description": "* @returns {string} '#000000' for black text or '#ffffff' for white text"
+      }
+    ]
+  }
+]

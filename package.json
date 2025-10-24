@@ -38,10 +38,9 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
     "prepare": "bob build",
-    "release": "release-it --only-version",
-    "typedocs": "npx typedoc --entryPointStrategy expand ./src/components ./src/hooks ./src/context ./src/provider ./src/theme ./src/models --out docs --excludePrivate --excludeProtected --excludeNotDocumented --tsconfig ./tsconfig.build.json",
-    "pub": "npm run release --only-version",
-    "doc": "npx danilor/docunatorjs -I ./src -O ./docs/docs.json"
+    "release": "release-it",
+    "pub": "npm run release",
+    "doc": "npx danilor/docunatorjs -I ./src -O ./docs/docs.json && npx danilor/docunatorjs -I ./src -O ./zenui-docs/src/json/docs.json"
   },
   "keywords": [
     "react-native",
@@ -117,7 +116,7 @@
   },
   "release-it": {
     "git": {
-      "commitMessage": "chore: release ${version}",
+      "commitMessage": "ZenUI: release ${version}",
       "tagName": "v${version}"
     },
     "npm": {

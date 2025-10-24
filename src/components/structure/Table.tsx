@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
 /**
  * @docunator
- * @title Table Props
+ * @title TableProps
  * @description Props for the Table component.
  * @category Structure Components Props
  */
@@ -88,7 +88,7 @@ export function Row(props: any){
 
 /**
  * @docunator
- * @title Column Props
+ * @title ColumnProps
  * @description Props for the Column component.
  * @category Structure Components Props
  * @param {Element} children The child component of the column. This is required

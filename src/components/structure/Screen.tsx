@@ -4,6 +4,12 @@ import { useTheme } from '../../hooks/useTheme';
 import { useKeyboard } from '../../hooks/useKeyboard';
 import { useEffect, useState } from 'react';
 
+/**
+ * @docunator
+ * @title ScreenProps
+ * @description Props for the Screen component.
+ * @category Structure Components Props
+ */
 type ScreenProps = {
   children?: any;
   useTopSafeArea?: boolean;

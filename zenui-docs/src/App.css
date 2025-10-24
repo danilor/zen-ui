@@ -1,0 +1,26 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css";
+@import "assets/css/main.css";
+#root {
+  width: 100vw;
+}
+
+.code {
+  text-align: left;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.right {
+  text-align: right;
+}
+
+.pClose {
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 4px;
+}
+
+/*# sourceMappingURL=App.css.map */

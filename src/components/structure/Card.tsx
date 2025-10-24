@@ -11,7 +11,7 @@ import  ZenDivider  from './../structure/ZenDivider';
 
 /**
  * @docunator
- * @title Card Header Props
+ * @title CardHeaderProps
  * @description Props for the CardHeader component.
  * @category Structure Components Props
  */
@@ -24,7 +24,7 @@ type CardHeaderProps = {
 
 /**
  * @docunator
- * @title Card Header
+ * @title CardHeader
  * @description A simple header component for the Card component.
  * @category Structure Components
  * @param {string} title - The title of the card header.
@@ -96,7 +96,7 @@ type CardFooterProps = {
 
 /**
  * @docunator
- * @title Card Footer
+ * @title CardFooter
  * @description A simple footer component for the Card component.
  * @category Structure Components
  * @param {string} type - The theme type of the card footer.
@@ -129,7 +129,7 @@ export function CardFooter(
 
 /**
  * @docunator
- * @title Card Props
+ * @title CardProps
  * @description Props for the Card component.
  * @category Structure Components Props
  */
@@ -149,6 +149,8 @@ type CardProps = {
  * @title Card
  * @description A simple card component to display content in a card-like container.
  * @category Structure Components
+ * @author Danilo Ramírez Mattey
+ * @version 1.0.0
  * @param {Element} children - The content of the card.
  * @param {string} type - The theme type of the card.
  * @param {string} title - The title of the card.

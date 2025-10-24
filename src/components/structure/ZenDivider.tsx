@@ -5,7 +5,7 @@ import LayoutConfig from '../../config/LayoutConfig';
 
 /**
  * @docunator
- * @title ZenDivider Props
+ * @title ZenDividerProps
  * @description Props for the ZenDivider component.
  * @category Structure Components Props
  */

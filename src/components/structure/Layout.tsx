@@ -4,7 +4,7 @@ import ZenSpaceBlock from './../structure/ZenSpaceBlock';
 
 /**
  * @docunator
- * @title Layout Props
+ * @title LayoutProps
  * @description Props for the Layout component.
  * @category Structure Components Props
  */
@@ -19,7 +19,7 @@ type LayoutProps = {
 
 /**
  * @docunator
- * @title Layout Component
+ * @title Layout
  * @description A layout component that provides consistent padding and optional scrolling behavior.
  * @category Structure Components
  * @author Danilo Ramírez Mattey

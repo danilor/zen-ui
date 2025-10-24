@@ -3,7 +3,7 @@ import LayoutConfig from '../../config/LayoutConfig';
 
 /**
  * @docunator
- * @title ZenSpaceBlock Props
+ * @title ZenSpaceBlockProps
  * @description Props for the ZenSpaceBlock component.
  * @category Structure Components Props
  */
