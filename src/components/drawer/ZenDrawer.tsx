@@ -4,7 +4,7 @@ import {
   Dimensions,
   Image,
   StatusBar,
-  Animated, TouchableOpacity,
+  Animated, TouchableOpacity, Platform, useWindowDimensions
 } from 'react-native';
 import { useTheme } from '../../hooks/useTheme';
 import LayoutConfig from '../../config/LayoutConfig';
@@ -62,14 +62,32 @@ export default function ZenDrawer({
    */
   const theme = useTheme();
 
+  const { width, height } = useWindowDimensions();
+
   /**
    * Get if the drawer is opened
    */
   const opened = useDrawer();
   const toggleDrawer = useToggleDrawer();
 
-  const drawerSize = Dimensions.get('screen').width * sizeRatio;
+  let size = 0;
+  let cHeight = 0;
+  if (Platform.OS === 'web') {
+    size =width;
+    cHeight = height;
+  }
+  else {
+    size = Dimensions.get('screen').width
+    cHeight = Dimensions.get('screen').height
+  }
 
+  // console.log('Dimensions drawer', size, cHeight);
+
+  const drawerSize = size * sizeRatio;
+
+  // console.log('drawerSize', drawerSize);
+
+  // const drawerSize = '';
 
   const drawerAnim = useRef(new Animated.Value(-1*drawerSize)).current;
 
@@ -100,12 +118,13 @@ export default function ZenDrawer({
     else {
       closeDrawer();
     }
+
   }, [opened]);
 
   const styles = StyleSheet.create({
     back: {
-      width: Dimensions.get('screen').width,
-      height: Dimensions.get('screen').height,
+      width: size,
+      height: cHeight,
       backgroundColor: backgroundDimmed
         ? (backgroundColor ?? 'rgba(0,0,0,0.7)')
         : 'transparent',
@@ -122,8 +141,8 @@ export default function ZenDrawer({
       left: position === 'left' ? 0 : 'auto',
       right: position === 'right' ? 0 : 'auto',
       bottom: 0,
-      width: Dimensions.get('screen').width * sizeRatio,
-      height: Dimensions.get('screen').height,
+      width: size * sizeRatio,
+      height: cHeight,
       zIndex: LayersConfig.drawer + 1,
       // paddingTop: StatusBar.currentHeight?StatusBar.currentHeight+LayoutConfig.space,
       display: 'flex',
@@ -131,7 +150,7 @@ export default function ZenDrawer({
     },
     topImage: {
       marginBottom: LayoutConfig.space,
-      height: headerImageSize ?? Dimensions.get('screen').height * 0.2,
+      height: headerImageSize ?? cHeight * 0.2,
       width: '100%',
       backgroundColor: 'red',
       // flex: 1,
