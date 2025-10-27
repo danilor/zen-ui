@@ -121,7 +121,7 @@ export default function ThemedComponent() {
 
 ## Documentation
 
-[Documentation](https://danilor.github.io/zen-ui)
+[Documentation](https://danilor.github.io/zenui-docs)
 
 ## Contributing
 
