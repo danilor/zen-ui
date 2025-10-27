@@ -122,6 +122,31 @@
     "title": "ZenFloatingIcons",
     "description": "A set of floating icon buttons that can be positioned at the bottom of the screen",
     "category": "Navigation Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "link": [
+      {
+        "url": "https://reactnavigation.org/"
+      }
+    ],
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import { ZenDark, ZenThemeProvider, ZenFloatingIcons } from 'react-zen-ui';\n\nexport default function App() {\n\n   const menuButtons: any[] = [\n     {\n       icon: 'home',\n       type: 'primary',\n       onPress: () => navigation.navigate('Home' as never),\n     },\n     {\n       icon: 'settings',\n       type: 'secondary',\n       onPress: () => navigation.navigate('Theme' as never),\n     },\n     {\n       icon: 'apple',\n       type: 'success',\n       onPress: () => navigation.navigate('FloatingIcons' as never),\n     },\n   ];\n\n    const headerComponent = (props: NativeStackHeaderProps) => (\n      <ZenHeader\n        automaticDrawerIcon={'menu'}\n        showBackButton={props.navigation.canGoBack()}\n        title={props.options.title as string}\n        goBack={()=>{ props.navigation.goBack(); }}\n        {...props}\n      />\n    );\n\n    return (\n         <ZenThemeProvider theme={ZenDark}>\n            <ZenFloatingIcons buttons={menuButtons} size={'large'} />\n            <Stack.Navigator\n              screenOptions={{\n                animation: 'default',\n                headerShown: true,\n                header: headerComponent,\n             }}\n            >\n              // OTHER STACK SCREEN ELEMENTS AND COMPONENTS HERE\n           </Stack.Navigator>\n\n         </ZenThemeProvider>\n     );\n   }",
+        "closeLang": "tsx"
+      }
+    ],
+    "see": [
+      {
+        "reference": "Screen"
+      },
+      {
+        "reference": "Layout"
+      },
+      {
+        "reference": "ZenHeader"
+      }
+    ],
     "params": [
       {
         "type": "number",
@@ -150,9 +175,20 @@
     "description": "A simple header component that will adapt to the current theme and display a title and a back button if needed",
     "category": "Navigation Components",
     "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
     "link": [
       {
         "url": "https://github.com/danilor/zen-ui/blob/main/example/src/App.tsx#L93"
+      },
+      {
+        "url": "https://reactnavigation.org/"
+      }
+    ],
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import { ZenDark, ZenThemeProvider } from 'react-zen-ui';\n\nexport default function App() {\n\n  const headerComponent = (props: NativeStackHeaderProps) => (\n    <ZenHeader\n      automaticDrawerIcon={'menu'}\n      showBackButton={props.navigation.canGoBack()}\n      title={props.options.title as string}\n      goBack={()=>{ props.navigation.goBack(); }}\n      {...props}\n    />\n  );\n\n  return (\n       <ZenThemeProvider theme={ZenDark}>\n        <Stack.Navigator\n          screenOptions={{\n            animation: 'default',\n            headerShown: true,\n            header: headerComponent,\n         }}\n        >\n            // OTHER STACK SCREEN ELEMENTS AND COMPONENTS HERE\n         </Stack.Navigator>\n       </ZenThemeProvider>\n   );\n }",
+        "closeLang": "tsx"
       }
     ],
     "params": [
@@ -212,6 +248,13 @@
     "title": "CardHeader",
     "description": "A simple header component for the Card component.",
     "category": "Structure Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "see": [
+      {
+        "reference": "Card"
+      }
+    ],
     "params": [
       {
         "type": "string",
@@ -244,6 +287,13 @@
     "title": "CardFooter",
     "description": "A simple footer component for the Card component.",
     "category": "Structure Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "see": [
+      {
+        "reference": "Card"
+      }
+    ],
     "params": [
       {
         "type": "string",
@@ -268,6 +318,14 @@
     "category": "Structure Components",
     "author": "Danilo Ramírez Mattey",
     "version": "1.0.0",
+    "see": [
+      {
+        "reference": "CardFooter"
+      },
+      {
+        "reference": "CardHeader"
+      }
+    ],
     "params": [
       {
         "type": "Element",
@@ -307,7 +365,7 @@
       {
         "type": "Element",
         "name": "footer",
-        "description": "* @constructor"
+        "description": "We can use this parameter to add a footer component to the card. We recomend using the CardFooter component."
       }
     ]
   },
@@ -321,6 +379,19 @@
     "description": "A layout component that provides consistent padding and optional scrolling behavior.",
     "category": "Structure Components",
     "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import { Screen, Layout, ZenText } from 'react-zen-ui';\n\n  export default function ExampleComponent(){\n  return (\n    <Screen useTopSafeArea={false}>\n        <Layout scrollable={true}>\n           <ZenText align={'justify'}>\n           Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n            Sed do eiusmod tempor incididunt ut\n            labore et dolore magna aliqua. Ut enim\n            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\n            ex ea commodo consequat. Duis aute irure dolor in\n            reprehenderit in voluptate velit esse cillum dolore eu fugiat\n            nulla pariatur. Excepteur sint occaecat cupidatat non proident,\n            sunt in culpa qui officia deserunt mollit anim id est laborum.\n           </ZenText>\n        </Layout>\n    </Screen>\n );\n }",
+        "closeLang": "tsx"
+      }
+    ],
+    "see": [
+      {
+        "reference": "Screen"
+      }
+    ],
     "params": [
       {
         "type": "Element",
@@ -359,6 +430,22 @@
     "description": "The screen component should be used as the main container for every screen in the app. The idea behind it is to use it only once in the app, right after the application provider tag. It should take care of the status bar height, the bottom bar height (if there is one) and the keyboard height. This way, we can have a full screen experience even when the keyboard is open.",
     "category": "Structure Components",
     "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import { Screen, Layout, ZenText } from 'react-zen-ui';\n\n    export default function ExampleComponent(){\n      return (\n        <Screen useTopSafeArea={false}>\n            <Layout scrollable={true}>\n               <ZenText align={'justify'}>\n               Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                Sed do eiusmod tempor incididunt ut\n                labore et dolore magna aliqua. Ut enim\n                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\n                ex ea commodo consequat. Duis aute irure dolor in\n                reprehenderit in voluptate velit esse cillum dolore eu fugiat\n                nulla pariatur. Excepteur sint occaecat cupidatat non proident,\n                sunt in culpa qui officia deserunt mollit anim id est laborum.\n               </ZenText>\n            </Layout>\n        </Screen>\n     );\n   }",
+        "closeLang": "tsx"
+      }
+    ],
+    "see": [
+      {
+        "reference": "ZenThemeProvider"
+      },
+      {
+        "reference": "Layout"
+      }
+    ],
     "params": [
       {
         "type": "Element",
@@ -386,6 +473,23 @@
     "title": "Table",
     "description": "A simple table component that will help you to create a grid layout",
     "category": "Structure Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import { Column, Row, Table, ZenText } from 'react-zen-ui';\n\n export default function TablesExample(){\n   return (\n   <>\n       <ZenText type={'h4'} paragraph={true} align={'left'}>\n       Tables\n       </ZenText>\n\n       <ZenText type={'p'} paragraph={true} align={'justify'}>\n       Simple table components to create grid layouts. It consists of a Table component\n       that wraps Row components, which in turn wrap Column components. You can enable borders\n       and customize their appearance.\n       </ZenText>\n\n       <ZenText type={'p'} paragraph={true} align={'left'}>\n       Bordered table:\n       </ZenText>\n\n       <Table>\n         <Row>\n           <Column border={true}>\n            <ZenText type={'p'} paragraph={false} align={'center'}>1,1</ZenText>\n           </Column>\n\n           <Column border={true}>\n            <ZenText type={'p'} paragraph={false} align={'center'}>1,2</ZenText>\n           </Column>\n\n           <Column border={true}>\n            <ZenText type={'p'} paragraph={false} align={'center'}>1,3</ZenText>\n           </Column>\n         </Row>\n         <Row>\n           <Column border={true}>\n            <ZenText type={'p'} paragraph={false} align={'center'}>2,1</ZenText>\n           </Column>\n\n           <Column border={true}>\n            <ZenText type={'p'} paragraph={false} align={'center'}>2,2</ZenText>\n           </Column>\n\n           <Column border={true}>\n            <ZenText type={'p'} paragraph={false} align={'center'}>2,3</ZenText>\n           </Column>\n         </Row>\n         <Row>\n           <Column border={true}>\n            <ZenText type={'p'} paragraph={false} align={'center'}>3,1</ZenText>\n           </Column>\n\n           <Column border={true}>\n            <ZenText type={'p'} paragraph={false} align={'center'}>3,2</ZenText>\n           </Column>\n\n           <Column border={true}>\n            <ZenText type={'p'} paragraph={false} align={'center'}>3,3</ZenText>\n           </Column>\n\n         </Row>\n       </Table>\n\n\n   </>\n   );\n }",
+        "closeLang": "tsx"
+      }
+    ],
+    "see": [
+      {
+        "reference": "Row"
+      },
+      {
+        "reference": "Column"
+      }
+    ],
     "params": [
       {
         "type": "StyleSheet",
@@ -418,11 +522,29 @@
     "title": "Row",
     "description": "A simple row component that will help you to create a grid layout",
     "category": "Structure Components",
+    "see": [
+      {
+        "reference": "Table"
+      },
+      {
+        "reference": "Column"
+      }
+    ],
     "params": [
       {
         "type": "any",
         "name": "props",
         "description": "The props of the row component"
+      },
+      {
+        "type": "Element",
+        "name": "children",
+        "description": "The child component of the row. This is required"
+      },
+      {
+        "type": "StyleSheet",
+        "name": "style",
+        "description": "The additional styles to be added to the row. Default is null"
       }
     ]
   },
@@ -466,12 +588,50 @@
   {
     "title": "Column",
     "description": "A simple column component that will help you to create a grid layout",
-    "category": "Structure Components Props",
+    "category": "Structure Components",
+    "see": [
+      {
+        "reference": "Table"
+      },
+      {
+        "reference": "Row"
+      }
+    ],
     "params": [
       {
         "type": "any",
         "name": "props",
         "description": "The props of the column component"
+      },
+      {
+        "type": "Element",
+        "name": "children",
+        "description": "The child component of the column. This is required"
+      },
+      {
+        "type": "StyleSheet",
+        "name": "style",
+        "description": "The additional styles to be added to the column. Default is null"
+      },
+      {
+        "type": "boolean",
+        "name": "border",
+        "description": "The border of the column. Default is false"
+      },
+      {
+        "type": "string",
+        "name": "borderType",
+        "description": "The border type of the column. Default is solid. Options are: solid, dotted, dashed"
+      },
+      {
+        "type": "string",
+        "name": "borderColor",
+        "description": "The border color of the column. Default is the text color of the current theme"
+      },
+      {
+        "type": "number",
+        "name": "span",
+        "description": "The number of columns to span. Default is 1"
       }
     ]
   },
@@ -484,11 +644,20 @@
     "title": "ZenDivider",
     "description": "Component to create a customizable divider line.",
     "category": "Structure Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import {  Layout, Screen, ZenText, ZenDivider } from 'react-zen-ui';\n\n export default function DividerScreen() {\n     return (\n     <>\n         <Screen useTopSafeArea={false}>\n             <Layout scrollable={true}>\n                 <ZenText type={'p'} paragraph={true} align={'justify'}>\n                   Sometimes you just need a divider for your content. Here are some\n                   examples of how to use the ZenDivider component in different styles\n                   and types.\n                 </ZenText>\n                 <ZenDivider type={'primary'} />\n                 <ZenText type={'h6'} paragraph={true} align={'justify'}>\n                   Another text divided from the one above\n                 </ZenText>\n                 <ZenDivider type={'secondary'} />\n                 <ZenText type={'h5'} paragraph={true} align={'justify'}>\n                    Another text\n                 </ZenText>\n                 <ZenDivider type={'danger'} />\n                 <ZenText type={'h4'} paragraph={true} align={'justify'}>\n                    Another text\n                 </ZenText>\n                 <ZenDivider type={'warning'} />\n                 <ZenText type={'h3'} paragraph={true} align={'justify'}>\n                    Another text\n                 </ZenText>\n                 <ZenDivider type={'info'} />\n                 <ZenText type={'h2'} paragraph={true} align={'justify'}>\n                    Another text\n                 </ZenText>\n             </Layout>\n         </Screen>\n     </>\n     );\n }",
+        "closeLang": "tsx"
+      }
+    ],
     "params": [
       {
         "type": "string",
         "name": "type",
-        "description": "The theme type for the divider color."
+        "description": "The theme type for the divider color. Supports primary, secondary, success, danger, warning, info."
       },
       {
         "type": "number",
@@ -510,12 +679,21 @@
   {
     "title": "ZenSpaceBlockProps",
     "description": "Props for the ZenSpaceBlock component.",
-    "category": "Structure Components Props"
+    "category": "Structure Components Props",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0"
   },
   {
     "title": "ZenSpaceBlock",
     "description": "A simple component that adds vertical space based on a factor of the standard layout space.",
     "category": "Structure Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "see": [
+      {
+        "reference": "ZenDivider"
+      }
+    ],
     "params": [
       {
         "type": "number",
@@ -541,6 +719,13 @@
       },
       {
         "url": "https://github.com/danilor/zen-ui/blob/main/example/src/components/examples/ButtonExample.tsx"
+      }
+    ],
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import { ZenButton } from 'react-zen-ui';\r\n import { View } from 'react-native';\r\n\r\n  export default function App(){\r\n    return (\r\n      <View style={{ padding: 20 }}>\r\n        <ZenButton\r\n          title=\"Click Me\"\r\n          type=\"primary\"\r\n          onPress={() => alert('Button Pressed!')}\r\n          leftIcon=\"yoga\"\r\n          rightIcon=\"bonfire\"\r\n        />\r\n      </View>\r\n    );\r\n }",
+        "closeLang": "tsx"
       }
     ],
     "params": [
@@ -686,6 +871,11 @@
         "type": "string",
         "name": "content",
         "description": "The code content to display"
+      },
+      {
+        "type": "number",
+        "name": "light",
+        "description": "A value to lighten or darken the background color. Default is -0.1 (slightly darker)."
       }
     ]
   },
@@ -696,10 +886,25 @@
   },
   {
     "title": "ZenIcon",
-    "description": "A simple icon component that will adapt to the current theme and display the provided icon",
+    "description": "A simple icon component that will adapt to the current theme and display the provided icon. If you want to overwrite the color, you can provide a color prop to change it. By default, the icon will adjust to the text color, size and format of the current theme.",
     "category": "Themed Components",
     "author": "Danilo Ramírez Mattey",
     "version": "1.0.0",
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import { ZenIcon } from 'react-zen-ui';\n\nexport default function ExampleComponent(){\n  return (\n    <ZenIcon\n      name={'home'}\n      size={32}\n      color={'#ff0000'}\n      onPress={() => alert('Icon pressed!')}\n    />\n  );\n}",
+        "closeLang": "tsx"
+      }
+    ],
+    "see": [
+      {
+        "reference": "ZenText"
+      },
+      {
+        "reference": "ZenIconButton"
+      }
+    ],
     "params": [
       {
         "type": "string",
@@ -742,6 +947,23 @@
     "title": "ZenIconButton",
     "description": "A button component that displays an icon and handles press and long-press actions with customizable styles and themes.",
     "category": "Themed Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import {\n Column,\n Layout,\n Row,\n Screen,\n Table,\n ZenIconButton,\n ZenText,\n } from 'react-zen-ui';\n import { StyleSheet } from 'react-native';\n\n export default function IconButtonsScreen() {\n     const styles = StyleSheet.create({\n        column: { justifyContent: 'center', alignItems: 'center' },\n     });\n\n     return (\n     <>\n         <Screen useTopSafeArea={false}>\n             <Layout scrollable={true}>\n                 <ZenText type={'p'} paragraph={true} align={'justify'}>\n                   Buttons can be also used with icons only. These are called Icon\n                   Buttons. They can be used in toolbars or action bars to represent\n                   actions with icons only. They can be primary, secondary, warning,\n                   info or danger types.\n                 </ZenText>\n\n                 <Table>\n                     <Row>\n                         <Column style={styles.column}>\n                         <    ZenIconButton icon={'home'} />\n                         </Column>\n                         <Column style={styles.column}>\n                            <ZenIconButton icon={'bell'} type={'secondary'} />\n                         </Column>\n                         <Column style={styles.column}>\n                            <ZenIconButton icon={'dns'} type={'danger'} />\n                         </Column>\n                         <Column style={styles.column}>\n                            <ZenIconButton icon={'eye'} type={'info'} />\n                         </Column>\n                         <Column style={styles.column}>\n                            <ZenIconButton icon={'google-circle'} type={'warning'} />\n                         </Column>\n                     </Row>\n\n                 </Table>\n             </Layout>\n         </Screen>\n     </>\n     );\n }",
+        "closeLang": "tsx"
+      }
+    ],
+    "see": [
+      {
+        "reference": "ZenIcon"
+      },
+      {
+        "reference": "ZenButton"
+      }
+    ],
     "params": [
       {
         "type": "string",
@@ -809,9 +1031,18 @@
     "title": "ZenInput",
     "description": "An input field with a label. The label is optional.",
     "category": "Themed Components",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
     "link": [
       {
         "url": "https://reactnative.dev/docs/textinput"
+      }
+    ],
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import { ZenButton, ZenInput } from 'react-zen-ui';\n import { useState } from 'react';\n import { StyleSheet, View } from 'react-native';\n\n const styles = StyleSheet.create({\n     buttonsContainer: {\n         display: 'flex',\n         flexDirection: 'row',\n         alignItems: 'center',\n         justifyContent: 'space-between',\n         marginBottom: 20,\n         marginTop: 10,\n         gap: 10,\n     },\n     container: {\n        flex: 1,\n     },\n     box: {\n         width: 60,\n         height: 60,\n         marginVertical: 20,\n     },\n });\n\n export default function InputExample(){\n\n     const [leftAccessory, setLeftAccessory] = useState<boolean>(true);\n     const [rightAccessory, setRightAccessory] = useState<boolean>(true);\n     const [textValue, setTextValue] = useState('Welcome to ZenUI');\n     const [textareaValue, setTextareaValue] = useState('This is a multiline textarea.');\n\n     return (\n         <>\n             <ZenText type={'h4'} paragraph={true} align={'left'}>\n                Input\n             </ZenText>\n             <ZenInput\n                 leftIcon={leftAccessory ? 'user-circle' : undefined}\n                 rightIcon={rightAccessory ? 'check-circle' : undefined}\n                 label={'Single Input'}\n                 onChangeText={(t: string) => setTextValue(t)}\n                 value={textValue}\n                 autoComplete={'off'}\n                 autoCapitalize={'none'}\n                 multiline={false}\n             />\n             <ZenInput\n                 leftIcon={leftAccessory ? 'user-circle' : undefined}\n                 rightIcon={rightAccessory ? 'closed-captions-tag' : undefined}\n                 label={'Multiline Textarea'}\n                 onChangeText={(t: string) => setTextareaValue(t)}\n                 value={textareaValue}\n                 autoComplete={'off'}\n                 autoCapitalize={'none'}\n                 multiline={true}\n             />\n             <ZenInput\n                 leftIcon={leftAccessory ? 'key' : undefined}\n                 rightIcon={rightAccessory ? 'closet' : undefined}\n                 label={'Password Input'}\n                 onChangeText={(t: string) => setPasswordValue(t)}\n                 value={passwordValue}\n                 autoComplete={'off'}\n                 placeholder={''}\n                 autoCapitalize={'none'}\n                 secureTextEntry={true}\n                 multiline={false}\n             />\n\n         </>\n     );\n }",
+        "closeLang": "tsx"
       }
     ],
     "params": [
@@ -876,6 +1107,19 @@
     "title": "ZenLoading",
     "description": "A loading indicator using an animated icon. You can set the size to small, medium or large.",
     "category": "Themed Components",
+    "version": "1.0.0",
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import { Column, ZenLoading, ZenText, Table, Row } from 'react-zen-ui';\n\n\n export default function LoadingExample(){\n     return (\n         <>\n             <ZenText type={'h4'} paragraph={true} align={'left'}>\n             Loading\n             </ZenText>\n             <Table>\n                 <Row>\n                     <Column>\n                        <ZenLoading size={'large'} />\n                     </Column>\n                     <Column>\n                        <ZenLoading size={'small'} />\n                     </Column>\n                     <Column>\n                        <ZenLoading size={'large'} duration={1000} />\n                     </Column>\n                     <Column>\n                        <ZenLoading size={'small'} duration={1000} />\n                     </Column>\n                 </Row>\n             </Table>\n         </>\n     );\n }",
+        "closeLang": "tsx"
+      }
+    ],
+    "see": [
+      {
+        "reference": "ZenIcon"
+      }
+    ],
     "params": [
       {
         "type": "number",
@@ -894,7 +1138,13 @@
       }
     ]
   },
-  {},
+  {
+    "see": [
+      {
+        "reference": "ZenInput"
+      }
+    ]
+  },
   {
     "title": "ZenTextProps",
     "description": "Props for the ZenText component.",
@@ -943,6 +1193,69 @@
         "type": "boolean",
         "name": "fill",
         "description": "Whether the text should take the full width of its container."
+      }
+    ]
+  },
+  {
+    "title": "useDrawer",
+    "description": "A custom hook to access the current state of the drawer (open or closed) from the ZenThemeContext. Its call must be made inside the context of a ZenThemeProvider.",
+    "category": "Hooks",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "return": [
+      {
+        "type": "boolean",
+        "description": "The current state of the drawer (true for open, false for closed)"
+      }
+    ],
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import { useDrawer } from 'react-zen-ui';\n\nexport default function DrawerStateComponent(){\n    const isDrawerOpen = useDrawer();\n    return (\n        <div>\n            The drawer is currently {isDrawerOpen ? 'open' : 'closed'}.\n        </div>\n    );\n}",
+        "closeLang": "tsx"
+      }
+    ],
+    "see": [
+      {
+        "reference": "ZenThemeProvider"
+      }
+    ]
+  },
+  {
+    "title": "useToggleDrawer",
+    "description": "A custom hook to toggle the drawer state (open or closed) from the ZenThemeContext. Its call must be made inside the context of a ZenThemeProvider.",
+    "category": "Hooks",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "return": [
+      {
+        "type": "Function",
+        "description": "A function to toggle the drawer state"
+      }
+    ]
+  },
+  {
+    "title": "useTheme",
+    "description": "A custom hook to access the current theme from the ZenThemeContext. It will contain all the theme properties defined in the ThemeModel. Its call must be made inside the context of a ZenThemeProvider.",
+    "category": "Hooks",
+    "author": "Danilo Ramírez Mattey",
+    "version": "1.0.0",
+    "return": [
+      {
+        "type": "ThemeModel",
+        "description": "The current theme object"
+      }
+    ],
+    "example": [
+      {
+        "lang": "tsx",
+        "code": "import { useTheme } from 'react-zen-ui';\n\nexport default function ThemedComponent(){\n    const theme = useTheme();\n    return (\n        <div style={{backgroundColor: theme.backgroundColor, color: theme.textColor}}>\n            This component is themed!\n        </div>\n    );\n}",
+        "closeLang": "tsx"
+      }
+    ],
+    "see": [
+      {
+        "reference": "ZenThemeProvider"
       }
     ]
   },
@@ -1012,7 +1325,12 @@
       {
         "type": "string",
         "name": "col",
-        "description": "* @param {number} light"
+        "description": "The hex color to shade"
+      },
+      {
+        "type": "number",
+        "name": "light",
+        "description": "The light factor (-1 to 1). Negative values darken the color, positive values lighten it."
       }
     ]
   },

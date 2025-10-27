@@ -41,7 +41,7 @@ type ZenCheckProps = {
  * @param {StyleSheet} style - Additional styles for the checkbox container.
  * @param {boolean} useBackground - Whether to use a background color for the checkbox icon. Default is false.
  * @param {boolean} disabled - Whether the checkbox is disabled. Default is false.
- * @constructor
+
  */
 export default function ZenCheck({
   type = 'primary',

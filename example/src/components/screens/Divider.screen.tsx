@@ -15,7 +15,6 @@ export default function DividerScreen() {
 
           <ZenDivider type={'primary'} />
 
-
           <ZenText type={'h6'} paragraph={true} align={'justify'}>
             Another text divided from the one above
           </ZenText>

@@ -22,6 +22,19 @@
   margin-bottom: 4px;
 }
 
+.single_doc:hover{
+  //background-color: #e1e1e1;
+}
+
+.internal_references{
+  .internal_references{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+}
+
 
 @import "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css";
 @import "assets/css/main.css";

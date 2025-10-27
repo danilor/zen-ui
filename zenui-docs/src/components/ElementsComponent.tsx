@@ -5,6 +5,7 @@ type orderProps={
   category: string;
   title: string;
   description?: string;
+  icon?: string;
 }
 
 export default function ElementsComponent(){
@@ -31,9 +32,16 @@ export default function ElementsComponent(){
       description: "Components that provide drawer functionality for navigation and content display.",
     },
     {
+      category: 'Hooks',
+      title: "Hooks",
+      description: "Custom React hooks provided by the library for enhanced functionality.",
+      icon: 'zi-power-cord'
+    },
+    {
       category: 'Color Utilities',
       title: "Color Utilities",
       description: "Utilities for managing and applying colors within the application.",
+      icon: 'zi-paint-brush'
     }
   ];
 
@@ -46,7 +54,7 @@ export default function ElementsComponent(){
 
         {
           order.map((category: orderProps) => (
-            <DocsSection key={category.category} category={category.category} title={category.title} description={category.description} />
+            <DocsSection key={category.category} icon={category.icon ?? undefined} category={category.category} title={category.title} description={category.description} />
           ))
         }
 

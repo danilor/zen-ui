@@ -43,6 +43,38 @@ const iconSize = 28;
  * @param {string} goBackIcon - The name of the back icon to display
  * @link https://github.com/danilor/zen-ui/blob/main/example/src/App.tsx#L93
  * @author Danilo Ramírez Mattey
+ * @version 1.0.0
+ * @example {tsx}
+import { ZenDark, ZenThemeProvider } from 'react-zen-ui';
+
+export default function App() {
+
+  const headerComponent = (props: NativeStackHeaderProps) => (
+    <ZenHeader
+      automaticDrawerIcon={'menu'}
+      showBackButton={props.navigation.canGoBack()}
+      title={props.options.title as string}
+      goBack={()=>{ props.navigation.goBack(); }}
+      {...props}
+    />
+  );
+
+  return (
+       <ZenThemeProvider theme={ZenDark}>
+        <Stack.Navigator
+          screenOptions={{
+            animation: 'default',
+            headerShown: true,
+            header: headerComponent,
+         }}
+        >
+            // OTHER STACK SCREEN ELEMENTS AND COMPONENTS HERE
+         </Stack.Navigator>
+       </ZenThemeProvider>
+   );
+ }
+  {/tsx}
+ * @link https://reactnavigation.org/
  *
  */
 export default function ZenHeader({

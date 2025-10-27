@@ -45,7 +45,84 @@ type ZenInputProps = {
  * @param {string } type The theme type for the input. Default is 'primary'
  * @param {Object} props All regular TextInput props
  * @link https://reactnative.dev/docs/textinput
- *
+ * @author Danilo Ramírez Mattey
+ * @version 1.0.0
+ * @example {tsx}
+
+ import { ZenButton, ZenInput } from 'react-zen-ui';
+ import { useState } from 'react';
+ import { StyleSheet, View } from 'react-native';
+
+ const styles = StyleSheet.create({
+     buttonsContainer: {
+         display: 'flex',
+         flexDirection: 'row',
+         alignItems: 'center',
+         justifyContent: 'space-between',
+         marginBottom: 20,
+         marginTop: 10,
+         gap: 10,
+     },
+     container: {
+        flex: 1,
+     },
+     box: {
+         width: 60,
+         height: 60,
+         marginVertical: 20,
+     },
+ });
+
+ export default function InputExample(){
+
+     const [leftAccessory, setLeftAccessory] = useState<boolean>(true);
+     const [rightAccessory, setRightAccessory] = useState<boolean>(true);
+     const [textValue, setTextValue] = useState('Welcome to ZenUI');
+     const [textareaValue, setTextareaValue] = useState('This is a multiline textarea.');
+
+     return (
+         <>
+             <ZenText type={'h4'} paragraph={true} align={'left'}>
+                Input
+             </ZenText>
+             <ZenInput
+                 leftIcon={leftAccessory ? 'user-circle' : undefined}
+                 rightIcon={rightAccessory ? 'check-circle' : undefined}
+                 label={'Single Input'}
+                 onChangeText={(t: string) => setTextValue(t)}
+                 value={textValue}
+                 autoComplete={'off'}
+                 autoCapitalize={'none'}
+                 multiline={false}
+             />
+             <ZenInput
+                 leftIcon={leftAccessory ? 'user-circle' : undefined}
+                 rightIcon={rightAccessory ? 'closed-captions-tag' : undefined}
+                 label={'Multiline Textarea'}
+                 onChangeText={(t: string) => setTextareaValue(t)}
+                 value={textareaValue}
+                 autoComplete={'off'}
+                 autoCapitalize={'none'}
+                 multiline={true}
+             />
+             <ZenInput
+                 leftIcon={leftAccessory ? 'key' : undefined}
+                 rightIcon={rightAccessory ? 'closet' : undefined}
+                 label={'Password Input'}
+                 onChangeText={(t: string) => setPasswordValue(t)}
+                 value={passwordValue}
+                 autoComplete={'off'}
+                 placeholder={''}
+                 autoCapitalize={'none'}
+                 secureTextEntry={true}
+                 multiline={false}
+             />
+
+         </>
+     );
+ }
+
+ {/tsx}
  */
 export default function ZenInput({
   label,
@@ -66,7 +143,6 @@ export default function ZenInput({
   if(theme[type] === undefined){
     throw new Error(`Theme type "${type}" is not defined in the current theme.`);
   }
-
 
   const styles = StyleSheet.create({
     container: {

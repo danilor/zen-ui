@@ -5,6 +5,7 @@ import LayoutConfig from '../../config/LayoutConfig';
 
 type ZenCodeType = {
   content: string;
+  light?: number;
 };
 
 /**
@@ -15,11 +16,12 @@ type ZenCodeType = {
  * @description A simple code block component that can be used to display code snippets throughout the app. It styles the code block according to the current theme.
  * @category Themed Components
  * @param {string} content The code content to display
+ * @param {number} light A value to lighten or darken the background color. Default is -0.1 (slightly darker).
  */
-export default function ZenCode({ content }: ZenCodeType) {
+export default function ZenCode({ content, light = -0.1 }: ZenCodeType) {
   const theme = useTheme();
 
-  const backgroundShaded = ColorUtil.shade(theme.background, -0.1);
+  const backgroundShaded = ColorUtil.shade(theme.background, light);
 
   const styles = StyleSheet.create({
     container: {

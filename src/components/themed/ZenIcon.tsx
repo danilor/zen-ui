@@ -23,7 +23,7 @@ type ZenIconProps = {
  * @title ZenIcon
  * @author Danilo Ramírez Mattey
  * @version 1.0.0
- * @description A simple icon component that will adapt to the current theme and display the provided icon
+ * @description A simple icon component that will adapt to the current theme and display the provided icon. If you want to overwrite the color, you can provide a color prop to change it. By default, the icon will adjust to the text color, size and format of the current theme.
  * @param {string} name The icon we want to use
  * @param {StyleSheet} style Additional styles for the icon
  * @param {number} size Number The size of the icon
@@ -31,6 +31,24 @@ type ZenIconProps = {
  * @param {function} onPress onPress action
  * @param {boolean} disabled Whether the icon is disabled. Default is false.
  * @category Themed Components
+ * @example {tsx}
+
+import { ZenIcon } from 'react-zen-ui';
+
+export default function ExampleComponent(){
+  return (
+    <ZenIcon
+      name={'home'}
+      size={32}
+      color={'#ff0000'}
+      onPress={() => alert('Icon pressed!')}
+    />
+  );
+}
+
+ {/tsx}
+ @see ZenText
+ @see ZenIconButton
  */
 export default (
   {

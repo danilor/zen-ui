@@ -305,7 +305,7 @@
       {
         "type": "Element",
         "name": "footer",
-        "description": "* @constructor"
+        "description": ""
       }
     ]
   },

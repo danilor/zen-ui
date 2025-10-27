@@ -52,7 +52,26 @@ export type ZenButtonProps = {
  * @param {Element} rightAccessory - A right accessory. Accepts any valid React Node.
  * @param {boolean} disabled - Whether the button is disabled. Default is false.
  * @param {StyleSheet} style - Additional styles for the button container.
- *
+ * @example {tsx}
+
+ import { ZenButton } from 'react-zen-ui';
+ import { View } from 'react-native';
+
+  export default function App(){
+    return (
+      <View style={{ padding: 20 }}>
+        <ZenButton
+          title="Click Me"
+          type="primary"
+          onPress={() => alert('Button Pressed!')}
+          leftIcon="yoga"
+          rightIcon="bonfire"
+        />
+      </View>
+    );
+ }
+
+  {/tsx}
  * @link https://github.com/danilor/zen-ui
  * @link https://github.com/danilor/zen-ui/blob/main/example/src/components/examples/ButtonExample.tsx
  *

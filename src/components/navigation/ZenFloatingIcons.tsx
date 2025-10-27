@@ -25,10 +25,67 @@ type ZenFloatingIconsType = {
  * @title ZenFloatingIcons
  * @description A set of floating icon buttons that can be positioned at the bottom of the screen
  * @category Navigation Components
+ * @author Danilo Ramírez Mattey
+ * @version 1.0.0
+
+ * @see Screen
+ * @see Layout
+ * @example {tsx}
+import { ZenDark, ZenThemeProvider, ZenFloatingIcons } from 'react-zen-ui';
+
+export default function App() {
+
+   const menuButtons: any[] = [
+     {
+       icon: 'home',
+       type: 'primary',
+       onPress: () => navigation.navigate('Home' as never),
+     },
+     {
+       icon: 'settings',
+       type: 'secondary',
+       onPress: () => navigation.navigate('Theme' as never),
+     },
+     {
+       icon: 'apple',
+       type: 'success',
+       onPress: () => navigation.navigate('FloatingIcons' as never),
+     },
+   ];
+
+    const headerComponent = (props: NativeStackHeaderProps) => (
+      <ZenHeader
+        automaticDrawerIcon={'menu'}
+        showBackButton={props.navigation.canGoBack()}
+        title={props.options.title as string}
+        goBack={()=>{ props.navigation.goBack(); }}
+        {...props}
+      />
+    );
+
+    return (
+         <ZenThemeProvider theme={ZenDark}>
+            <ZenFloatingIcons buttons={menuButtons} size={'large'} />
+            <Stack.Navigator
+              screenOptions={{
+                animation: 'default',
+                headerShown: true,
+                header: headerComponent,
+             }}
+            >
+              // OTHER STACK SCREEN ELEMENTS AND COMPONENTS HERE
+           </Stack.Navigator>
+
+         </ZenThemeProvider>
+     );
+   }
+    {/tsx}
+ * @link https://reactnavigation.org/
+ * @see ZenHeader
  * @param {number} size - The size of the buttons (small, medium, large)
  * @param {string} position - The position of the buttons (left, right, center)
  * @param {Object} buttons - An array of button objects with icon, type and onPress function
- * @constructor
+
  */
 export default function ZenFloatingIcons({
   size = 'medium',

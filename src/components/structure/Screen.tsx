@@ -22,11 +22,37 @@ type ScreenProps = {
  * @title Screen
  * @description The screen component should be used as the main container for every screen in the app. The idea behind it is to use it only once in the app, right after the application provider tag. It should take care of the status bar height, the bottom bar height (if there is one) and the keyboard height. This way, we can have a full screen experience even when the keyboard is open.
  * @author Danilo Ramírez Mattey
+ * @version 1.0.0
  * @see ZenThemeProvider
  * @param {Element} children The main content of the screen. It could be anything, including React elements.
  * @param {boolean} useTopSafeArea If true, the screen will use the top safe area. This is useful when you have a full screen and not planing to use react navigator or other similar libraries that already take care of the top safe area. Default is false.
  * @param {number} extraBottomPadding If you need to add extra padding to the bottom of the screen, you can use this prop. Default is 0.
  * @category Structure Components
+ * @example {tsx}
+
+    import { Screen, Layout, ZenText } from 'react-zen-ui';
+
+    export default function ExampleComponent(){
+      return (
+        <Screen useTopSafeArea={false}>
+            <Layout scrollable={true}>
+               <ZenText align={'justify'}>
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+               </ZenText>
+            </Layout>
+        </Screen>
+     );
+   }
+
+   {/tsx}
+ * @see Layout
  */
 export default function Screen({ children, useTopSafeArea = false, extraBottomPadding = 0 }: ScreenProps) {
 

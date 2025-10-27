@@ -23,4 +23,11 @@
   margin-bottom: 4px;
 }
 
+.internal_references .internal_references {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
 /*# sourceMappingURL=App.css.map */

@@ -24,7 +24,40 @@ const iconName = 'refresh-double';
  * @param {string} color The color of the loading indicator. Default is the text color of the current theme
  * @param {number} duration The duration of one full rotation in milliseconds. Default is 1500ms
  * @category Themed Components
- *
+ * @autor Danilo Ramírez Mattey
+ * @version 1.0.0
+ * @example {tsx}
+ import { Column, ZenLoading, ZenText, Table, Row } from 'react-zen-ui';
+
+
+ export default function LoadingExample(){
+     return (
+         <>
+             <ZenText type={'h4'} paragraph={true} align={'left'}>
+             Loading
+             </ZenText>
+             <Table>
+                 <Row>
+                     <Column>
+                        <ZenLoading size={'large'} />
+                     </Column>
+                     <Column>
+                        <ZenLoading size={'small'} />
+                     </Column>
+                     <Column>
+                        <ZenLoading size={'large'} duration={1000} />
+                     </Column>
+                     <Column>
+                        <ZenLoading size={'small'} duration={1000} />
+                     </Column>
+                 </Row>
+             </Table>
+         </>
+     );
+ }
+
+ {/tsx}
+ * @see ZenIcon
  */
 export default function ZenLoading(
   {

@@ -4,9 +4,10 @@ type Props = {
   title: string;
   category: string;
   description?: string;
+  icon?: string;
 }
 export default function DocsSection(
-  {title,category, description}: Props
+  {title,category, description, icon}: Props
 ){
 
   const docData = docs.filter(d => d.category === category);
@@ -25,7 +26,7 @@ export default function DocsSection(
         <hr />
         {
           docData.map((doc, index) => (
-            <DocsSingle key={index} {...doc} />
+            <DocsSingle icon={icon ?? 'zi-codepen'} key={index} {...doc} />
           ))
         }
       </section>

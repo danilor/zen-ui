@@ -36,8 +36,8 @@ const ColorUtil = {
    * @title shade
    * @category Color Utilities
    * @description Shade a hex color by a given light factor
-   * @param {string} col
-   * @param {number} light
+   * @param {string} col The hex color to shade
+   * @param {number} light The light factor (-1 to 1). Negative values darken the color, positive values lighten it.
    * @returns {string} The shaded hex color
    */
   shade: (col: string, light: number)=> {

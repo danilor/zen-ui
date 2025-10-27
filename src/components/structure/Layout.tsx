@@ -23,11 +23,37 @@ type LayoutProps = {
  * @description A layout component that provides consistent padding and optional scrolling behavior.
  * @category Structure Components
  * @author Danilo Ramírez Mattey
+ * @version 1.0.0
  * @param {Element} children - The children components to be rendered within the layout.
  * @param {boolean} centered - Whether to center the children components.
  * @param {boolean} scrollable - Whether the layout should be scrollable.
  * @param {StyleSheet} style - Additional styles to apply to the layout.
  * @param {boolean} airBottom - Whether to add extra space at the bottom of the layout.
+ * @example {tsx}
+
+  import { Screen, Layout, ZenText } from 'react-zen-ui';
+
+  export default function ExampleComponent(){
+  return (
+    <Screen useTopSafeArea={false}>
+        <Layout scrollable={true}>
+           <ZenText align={'justify'}>
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+           </ZenText>
+        </Layout>
+    </Screen>
+ );
+ }
+
+ {/tsx}
+ * @see Screen
  */
 export default function Layout({
   children,
