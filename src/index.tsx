@@ -20,6 +20,7 @@ import ZenInput from './components/themed/ZenInput';
 import ZenLoading from './components/themed/ZenLoading';
 import ZenSearch from './components/themed/ZenSearch';
 import ZenText from './components/themed/ZenText';
+import ZenSelect from './components/themed/ZenSelect';
 import ZenThemeProvider from './provider/ZenThemeProvider';
 import icons from './assets/icons.json';
 import { useChangeTheme, useTheme } from './hooks/useTheme';
@@ -81,6 +82,7 @@ export {
   ZenCode,
   ZenDivider,
   ZenCheck,
+  ZenSelect,
 
   /**
    * Navigation

@@ -8,6 +8,7 @@ import {
   ZenDivider,
   ZenInput,
   ZenText,
+  ZenSelect
 } from 'react-zen-ui';
 
 import { StyleSheet } from 'react-native';
@@ -37,6 +38,27 @@ export default function FormScreen() {
           <ZenInput label={'Warning Input'} type={'warning'} placeholder={'Type here'} />
           <ZenInput label={'Danger Input'} type={'danger'} placeholder={'Type here'} />
           <ZenInput label={'Info Input'} type={'info'} placeholder={'Type here'} />
+
+          <ZenDivider type={'primary'} />
+          <ZenText fill={true} type={'h4'} paragraph={true}>
+            Select
+          </ZenText>
+
+          <Table>
+            <Row>
+              <Column span={2}>
+                <ZenSelect items={['Option 1', 'Option 2', 'Option 3']} label={'Select one option (primary)'} type={'primary'} />
+              </Column>
+            </Row>
+            <Row>
+              <Column>
+                <ZenSelect items={['Success 1', 'Success 2', 'Success 3']} label={'Success'} type={'success'} />
+              </Column>
+              <Column>
+                <ZenSelect items={['Danger 1', 'Danger 2', 'Danger 3']} label={'Danger'} type={'danger'} />
+              </Column>
+            </Row>
+          </Table>
 
           <ZenDivider type={'primary'} />
           <ZenText fill={true} type={'h4'} paragraph={true}>

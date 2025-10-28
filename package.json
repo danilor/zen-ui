@@ -39,8 +39,7 @@
     "clean": "del-cli lib",
     "prepare": "bob build",
     "release": "release-it",
-    "pub": "npm run release",
-    "doc": "npx danilor/docunatorjs -I ./src -O ./docs/docs.json && npx danilor/docunatorjs -I ./src -O ./zenui-docs/src/json/docs.json"
+    "pub": "npm run release"
   },
   "keywords": [
     "react-native",
