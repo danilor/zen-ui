@@ -37,6 +37,9 @@ const defaultDimmedValue = 0.2;
  * @param {boolean} arrow - Whether to show a right arrow icon
  * @param {function} closeOnPress - Whether to close the drawer when the item is pressed
  * @author Danilo Ramírez Mattey
+ * @version 1.0.0
+ * @see ZenDrawer
+ * @see ZenDrawerTitle
  */
 export default function ZenDrawerItem({
   label,

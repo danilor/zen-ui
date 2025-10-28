@@ -19,6 +19,9 @@ type ZenDrawerTitle={
  * @category Drawer Components
  * @param {string} title - The title text to display
  * @author Danilo Ramírez Mattey
+ * @version 1.0.0
+ * @see ZenDrawer
+ * @see ZenDrawerItem
  */
 export default function ZenDrawerTitle(
   {title = 'Test'}:ZenDrawerTitle
