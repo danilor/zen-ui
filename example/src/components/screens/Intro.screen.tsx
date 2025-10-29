@@ -153,6 +153,17 @@ export default function IntroScreen() {
               }}
             />
           </View>
+          <View style={styles.buttons}>
+            <ZenButton
+              type={'primary'}
+              title={'List Items'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('List' as never);
+              }}
+            />
+
+          </View>
         </Layout>
       </Screen>
     </>

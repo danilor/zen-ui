@@ -88,7 +88,7 @@ export default function ZenHeader({
   rightAccessory = null,
   automaticDrawerIcon,
   goBack = () => {},
-  goBackIcon = 'cursor-pointer',
+  goBackIcon = 'arrow-left-circle',
 }: ZenHeaderProps) {
   // console.log('Rendering ZenHeader', props);
 
@@ -117,7 +117,10 @@ export default function ZenHeader({
     },
     left: {
       flexDirection: 'row',
+      flex: 1,
+      // backgroundColor: 'red',
       justifyContent: 'flex-start',
+      alignItems:'center',
       gap: LayoutConfig.space,
     },
     right: {
@@ -139,7 +142,7 @@ export default function ZenHeader({
           />
         )}
 
-        <ZenText fill={false} textColor={baseColor} type={'h4'}>
+        <ZenText fill={true} align={'left'} textColor={baseColor} type={'h4'}>
           {title ?? 'Header'}
         </ZenText>
       </View>

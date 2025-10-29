@@ -22,6 +22,8 @@ import ZenSearch from './components/themed/ZenSearch';
 import ZenText from './components/themed/ZenText';
 import ZenSelect from './components/themed/ZenSelect';
 import ZenThemeProvider from './provider/ZenThemeProvider';
+import ZenSlider from './components/themed/ZenSlider';
+import ZenListItem from './components/themed/ZenListItem';
 import icons from './assets/icons.json';
 import { useChangeTheme, useTheme } from './hooks/useTheme';
 import ZenDrawer from './components/drawer/ZenDrawer';
@@ -83,6 +85,8 @@ export {
   ZenDivider,
   ZenCheck,
   ZenSelect,
+  ZenSlider,
+  ZenListItem,
 
   /**
    * Navigation
