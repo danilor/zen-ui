@@ -1,6 +1,10 @@
-# ZEN UI (WORK ON PROGRESS)
+<div align="center">
+  <h1>Zen UI</h1>
+  <p>A simple React Native UI Library</p>
+  <a href="https://danilor.github.io/zenui-docs" target="_blank">Documentation</a> | <a href="https://danilor.github.io/arkhive_hub" target="_blank"><strong>Arkhive</strong> hub</a>
+</div>
 
-![ZEN UI Logo, made with AI](readme/logo.png)
+![ZEN UI Logo, made with AI](readme/banner.png)
 
 A React Native component library with a focus on simplicity and ease of use. ZEN UI was built upon
 the idea of providing a set of essential components that can be easily integrated into any React Native application
@@ -18,7 +22,16 @@ simple and effective way to build their applications.
 
 [![npm version](https://badge.fury.io/js/react-zen-ui.svg)](https://badge.fury.io/js/react-zen-ui)
 [![Downloads](https://img.shields.io/npm/dm/react-zen-ui.svg)](https://www.npmjs.com/package/react-zen-ui)
-[![License](https://img.shields.io/npm/l/react-zen-ui.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![License](https://img.shields.io/npm/l/react-zen-ui.svg)](https://opensource.org/license/mit)
+
+## Key Features
+
+- **Lightweight**: Minimal dependencies to keep your app size small.
+- **Customizable**: Easily theme and style components to match your app's design.
+- **Essential Components**: A curated set of components that cover common UI needs.
+- **TypeScript Support**: Built with TypeScript for better developer experience and type safety.
+- **No Native Dependencies**: Pure JavaScript implementation, no need for linking native modules.
+- **No Expo Dependencies**: Can be used in both Expo and non-Expo React Native projects without any issues.
 
 ## Manual Installation
 
@@ -46,7 +59,6 @@ export default function App() {
     </ZenThemeProvider>
   );
 }
-
 ```
 
 After wrapping your app with the `ZenThemeProvider`, you can start using ZEN UI components. For example, to use a
@@ -121,10 +133,8 @@ export default function ThemedComponent() {
 
 ## Documentation
 
-[Documentation](https://danilor.github.io/zenui-docs)
+You can read more about this library, check examples, and get more information on our [Documentation](https://danilor.github.io/zenui-docs) site.
 
-## Contributing
+## License
 
-- [Development workflow](CONTRIBUTING.md#development-workflow)
-- [Sending a pull request](CONTRIBUTING.md#sending-a-pull-request)
-- [Code of conduct](CODE_OF_CONDUCT.md)
+ZEN UI is open source software licensed under the [MIT license](LICENSE).
