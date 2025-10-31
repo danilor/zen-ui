@@ -2,6 +2,7 @@
   <h1>Zen UI</h1>
   <p>A simple React Native UI Library</p>
   <a href="https://danilor.github.io/zenui-docs" target="_blank">Documentation</a> | <a href="https://danilor.github.io/arkhive_hub" target="_blank"><strong>Arkhive</strong> hub</a>
+    <br /><br />
 </div>
 
 ![ZEN UI Logo, made with AI](readme/banner.png)
