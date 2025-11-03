@@ -2,13 +2,12 @@ import ZenInput from './ZenInput';
 import ZenText from './ZenText';
 import type { ThemeType } from '../../literals/Type.literal';
 import { useState } from 'react';
-import { TouchableOpacity, StyleSheet, View } from 'react-native';
+import { TouchableOpacity, StyleSheet, View, Dimensions, ScrollView } from 'react-native';
 import ThemeConfig from '../../config/Theme.config';
 import { useTheme } from './../../hooks/useTheme';
 import LayersConfig from '../../config/Layers.config';
 import LayoutConfig from '../../config/LayoutConfig';
 import ColorUtil from '../../util/Color.util';
-
 
 type ZenSelectProps = {
   items: string[];
@@ -20,10 +19,11 @@ type ZenSelectProps = {
   leftAccessory?: any;
   rightAccessory?: any;
   disabled?: boolean;
-  type?: ThemeType,
+  type?: ThemeType;
   defaultValue?: string;
   onChange?: (selectedItem: string) => void;
-}
+  maxNumberOfVisibleItems?: number;
+};
 
 /**
  * @docunator
@@ -42,6 +42,7 @@ type ZenSelectProps = {
  * @param {string} type The theme type for the select. Default is 'primary'
  * @param {string} defaultValue The default selected value
  * @param {Function} onChange Callback function when the selected item changes
+ * @param {number} maxNumberOfVisibleItems The maximum number of items to show when the select is opened. Default is 3
  * @see ZenInput
  * @example {tsx}
  import {
@@ -72,52 +73,53 @@ type ZenSelectProps = {
  }
 
  */
-export default function ZenSelect(
-  {
-    items,
-    label = 'Select',
-    placeholder = 'Select',
-    dir = 'ltr',
-    leftIcon,
-    leftAccessory,
-    disabled = false,
-    type = 'primary',
-    defaultValue = '',
-    onChange = (s: string)=>{return s;},
-
-  }: ZenSelectProps
-){
-
+export default function ZenSelect({
+  items,
+  label = 'Select',
+  placeholder = 'Select',
+  dir = 'ltr',
+  leftIcon,
+  leftAccessory,
+  disabled = false,
+  type = 'primary',
+  defaultValue = '',
+  onChange = (s: string) => {
+    return s;
+  },
+  maxNumberOfVisibleItems = 5,
+}: ZenSelectProps) {
   const [opened, setOpened] = useState(false);
   const [selectedItem, setSelectedItem] = useState<string>(defaultValue);
   const [randomId] = useState(Math.random().toString(36).substring(7));
 
   const theme = useTheme();
 
-  if(!theme[type]){
-    throw new Error('ZenSelect: Invalid type provided. Available types are primary, secondary, success, warning, danger, info.');
+  if (!theme[type]) {
+    throw new Error(
+      'ZenSelect: Invalid type provided. Available types are primary, secondary, success, warning, danger, info.'
+    );
   }
 
   const changeOpened = () => {
     setOpened(!opened);
-  }
+  };
 
   const changeSelectedItem = (s: string) => {
     setSelectedItem(s);
     setOpened(false);
-    if(onChange){
+    if (onChange) {
       onChange(s);
     }
   };
 
   const styles = StyleSheet.create({
-    container:{
+    container: {
       position: 'relative',
     },
-    overlay:{
-      backgroundColor: 'red'
+    overlay: {
+      backgroundColor: 'red',
     },
-    modal:{
+    modal: {
       position: 'absolute',
       // backgroundColor: 'red',
       // bottom: 0,
@@ -125,7 +127,11 @@ export default function ZenSelect(
       zIndex: LayersConfig.select,
       width: '100%',
       borderRadius: LayoutConfig.border,
-      padding: LayoutConfig.space,
+      // padding: LayoutConfig.space,
+      // paddingBottom: LayoutConfig.space * 10,
+      paddingLeft: LayoutConfig.space,
+      paddingRight: LayoutConfig.space,
+      // paddingBottom: LayoutConfig.space * 10,
       display: 'flex',
       gap: LayoutConfig.space,
       backgroundColor: ColorUtil.shade(
@@ -134,19 +140,28 @@ export default function ZenSelect(
       ),
       borderWidth: 1,
       borderColor: theme[type] ?? theme.primary,
-    }
-  });
+      maxHeight:
+        maxNumberOfVisibleItems && items.length > maxNumberOfVisibleItems
+          ? (Dimensions.get('window').fontScale * 18 + LayoutConfig.space) *
+            maxNumberOfVisibleItems
+          : undefined,
 
+    },
+  });
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity disabled={disabled} activeOpacity={ThemeConfig.defaultDimValue} onPress={changeOpened}>
+      <TouchableOpacity
+        disabled={disabled}
+        activeOpacity={ThemeConfig.defaultDimValue}
+        onPress={changeOpened}
+      >
         <ZenInput
           label={label}
           placeholder={placeholder}
           dir={dir}
           leftIcon={leftIcon}
-          rightIcon={ (opened ? 'arrow-up-circle' : 'arrow-down-circle') }
+          rightIcon={opened ? 'arrow-up-circle' : 'arrow-down-circle'}
           leftAccessory={leftAccessory}
           disabled={disabled}
           type={type}
@@ -155,18 +170,21 @@ export default function ZenSelect(
         />
       </TouchableOpacity>
 
-      { opened && (
-        <View style={styles.modal}>
-
-          {items.map( (item: string, index: number)=>(
-            <TouchableOpacity onPress={()=>{changeSelectedItem(item)}} key={`select_item_${index}_${randomId}`} activeOpacity={ThemeConfig.defaultDimValue}>
-              <ZenText type={'h5'} >{item}</ZenText>
+      {opened && (
+        <ScrollView style={styles.modal} scrollEnabled={true} nestedScrollEnabled={true} persistentScrollbar={true}>
+          {items.map((item: string, index: number) => (
+            <TouchableOpacity
+              onPress={() => {
+                changeSelectedItem(item);
+              }}
+              key={`select_item_${index}_${randomId}`}
+              activeOpacity={ThemeConfig.defaultDimValue}
+            >
+              <ZenText type={'h6'}>{item}</ZenText>
             </TouchableOpacity>
           ))}
-
-        </View>
-      ) }
-
+        </ScrollView>
+      )}
     </View>
   );
 }
