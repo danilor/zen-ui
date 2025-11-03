@@ -37,6 +37,7 @@ import ZenDivider from './components/structure/ZenDivider';
 import ZenCheck from './components/themed/ZenCheck';
 import ZenSpaceBlock from './components/structure/ZenSpaceBlock';
 import Card, {CardHeader, CardFooter} from './components/structure/Card';
+import ZenSpotlight from './components/widgets/ZenSpotlight';
 /**
  * Theme
  */
@@ -107,6 +108,11 @@ export {
    * Types
    */
   type ThemeModel,
+
+  /**
+   * Widgets
+   */
+  ZenSpotlight,
 
   /**
    * Other

@@ -31,6 +31,7 @@ import FormScreen from './components/screens/Form.screen';
 import FloatingIconsScreen from './components/screens/FloatingIcons.screen';
 import CardsScreen from './components/screens/Cards.screen';
 import ListScreen from './components/screens/List.screen';
+import SpotlightScreen from './components/screens/Spotlight.screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -236,6 +237,13 @@ function RootStack() {
           component={CardsScreen}
           options={{
             title: 'Cards',
+          }}
+        />
+        <Stack.Screen
+          name="Spotlight"
+          component={SpotlightScreen}
+          options={{
+            title: 'Spotlight',
           }}
         />
       </Stack.Navigator>

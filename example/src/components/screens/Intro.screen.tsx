@@ -162,6 +162,14 @@ export default function IntroScreen() {
                 navigation.navigate('List' as never);
               }}
             />
+            <ZenButton
+              type={'primary'}
+              title={'Spotlight'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Spotlight' as never);
+              }}
+            />
 
           </View>
         </Layout>
