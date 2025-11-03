@@ -16,6 +16,7 @@ type ZenPlayProps = {
   icon?: string;
   leftText?: string;
   rightIcon?: string;
+  bordered?: boolean;
 };
 
 /**
@@ -32,6 +33,7 @@ type ZenPlayProps = {
  * @param {string} icon - The name of the icon to display on the play button.
  * @param {string} leftText - Optional text to display at the bottom left of the image.
  * @param {string }rightIcon - Optional icon name to display at the bottom right of the image.
+ * @param {boolean} bordered - Whether to display a border around the component. Default is false.
  * @example {tsx}
 
   import {
@@ -71,7 +73,7 @@ type ZenPlayProps = {
           </Screen>
         </>
       );
-  } 
+  }
 
  {/tsx}
  */
@@ -83,6 +85,7 @@ export default function ZenPlay({
   icon = 'play',
   leftText,
   rightIcon,
+  bordered = false,
 }: ZenPlayProps) {
   const theme = useTheme();
   if (!theme[type]) {
@@ -107,8 +110,12 @@ export default function ZenPlay({
       alignItems: 'center',
       justifyContent: 'center',
       position: 'relative',
-      // borderWidth: 1,
-      borderColor: 'red',
+      borderWidth: (bordered ? 1 : 0),
+      borderColor: theme[type],
+      borderStyle: 'solid',
+      borderRadius: (bordered ? LayoutConfig.border : 0),
+      overflow: 'hidden',
+
     },
     image: {
       // minWidth: 10,

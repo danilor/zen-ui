@@ -38,13 +38,13 @@ const LAYOUT_FACTOR = 0.3;
  * @group Widgets
  * @param {string} type - The theme type for the component. Can be 'primary', 'secondary', 'success', 'info', 'warning', or 'danger'. Default is 'primary'.
  * @param {ImageSource} bannerImageSource - The source for the banner image.
- * @param {ImageSource}{string}  avatarImageSource - The source for the avatar image.
- * @param {string} {Element|Element[]} title - The title of the profile.
+ * @param {ImageSource}  avatarImageSource - The source for the avatar image.
+ * @param {string} title - The title of the profile.
  * @param {Element|Element[]} subTitleElement - The subtitle element of the profile.
  * @param {boolean} bordered - Whether the avatar and banner images should have borders. Default is true.
- * @param {number} {boolean} bannerHeight - The height of the banner image. Default is 150.
- * @param {Element|{number} Element[]} description - The description of the profile.
- * @param {Element|Element[]{StyleSheet} } footer - The footer element of the profile.
+ * @param {number} bannerHeight - The height of the banner image. Default is 150.
+ * @param {Element|{number} description - The description of the profile.
+ * @param {Element|Element[] footer - The footer element of the profile.
  * @param {StyleSheet} style - Additional styles for the profile container.
  * @see ZenButton
  * @see ZenIconButton

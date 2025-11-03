@@ -11,6 +11,7 @@ import { useState } from 'react';
 export default function PlayScreen() {
   const [columns, setColumns] = useState<number>(3);
   const [iconName, setIconName] = useState<'play'|'send'>('play');
+  const [bordered, setBordered] = useState<boolean>(true);
 
   const changeDistribution = () => {
     const newColumns = columns === 3 ? 4 : columns === 4 ? 2 : 3;
@@ -52,6 +53,12 @@ export default function PlayScreen() {
             title={'Change Icon (' + iconName + ')'}
             fill={true}
           />
+          <ZenDivider type={'primary'} />
+          <ZenButton
+            onPress={()=> setBordered(!bordered)}
+            title={'Change Bordered'}
+            fill={true}
+          />
 
           <ZenSpaceBlock />
 
@@ -63,6 +70,7 @@ export default function PlayScreen() {
                 uri: 'https://picsum.photos/300?' + Math.random().toString(),
               }}
               leftText={'1M views'}
+              bordered={bordered}
             />
             <ZenPlay
               style={styles.play}
@@ -71,6 +79,7 @@ export default function PlayScreen() {
               }}
               icon={iconName}
               leftText={'140K views'}
+              bordered={bordered}
             />
             <ZenPlay
               style={styles.play}
@@ -79,6 +88,7 @@ export default function PlayScreen() {
               }}
               icon={iconName}
               leftText={'30K views'}
+              bordered={bordered}
             />
             <ZenPlay
               style={styles.play}
@@ -88,6 +98,7 @@ export default function PlayScreen() {
               icon={iconName}
               leftText={'1.2M views'}
               rightIcon={'money-square'}
+              bordered={bordered}
             />
             <ZenPlay
               style={styles.play}
@@ -96,6 +107,7 @@ export default function PlayScreen() {
               }}
               icon={iconName}
               leftText={'12 views'}
+              bordered={bordered}
             />
             <ZenPlay
               style={styles.play}
@@ -104,6 +116,7 @@ export default function PlayScreen() {
               }}
               icon={iconName}
               leftText={'40K views'}
+              bordered={bordered}
             />
             <ZenPlay
               style={styles.play}
@@ -113,6 +126,7 @@ export default function PlayScreen() {
               icon={iconName}
               leftText={'1M views'}
               rightIcon={'money-square'}
+              bordered={bordered}
             />
 
 
