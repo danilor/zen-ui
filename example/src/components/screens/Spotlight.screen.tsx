@@ -10,11 +10,11 @@ export default function SpotlightScreen() {
           <ZenSpotlight footerText={'This image was taken from Picsum'} imageSource={{uri:'https://picsum.photos/300?random'}} bordered={true} borderRounded={true} />
 
           <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20}}>
-            <ZenSpotlight style={{width: '48%'}}  type={'success'} imageSource={{uri:'https://picsum.photos/300?random2'}} bordered={true} borderRounded={true} />
-            <ZenSpotlight style={{width: '48%'}}  type={'info'} imageSource={{uri:'https://picsum.photos/300?random2'}} bordered={true} borderRounded={true} />
+            <ZenSpotlight style={{width: '48%'}} iconName={'arrow-archery'}  type={'success'} imageSource={{uri:'https://picsum.photos/300?random2'}} bordered={true} borderRounded={true} />
+            <ZenSpotlight style={{width: '48%'}} iconName={'send-diagonal'}  type={'info'} imageSource={{uri:'https://picsum.photos/300?random2'}} bordered={true} borderRounded={true} />
           </View>
 
-          <ZenSpotlight footerText={'This image was taken from Picsum'} type={'warning'} imageSource={{uri:'https://picsum.photos/300?random2'}} bordered={true} borderRounded={true} />
+          <ZenSpotlight iconName={'arrow-up-tag'} footerText={'This image was taken from Picsum'} type={'warning'} imageSource={{uri:'https://picsum.photos/300?random2'}} bordered={true} borderRounded={true} />
 
         </Layout>
       </Screen>
