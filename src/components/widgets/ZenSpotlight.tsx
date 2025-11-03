@@ -4,8 +4,13 @@ import ZenIconButton  from './../themed/ZenIconButton';
 import type { ThemeType } from '../../literals/Type.literal';
 import { useTheme } from '../../hooks/useTheme';
 import LayoutConfig from '../../config/LayoutConfig';
+import ColorUtil from '../../util/Color.util';
+import ThemeConfig from '../../config/Theme.config';
 
 type ZenSpotlightProps = {
+  title?: string;
+  titleBackground?: boolean;
+  titleType?: keyof typeof ThemeConfig.text,
   imageSource: any;
   footerText?: string;
   iconName?: string;
@@ -23,6 +28,10 @@ type ZenSpotlightProps = {
  * @author Danilo Ramírez Mattey
  * @version 1.0.0
  * @category Widget Components
+ * @group Widgets
+ * @param {string} title - Optional title to be displayed on top of the image.
+ * @param {boolean} titleBackground - Whether the title should have a background for better visibility. Default is false.
+ * @param {string} titleType - The text type for the title. Default is 'h3'.
  * @param {ImageSource} imageSource - The source of the image to be displayed.
  * @param {string} footerText - Optional text to be displayed in the footer.
  * @param {string} iconName - The name of the icon to be displayed in the button. Default is 'arrow-right-circle'.
@@ -54,6 +63,9 @@ type ZenSpotlightProps = {
  */
 export default function ZenSpotlight(
   {
+    title,
+    titleType = 'h3',
+    titleBackground = false,
     imageSource,
     footerText,
     iconName = 'arrow-right-circle',
@@ -95,11 +107,20 @@ export default function ZenSpotlight(
       position: 'absolute',
       right: 0,
       transform: 'translate(0%, -50%)',
+    },
+    title:{
+      position: 'absolute',
+      top: LayoutConfig.space,
+      left: LayoutConfig.space,
+      zIndex: 1,
+      backgroundColor: (titleBackground ? ColorUtil.hexToRgb(theme.background, 0.4) : 'transparent'),
     }
   });
 
   return (
     <View style={[styles.container, style]}>
+
+      { title && (<ZenText style={styles.title} type={titleType} paragraph={false}>{title}</ZenText>) }
 
       <Image style={styles.image} source={imageSource} />
       <View style={styles.footer}>

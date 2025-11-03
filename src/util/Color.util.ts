@@ -57,6 +57,34 @@ const ColorUtil = {
     return ColorUtil.color(r, g, b);
   },
 
+
+  /**
+   * @docunator
+   * @title hexToRgb
+   * @category Color Utilities
+   * @description Convert a hex color string to an RGB object
+   * @param {string} hex The hex color string
+   * @param {number} opacity The opacity value (0-1)
+   * @returns {string|null} The RGB color string in the format 'rgba(r, g, b, opacity)' or null if the hex string is invalid
+   */
+  hexToRgb: (hex: string, opacity: number = 1)=> {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+
+    const v =  result ? {
+      // @ts-ignore
+      r: parseInt(result[1], 16),
+      // @ts-ignore
+      g: parseInt(result[2], 16),
+      // @ts-ignore
+      b: parseInt(result[3], 16)
+    } : null;
+    if(v !== null){
+      return `rgba(${v.r}, ${v.g}, ${v.b}, ${opacity})`;
+    }else{
+      return null;
+    }
+  },
+
   /**
    * @docunator
    * @title getContrastTextColor
