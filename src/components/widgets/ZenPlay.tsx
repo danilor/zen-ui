@@ -18,6 +18,63 @@ type ZenPlayProps = {
   rightIcon?: string;
 };
 
+/**
+ * @docunator
+ * @title ZenPlay
+ * @description A play button component overlayed on an image, with optional left text and right icon.
+ * @author Danilo Ramírez Mattey
+ * @version 1.0.0
+ * @category Widget Components
+ * @param {string} type - The theme type for the component (e.g., 'primary', 'secondary').
+ * @param {ImageSource} imageSource - The source of the image to display.
+ * @param {StyleSheet} style - Additional styles for the component container.
+ * @param {Function} onPress - Function to execute when the play button is pressed.
+ * @param {string} icon - The name of the icon to display on the play button.
+ * @param {string} leftText - Optional text to display at the bottom left of the image.
+ * @param {string }rightIcon - Optional icon name to display at the bottom right of the image.
+ * @example {tsx}
+
+  import {
+  Layout,
+  Screen,
+  ZenPlay,
+  } from 'react-zen-ui';
+  import { StyleSheet } from 'react-native';
+
+  export default function PlayScreen() {
+      const styles = StyleSheet.create({
+        play: {
+          width: 200,
+          height: 200,
+        },
+      });
+
+      const handlePlayPress = () => {
+        console.log('Play button pressed!');
+      };
+
+      return (
+        <>
+          <Screen useTopSafeArea={false}>
+            <Layout centerContent={true}>
+              <ZenPlay
+                style={styles.play}
+                imageSource={{
+                  uri: 'https://example.com/image.jpg',
+                }}
+                onPress={handlePlayPress}
+                icon={'play'}
+                leftText={'Sample Text'}
+                rightIcon={'info'}
+              />
+            </Layout>
+          </Screen>
+        </>
+      );
+  } 
+
+ {/tsx}
+ */
 export default function ZenPlay({
   type = 'primary',
   imageSource,

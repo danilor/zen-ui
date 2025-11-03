@@ -52,7 +52,7 @@ export default function PlayScreen() {
             title={'Change Icon (' + iconName + ')'}
             fill={true}
           />
-          
+
           <ZenSpaceBlock />
 
           <View style={styles.container}>
