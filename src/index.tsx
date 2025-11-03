@@ -39,6 +39,7 @@ import ZenSpaceBlock from './components/structure/ZenSpaceBlock';
 import Card, {CardHeader, CardFooter} from './components/structure/Card';
 import ZenSpotlight from './components/widgets/ZenSpotlight';
 import ZenProfile from './components/widgets/ZenProfile';
+import ZenPlay from './components/widgets/ZenPlay';
 /**
  * Theme
  */
@@ -115,6 +116,7 @@ export {
    */
   ZenSpotlight,
   ZenProfile,
+  ZenPlay,
 
   /**
    * Other

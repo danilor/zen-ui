@@ -177,6 +177,14 @@ export default function IntroScreen() {
                 navigation.navigate('Profile' as never);
               }}
             />
+            <ZenButton
+              type={'primary'}
+              title={'Play'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Play' as never);
+              }}
+            />
 
           </View>
         </Layout>
