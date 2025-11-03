@@ -32,6 +32,7 @@ import FloatingIconsScreen from './components/screens/FloatingIcons.screen';
 import CardsScreen from './components/screens/Cards.screen';
 import ListScreen from './components/screens/List.screen';
 import SpotlightScreen from './components/screens/Spotlight.screen';
+import ProfileScreen from './components/screens/Profile.screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -244,6 +245,13 @@ function RootStack() {
           component={SpotlightScreen}
           options={{
             title: 'Spotlight',
+          }}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            title: 'Profile',
           }}
         />
       </Stack.Navigator>

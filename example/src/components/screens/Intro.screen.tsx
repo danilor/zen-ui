@@ -43,8 +43,6 @@ export default function IntroScreen() {
                 navigation.navigate('Drawer' as never);
               }}
             />
-          </View>
-          <View style={styles.buttons}>
             <ZenButton
               type={'primary'}
               title={'Buttons'}
@@ -53,6 +51,9 @@ export default function IntroScreen() {
                 navigation.navigate('Buttons' as never);
               }}
             />
+          </View>
+
+          <View style={styles.buttons}>
             <ZenButton
               type={'primary'}
               title={'Icon Buttons'}
@@ -61,8 +62,6 @@ export default function IntroScreen() {
                 navigation.navigate('IconButtons' as never);
               }}
             />
-          </View>
-          <View style={styles.buttons}>
             <ZenButton
               type={'primary'}
               title={'Text'}
@@ -98,8 +97,6 @@ export default function IntroScreen() {
                 navigation.navigate('Input' as never);
               }}
             />
-          </View>
-          <View style={styles.buttons}>
             <ZenButton
               type={'primary'}
               title={'Loading'}
@@ -108,6 +105,9 @@ export default function IntroScreen() {
                 navigation.navigate('Loading' as never);
               }}
             />
+          </View>
+
+          <View style={styles.buttons}>
             <ZenButton
               type={'primary'}
               title={'Tables'}
@@ -116,8 +116,6 @@ export default function IntroScreen() {
                 navigation.navigate('Tables' as never);
               }}
             />
-          </View>
-          <View style={styles.buttons}>
             <ZenButton
               type={'primary'}
               title={'Form'}
@@ -152,8 +150,6 @@ export default function IntroScreen() {
                 navigation.navigate('Cards' as never);
               }}
             />
-          </View>
-          <View style={styles.buttons}>
             <ZenButton
               type={'primary'}
               title={'List Items'}
@@ -162,12 +158,23 @@ export default function IntroScreen() {
                 navigation.navigate('List' as never);
               }}
             />
+          </View>
+          <View style={styles.buttons}>
+
             <ZenButton
               type={'primary'}
               title={'Spotlight'}
               fill={true}
               pressAction={() => {
                 navigation.navigate('Spotlight' as never);
+              }}
+            />
+            <ZenButton
+              type={'primary'}
+              title={'Profile'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Profile' as never);
               }}
             />
 
