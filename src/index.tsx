@@ -36,10 +36,12 @@ import ZenIconButton from './components/themed/ZenIconButton';
 import ZenDivider from './components/structure/ZenDivider';
 import ZenCheck from './components/themed/ZenCheck';
 import ZenSpaceBlock from './components/structure/ZenSpaceBlock';
-import Card, {CardHeader, CardFooter} from './components/structure/Card';
+import Card, { CardHeader, CardFooter } from './components/structure/Card';
 import ZenSpotlight from './components/widgets/ZenSpotlight';
 import ZenProfile from './components/widgets/ZenProfile';
 import ZenPlay from './components/widgets/ZenPlay';
+import ZenImageSlider from './components/widgets/ZenImageSlider';
+
 /**
  * Theme
  */
@@ -50,6 +52,7 @@ import ZenDark from './theme/ZenDark';
  * Types
  */
 import type { ThemeModel } from './models/ThemeModel';
+import type { ZenImageSliderItem } from './components/widgets/ZenImageSlider';
 
 export {
   /**
@@ -110,6 +113,7 @@ export {
    * Types
    */
   type ThemeModel,
+  type ZenImageSliderItem,
 
   /**
    * Widgets
@@ -117,6 +121,7 @@ export {
   ZenSpotlight,
   ZenProfile,
   ZenPlay,
+  ZenImageSlider,
 
   /**
    * Other

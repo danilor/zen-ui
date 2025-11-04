@@ -34,6 +34,7 @@ import ListScreen from './components/screens/List.screen';
 import SpotlightScreen from './components/screens/Spotlight.screen';
 import ProfileScreen from './components/screens/Profile.screen';
 import PlayScreen from './components/screens/Play.screen';
+import SliderScreen from './components/screens/Slider.screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -262,6 +263,14 @@ function RootStack() {
             title: 'Play',
           }}
         />
+        <Stack.Screen
+          name="Slider"
+          component={SliderScreen}
+          options={{
+            title: 'Slider',
+          }}
+        />
+
       </Stack.Navigator>
 
     </>
