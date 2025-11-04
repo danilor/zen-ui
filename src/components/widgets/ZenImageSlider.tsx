@@ -69,7 +69,7 @@ type ZenImageSliderProps = {
 
 /**
  * @docunator
- * @title Image Slider
+ * @title ZenImageSlider
  * @description A simple image slider component with pagination.
  * @author Danilo Ramírez Mattey
  * @category Widget Components
