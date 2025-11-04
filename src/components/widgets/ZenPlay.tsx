@@ -34,6 +34,7 @@ type ZenPlayProps = {
  * @param {string} leftText - Optional text to display at the bottom left of the image.
  * @param {string }rightIcon - Optional icon name to display at the bottom right of the image.
  * @param {boolean} bordered - Whether to display a border around the component. Default is false.
+ * @snack @daniloramirezcr/zenui-play-example
  * @example {tsx}
 
   import {
