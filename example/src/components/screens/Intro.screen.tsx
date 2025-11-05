@@ -198,6 +198,15 @@ export default function IntroScreen() {
               }}
             />
 
+            <ZenButton
+              type={'primary'}
+              title={'Toast'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Toast' as never);
+              }}
+            />
+
           </View>
         </Layout>
       </Screen>

@@ -8,5 +8,6 @@ const LayersConfig = {
   drawer: 999,
   floatingIcons: 1,
   select: 2,
+  toast: 10,
 }
 export default LayersConfig;

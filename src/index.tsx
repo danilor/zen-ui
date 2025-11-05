@@ -41,7 +41,9 @@ import ZenSpotlight from './components/widgets/ZenSpotlight';
 import ZenProfile from './components/widgets/ZenProfile';
 import ZenPlay from './components/widgets/ZenPlay';
 import ZenImageSlider from './components/widgets/ZenImageSlider';
-
+import ZenToast from './components/toast/ZenToast';
+import {useToast} from './hooks/useToast';
+import {useToastData} from './hooks/useToast';
 /**
  * Theme
  */
@@ -122,6 +124,13 @@ export {
   ZenProfile,
   ZenPlay,
   ZenImageSlider,
+
+  /**
+   * Toast
+   */
+  ZenToast,
+  useToast,
+  useToastData,
 
   /**
    * Other
