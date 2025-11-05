@@ -27,6 +27,8 @@ const defaultConfig : ToastModel= {
  * @title ZenToast
  * @description A simple toast notification component for displaying brief messages to users. Not intended to be used directly, use the useToast hook instead. To enable the usage of toasts, make sure to wrap your application with the ZenThemeProvider component and pass the "toast" parameter as true.
  * @category Utility Components
+ * @see useToast
+ * @see ZenThemeProvider
  */
 export default function ZenToast(
   {
