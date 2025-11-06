@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { StyleSheet, Animated } from 'react-native';
 import LayersConfig from '../../config/Layers.config';
 import ColorUtil from '../../util/Color.util';
@@ -29,6 +29,7 @@ const defaultConfig : ToastModel= {
  * @category Utility Components
  * @see useToast
  * @see ZenThemeProvider
+ * @experimental This is a new component and may undergo significant changes in future releases.
  */
 export default function ZenToast(
   {
@@ -36,70 +37,83 @@ export default function ZenToast(
   }: ToastProps,
 ) {
 
-
-  const [visible, setVisible] = useState<boolean>(true);
-  const [message, setMessage] = useState<string>('Notification');
-
   const toast = useToastData();
   const _toast = useToast();
 
-  const [config, setConfig] = useState<ToastModel>(defaultConfig);
-
   const theme = useTheme();
   const animatedValue = new Animated.Value(0);
+
+
 
   useEffect(() => {
 
     // console.log('TOAST CHANGED', toast);
 
-    if( toast && toast.message && !visible && message === ''){
-      setMessage(toast.message);
-      setConfig({...defaultConfig, ...toast.config});
-      setVisible(true);
-    }
 
-    if (visible) {
+
+    if (toast.message !== '') {
+      toast.config = { ...defaultConfig, ...toast.config };
+      animatedValue.setValue(0);
+      animatedValue.stopAnimation();
+
       Animated.timing(animatedValue, {
         toValue: 1,
-        duration: config.speed === 'fast' ? ToastConfig.speed.fast : config.speed === 'slow' ? ToastConfig.speed.slow : ToastConfig.speed.normal,
+        duration:
+          toast.config.speed === 'fast'
+            ? ToastConfig.speed.fast
+            : toast.config.speed === 'slow'
+              ? ToastConfig.speed.slow
+              : ToastConfig.speed.normal,
         useNativeDriver: true,
       }).start();
-      setTimeout(() => {
+       setTimeout(() => {
         Animated.timing(animatedValue, {
           toValue: 0,
-          duration: config.speed === 'fast' ? ToastConfig.speed.fast : config.speed === 'slow' ? ToastConfig.speed.slow : ToastConfig.speed.normal,
+          duration:
+            toast.config.speed === 'fast'
+              ? ToastConfig.speed.fast
+              : toast.config.speed === 'slow'
+                ? ToastConfig.speed.slow
+                : ToastConfig.speed.normal,
           useNativeDriver: true,
-        }).start(() =>{
+        }).start(() => {
           //  onHide()
-          setVisible(false);
-          setMessage('');
           _toast('');
         });
-      }, config.duration); // Hide after 3 seconds
+      }, toast.config.duration); // Hide after 3 seconds
     }
     // @ts-ignore
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visible, toast]);
+  }, [toast]);
+
+
+  // @ts-ignore
+  const position: string = ( toast.config && toast.config.position ? toast.config.position : defaultConfig.position);
+
+  // @ts-ignore
+  const margin: string = ( toast.config && toast.config.margin ? toast.config.margin : defaultConfig.margin);
+
+  // @ts-ignore
+  const type: string = ( toast.config && toast.config.type ? toast.config.type : defaultConfig.type);
 
   const translateY = animatedValue.interpolate({
     inputRange: [0, 1],
     // @ts-ignore
-    outputRange: [0, (config.position === 'top' ? config.margin : -1 * config.margin)], // Slide from top
+    outputRange: [0, (position === 'top' ? margin : -1 * margin)], // Slide from top
   });
 
 
   let cC = theme.background;
-  if(config.type && config.type !== 'default' && theme[config.type]){
-
-    cC = theme[config.type]!;
+  if(type !== 'default' && theme[type]){
+    cC = theme[type]!;
   }
 
   const styles = StyleSheet.create({
     container: {
       position: 'absolute',
-      top: (config.position==='bottom' ? '100%' : 'auto'), // Adjust position as needed
+      top: (position==='bottom' ? '100%' : 'auto'), // Adjust position as needed
       // bottom: (position==='bottom' ? margin : 'auto'),
-      bottom: (config.position === 'top' ? '100%' : 'auto'),
+      bottom: (position === 'top' ? '100%' : 'auto'),
       left: '10%',
       right: '10%',
       backgroundColor: cC,
@@ -122,10 +136,10 @@ export default function ZenToast(
   });
 
   return (
-    visible && (
+
       <Animated.View style={[styles.container, { ["transform"]: [{ translateY }] }]}>
-        <ZenText textColor={ColorUtil.getContrastTextColor(cC)} style={styles.messageText}>{message}</ZenText>
+        <ZenText textColor={ColorUtil.getContrastTextColor(cC)} style={styles.messageText}>{toast.message}</ZenText>
       </Animated.View>
-    )
+
   );
 }

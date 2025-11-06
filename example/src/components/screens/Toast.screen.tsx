@@ -25,6 +25,10 @@ export default function ToastScreen() {
           <ZenButton type={'danger'} fill={true} title={'Display Danger Toast'} pressAction={()=>{ toast('Example Toast in danger theme colors',{type:'danger'}); }} />
           <ZenDivider type={'primary'} />
           <ZenButton type={'success'} fill={true} title={'One Second Toast'} pressAction={()=>{ toast('1 second to close',{type:'success',duration:1000}); }} />
+          <ZenDivider type={'primary'} />
+          <ZenButton type={'info'} fill={true} title={'Toast on the bottom'} pressAction={()=>{ toast('I am on the bottom of the screen',{position:'bottom',type:'success',duration:3000}); }} />
+          <ZenDivider type={'primary'} />
+          <ZenButton type={'danger'} fill={true} title={'I can feel the danger'} pressAction={()=>{ toast('Danger from below!',{position:'bottom',type:'danger',duration:3000}); }} />
 
         </Layout>
       </Screen>
