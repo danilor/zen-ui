@@ -19,6 +19,7 @@ import type { ToastModel } from '../models/ToastModel';
  * @see ZenThemeProvider
  * @see ToastModel
  * @experimental This is a new hook and may undergo significant changes in future releases.
+ * @snack @daniloramirezcr/zen-ui-toast-example
  */
 
 export const useToast: ()=> Function = () => {
