@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 export default function ChipsScreen() {
   const [ghosted, setGhosted] = useState<boolean>(false);
+  const [buttonOn, setButtonOn] = useState<boolean>(false);
 
   return (
     <>
@@ -72,40 +73,126 @@ export default function ChipsScreen() {
             <ZenChip type={'warning'} text={'Airplane'} leftIcon={'airplane'} />
             <ZenChip type={'success'} text={'Database'} leftIcon={'database'} />
             <ZenChip type={'info'} text={'Thumbs'} leftIcon={'thumbs-up'} />
-
           </View>
           <View style={styles.chipsContainer}>
             <ZenChip type={'primary'} text={'Home'} rightIcon={'home'} />
-            <ZenChip type={'warning'} text={'Airplane'} rightIcon={'airplane'} />
-            <ZenChip type={'success'} text={'Database'} rightIcon={'database'} />
+            <ZenChip
+              type={'warning'}
+              text={'Airplane'}
+              rightIcon={'airplane'}
+            />
+            <ZenChip
+              type={'success'}
+              text={'Database'}
+              rightIcon={'database'}
+            />
             <ZenChip type={'info'} text={'Thumbs'} rightIcon={'thumbs-up'} />
+          </View>
+          <View style={styles.chipsContainer}>
+            <ZenChip
+              ghost={true}
+              type={'primary'}
+              text={'Home'}
+              leftIcon={'home'}
+            />
+            <ZenChip
+              ghost={true}
+              type={'warning'}
+              text={'Airplane'}
+              leftIcon={'airplane'}
+            />
+            <ZenChip
+              ghost={true}
+              type={'success'}
+              text={'Database'}
+              leftIcon={'database'}
+            />
+            <ZenChip
+              ghost={true}
+              type={'info'}
+              text={'Thumbs'}
+              leftIcon={'thumbs-up'}
+            />
+          </View>
+
+          <View style={styles.chipsContainer}>
+            <ZenChip
+              ghost={false}
+              type={'success'}
+              text={'Send a message'}
+              leftIcon={'telegram'}
+              onPress={() => {}}
+            />
+            <ZenChip
+              ghost={true}
+              type={'danger'}
+              text={'Delete'}
+              leftIcon={'trash'}
+              onPress={() => {}}
+            />
+            <ZenChip
+              ghost={false}
+              type={'warning'}
+              text={'Fix'}
+              rightIcon={'wrench'}
+              onPress={() => {}}
+            />
+          </View>
+
+          <View style={styles.chipsContainer}>
+            <ZenChip
+              ghost={false}
+              type={'success'}
+              text={'User Favorite'}
+              leftIcon={'star'}
+            />
+            <ZenChip
+              ghost={false}
+              type={'success'}
+              text={'Trending'}
+              leftIcon={'cart'}
+            />
+            <ZenChip
+              ghost={false}
+              type={'success'}
+              text={'Card Available'}
+              leftIcon={'card-shield'}
+            />
+          </View>
+          <View style={styles.chipsContainer}>
+            <ZenChip
+              ghost={false}
+              type={'danger'}
+              text={'Late'}
+              rightIcon={'clock'}
+            />
+            <ZenChip
+              ghost={false}
+              type={'warning'}
+              text={'Requires attention'}
+              rightIcon={'warning-triangle'}
+            />
+            <ZenChip
+              ghost={false}
+              type={'info'}
+              text={'On Time'}
+              leftIcon={'clock'}
+            />
+          </View>
+          <View style={styles.chipsContainer}>
+            <ZenChip text={'Default'} />
+            <ZenChip rounded={false} text={'Default squared'} />
+            <ZenChip rounded={true} text={'Default Rounded'} />
 
           </View>
           <View style={styles.chipsContainer}>
-            <ZenChip ghost={true} type={'primary'} text={'Home'} leftIcon={'home'} />
-            <ZenChip ghost={true} type={'warning'} text={'Airplane'} leftIcon={'airplane'} />
-            <ZenChip ghost={true} type={'success'} text={'Database'} leftIcon={'database'} />
-            <ZenChip ghost={true} type={'info'} text={'Thumbs'} leftIcon={'thumbs-up'} />
-
+            <ZenChip text={'Default'} leftIcon={'trello'} />
+            <ZenChip text={'Default'} rightIcon={'off-tag'} />
+            <ZenChip text={'Default'} rightIcon={'on-tag'} />
           </View>
 
           <View style={styles.chipsContainer}>
-            <ZenChip ghost={false} type={'success'} text={'Send a message'} leftIcon={'telegram'} onPress={()=>{}} />
-            <ZenChip ghost={true} type={'danger'} text={'Delete'} leftIcon={'trash'} onPress={()=>{}} />
-            <ZenChip ghost={false} type={'warning'} text={'Fix'} rightIcon={'wrench'} onPress={()=>{}} />
-
-
-          </View>
-
-          <View style={styles.chipsContainer}>
-            <ZenChip ghost={false} type={'success'} text={'User Favorite'} leftIcon={'star'} />
-            <ZenChip ghost={false} type={'success'} text={'Trending'} leftIcon={'cart'} />
-            <ZenChip ghost={false} type={'success'} text={'Card Available'} leftIcon={'card-shield'} />
-          </View>
-          <View style={styles.chipsContainer}>
-            <ZenChip ghost={false} type={'danger'} text={'Late'} rightIcon={'clock'} />
-            <ZenChip ghost={false} type={'warning'} text={'Requires attention'} rightIcon={'warning-triangle'} />
-            <ZenChip ghost={false} type={'info'} text={'On Time'} leftIcon={'clock'} />
+            <ZenChip type={'primary'} ghost={!buttonOn} text={'Turn me on/off'} leftIcon={(buttonOn ? 'on-tag':'off-tag')} onPress={ ()=>{ setButtonOn(!buttonOn) } } />
 
           </View>
         </Layout>
