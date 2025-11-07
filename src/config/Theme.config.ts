@@ -100,7 +100,7 @@ const ThemeConfig = {
     input: -0.05
   },
   defaultDimValue: 0.5,
-  defaultCardBackgroundFactor: -0.2,
+  defaultCardBackgroundFactor: -0.08,
 };
 
 completeColors('success', ThemeConfig.colors.defaultSuccess);
