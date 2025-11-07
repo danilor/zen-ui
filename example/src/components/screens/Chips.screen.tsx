@@ -193,7 +193,6 @@ export default function ChipsScreen() {
 
           <View style={styles.chipsContainer}>
             <ZenChip type={'primary'} ghost={!buttonOn} text={'Turn me on/off'} leftIcon={(buttonOn ? 'on-tag':'off-tag')} onPress={ ()=>{ setButtonOn(!buttonOn) } } />
-
           </View>
         </Layout>
       </Screen>
