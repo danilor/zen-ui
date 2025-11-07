@@ -36,6 +36,7 @@ import ProfileScreen from './components/screens/Profile.screen';
 import PlayScreen from './components/screens/Play.screen';
 import SliderScreen from './components/screens/Slider.screen';
 import ToastScreen from './components/screens/Toast.screen';
+import ChipsScreen from './components/screens/Chips.screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -276,6 +277,13 @@ function RootStack() {
           component={ToastScreen}
           options={{
             title: 'Toast',
+          }}
+        />
+        <Stack.Screen
+          name="Chips"
+          component={ChipsScreen}
+          options={{
+            title: 'Chips',
           }}
         />
 

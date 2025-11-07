@@ -44,6 +44,7 @@ import ZenImageSlider from './components/widgets/ZenImageSlider';
 import ZenToast from './components/toast/ZenToast';
 import {useToast} from './hooks/useToast';
 import {useToastData} from './hooks/useToast';
+import ZenChip from './components/themed/ZenChip';
 /**
  * Theme
  */
@@ -95,6 +96,7 @@ export {
   ZenSelect,
   ZenSlider,
   ZenListItem,
+  ZenChip,
 
   /**
    * Navigation

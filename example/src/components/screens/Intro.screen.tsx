@@ -207,6 +207,15 @@ export default function IntroScreen() {
               }}
             />
 
+            <ZenButton
+              type={'primary'}
+              title={'Chips'}
+              fill={true}
+              pressAction={() => {
+                navigation.navigate('Chips' as never);
+              }}
+            />
+
           </View>
         </Layout>
       </Screen>
